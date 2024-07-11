@@ -1,0 +1,1 @@
+export { RegistationForm } from "./ui";
