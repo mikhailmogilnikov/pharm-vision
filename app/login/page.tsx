@@ -1,5 +1,9 @@
-import { LoginPage } from '@/src/page/login';
+import { LoginPage } from '@/src/page/auth/login';
 
-export default function Login() {
-  return <LoginPage />;
+type Props = {
+  searchParams: Record<string, string>;
+};
+
+export default function Login({ searchParams }: Props) {
+  return <LoginPage promotion={searchParams.promotion} />;
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import { useMask } from '@react-input/mask';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 

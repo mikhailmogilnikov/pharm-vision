@@ -1,3 +1,5 @@
+'use client';
+
 import { Input, InputProps } from '@nextui-org/input';
 import { Eye, EyeClosed } from '@phosphor-icons/react';
 import { useState } from 'react';

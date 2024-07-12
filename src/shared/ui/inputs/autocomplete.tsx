@@ -2,10 +2,11 @@ import {
   Autocomplete,
   AutocompleteItem,
   AutocompleteProps,
-} from "@nextui-org/autocomplete";
+} from '@nextui-org/autocomplete';
+import { Key } from 'react';
 
 type VariantBase = {
-  id: number;
+  id: number | string;
 };
 
 type Variant<K extends string> = VariantBase & {
@@ -16,8 +17,8 @@ type Props<K extends string> = {
   title: K;
   variants: Variant<K>[];
   value: string;
-  setValue: (key: React.Key | null) => void;
-} & Omit<AutocompleteProps, "children">;
+  setValue: (key: Key | null) => void;
+} & Omit<AutocompleteProps, 'children'>;
 
 export const AutocompleteInput = <K extends string>({
   title,
@@ -28,14 +29,17 @@ export const AutocompleteInput = <K extends string>({
 }: Props<K>) => {
   return (
     <Autocomplete
-      aria-label="autocomplete"
+      aria-label='autocomplete'
       inputProps={{
         classNames: {
-          inputWrapper: "!bg-default",
+          inputWrapper: '!bg-default',
         },
       }}
+      listboxProps={{
+        emptyContent: 'Ничего не найдено',
+      }}
       selectedKey={value}
-      size="lg"
+      size='lg'
       onSelectionChange={setValue}
       {...rest}
     >

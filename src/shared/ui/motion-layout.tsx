@@ -1,7 +1,7 @@
-import { m, MotionProps } from 'framer-motion';
+import { HTMLMotionProps, m } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 
-type Props = PropsWithChildren<MotionProps>;
+type Props = PropsWithChildren<HTMLMotionProps<'div'>>;
 
 export const MotionLayout = ({ children, ...restProps }: Props) => {
   return (

@@ -90,12 +90,12 @@ module.exports = {
               foreground: '#ffffff',
             },
             secondary: {
-              DEFAULT: '#ff6710',
-              foreground: '#000000',
+              DEFAULT: '#ff5b0b',
+              foreground: '#ffffff',
             },
             danger: {
-              500: '#7f1c1d',
-              DEFAULT: '#7f1c1d',
+              500: '#ED2939',
+              DEFAULT: '#ED2939',
               foreground: 'white',
             },
             success: {
