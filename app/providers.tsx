@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { LazyMotion, MotionConfig } from 'framer-motion';
 import { ThemeProviderProps } from 'next-themes/dist/types';
+import { ThemeColorProvider } from '@/src/shared/lib/providers/theme-color-provider';
+import { OriginTrackerProvider } from '@/src/shared/lib/providers/origin-tracker-provider';
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -23,7 +25,11 @@ export function Providers({ children, themeProps }: ProvidersProps) {
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       >
         <NextUIProvider navigate={router.push}>
-          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+          <NextThemesProvider {...themeProps}>
+            <ThemeColorProvider>
+              <OriginTrackerProvider>{children}</OriginTrackerProvider>
+            </ThemeColorProvider>
+          </NextThemesProvider>
         </NextUIProvider>
       </MotionConfig>
     </LazyMotion>

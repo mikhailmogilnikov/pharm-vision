@@ -19,7 +19,7 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
   return (
     <Flex
       center
-      className='fixed bottom-6 left-1/2 -translate-x-[50%] !w-56 h-14 bg-default/50 backdrop-blur-lg rounded-2xl border-1 border-white/10 shadow-base'
+      className='fixed bottom-6 left-1/2 -translate-x-[50%] !w-56 h-14 bg-default/50 backdrop-blur-lg rounded-2xl border-1 border-white/10 shadow-base z-40'
       gap={14}
       tag='nav'
     >

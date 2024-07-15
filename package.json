@@ -11,10 +11,12 @@
   "dependencies": {
     "@nextui-org/autocomplete": "^2.1.2",
     "@nextui-org/button": "2.0.34",
+    "@nextui-org/image": "^2.0.29",
     "@nextui-org/input": "2.2.2",
     "@nextui-org/system": "2.2.1",
     "@nextui-org/tabs": "^2.0.32",
     "@nextui-org/theme": "2.2.5",
+    "@nextui-org/tooltip": "^2.0.36",
     "@phosphor-icons/react": "^2.1.7",
     "@react-aria/ssr": "3.9.4",
     "@react-aria/visually-hidden": "3.8.12",

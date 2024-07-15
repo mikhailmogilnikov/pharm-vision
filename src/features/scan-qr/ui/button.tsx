@@ -4,6 +4,8 @@ import { m } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { updateThemeColor } from '@/src/shared/lib/utils/update-theme-color';
+
 type Props = {
   promotionId: string;
 };
@@ -15,6 +17,10 @@ export const ScanQrButton = ({ promotionId }: Props) => {
 
   const handlePressQrButton = () => {
     setIsQrPressed(true);
+
+    setTimeout(() => {
+      updateThemeColor('dark');
+    }, 100);
 
     setTimeout(() => {
       push(`/promotion/${promotionId}/scanner`);
@@ -41,7 +47,7 @@ export const ScanQrButton = ({ promotionId }: Props) => {
             borderRadius: 0,
             x: '-50%',
           }}
-          className='absolute left-1/2 w-16 h-16'
+          className='absolute left-1/2 w-16 h-16 z-50'
           initial={{
             scale: 1,
             backgroundColor: '#ff5b0b',

@@ -2,22 +2,20 @@
 
 import { IDetectedBarcode, Scanner, outline } from '@yudiel/react-qr-scanner';
 import { CaretLeft } from '@phosphor-icons/react/dist/ssr';
-import { Button } from '@nextui-org/button';
-import { useRouter } from 'next/navigation';
 
 import { QrFinder } from './finder';
 
 import { MotionLayout } from '@/src/shared/ui/motion-layout';
 import { Flex } from '@/src/shared/ui/flex';
 import { Text } from '@/src/shared/ui/text';
+import { BackButton } from '@/src/shared/ui/buttons/back-button';
 
 type Props = {
   onChange: (result: IDetectedBarcode[]) => void;
+  fallbackUrl: string;
 };
 
-export const QrScanner = ({ onChange }: Props) => {
-  const { back } = useRouter();
-
+export const QrScanner = ({ onChange, fallbackUrl }: Props) => {
   return (
     <>
       <MotionLayout
@@ -30,14 +28,14 @@ export const QrScanner = ({ onChange }: Props) => {
           className='fixed top-0 left-0 z-10 pb-6 text-white bg-gradient-to-b from-black/70 to-transparent h-24 px-4'
           tag='aside'
         >
-          <Button
+          <BackButton
             isIconOnly
             className='text-white'
+            fallbackUrl={fallbackUrl}
             radius='full'
             size='sm'
             startContent={<CaretLeft size={24} weight='bold' />}
             variant='light'
-            onPress={() => back()}
           />
           <Flex center className='justify-center'>
             <Text className='text-white' size={18} weight={600}>
