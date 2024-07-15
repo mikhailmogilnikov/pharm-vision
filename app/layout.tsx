@@ -45,7 +45,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: 'class', defaultTheme: 'system' }}>
+        <Providers themeProps={{ attribute: 'class' }}>
           <SquircleNoScript />
           <Flex className='relative' gap={0} tag='main'>
             {children}

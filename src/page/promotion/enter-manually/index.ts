@@ -1,0 +1,1 @@
+export { PromotionEnterManuallyPage } from './ui';

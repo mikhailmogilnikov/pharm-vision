@@ -1,6 +1,6 @@
 'use client';
 
-import { Scanner } from '@yudiel/react-qr-scanner';
+import { IDetectedBarcode, Scanner, outline } from '@yudiel/react-qr-scanner';
 import { CaretLeft } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@nextui-org/button';
 import { useRouter } from 'next/navigation';
@@ -11,7 +11,11 @@ import { MotionLayout } from '@/src/shared/ui/motion-layout';
 import { Flex } from '@/src/shared/ui/flex';
 import { Text } from '@/src/shared/ui/text';
 
-export const QrScanner = () => {
+type Props = {
+  onChange: (result: IDetectedBarcode[]) => void;
+};
+
+export const QrScanner = ({ onChange }: Props) => {
   const { back } = useRouter();
 
   return (
@@ -45,8 +49,9 @@ export const QrScanner = () => {
         <QrFinder />
         <Scanner
           classNames={{ video: 'object-cover' }}
-          components={{ audio: false, finder: false }}
-          onScan={(result) => console.log(result)}
+          components={{ audio: false, finder: false, tracker: outline }}
+          constraints={{ facingMode: 'outline' }}
+          onScan={onChange}
         />
       </MotionLayout>
     </>
