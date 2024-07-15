@@ -10,7 +10,7 @@ export const PromotionHomePage = ({ promotionId }: Props) => {
   return (
     <>
       <Squircle
-        className='w-full aspect-[3/2] relative !z-10'
+        className='w-full aspect-[3/2] bg-default relative !z-10'
         cornerRadius={20}
         cornerSmoothing={1}
       >

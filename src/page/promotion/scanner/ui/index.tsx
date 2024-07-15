@@ -25,7 +25,7 @@ export const PromotionScannerPage = ({ promotionId }: Props) => {
   return (
     <Flex className='w-dvw h-dvh bg-black'>
       <QrScanner
-        fallbackUrl={`/promotions/${promotionId}`}
+        fallbackUrl={`/promotion/${promotionId}`}
         onChange={(result) => setScanValue(result[0].rawValue)}
       />
       <EnterQrManuallyButton promotionId={promotionId} />
