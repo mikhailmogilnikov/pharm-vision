@@ -1,4 +1,4 @@
-import { PromotionProfilePage } from '@/src/page/promotion/profile/ui';
+import { PromotionProfilePage } from '@/src/page/promotion/profile';
 
 type Props = { params: { promotionId: string } };
 

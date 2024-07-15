@@ -1,0 +1,1 @@
+export { PromotionScannerPage } from './ui';

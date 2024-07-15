@@ -1,1 +1,1 @@
-export { PromotionHomePage } from './ui';
+export { PromotionProfilePage } from './ui';

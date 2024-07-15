@@ -2,6 +2,7 @@ import './globals.css';
 
 import { Metadata, Viewport } from 'next';
 import clsx from 'clsx';
+import { SquircleNoScript } from '@squircle-js/react';
 
 import { Providers } from './providers';
 
@@ -45,7 +46,8 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'system' }}>
-          <Flex gap={0} tag='main'>
+          <SquircleNoScript />
+          <Flex className='relative' gap={0} tag='main'>
             {children}
           </Flex>
         </Providers>
