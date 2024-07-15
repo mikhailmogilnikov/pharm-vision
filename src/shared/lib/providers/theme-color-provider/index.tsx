@@ -14,5 +14,5 @@ export const ThemeColorProvider = ({ children }: Props) => {
     updateThemeColor(resolvedTheme as 'light' | 'dark');
   }, [theme, resolvedTheme]);
 
-  return children;
+  return <>{children}</>;
 };
