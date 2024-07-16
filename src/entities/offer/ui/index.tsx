@@ -1,7 +1,6 @@
 import { Squircle } from '@squircle-js/react';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import Image from 'next/image';
 
 export const OfferCard = () => {
   return (
@@ -12,11 +11,9 @@ export const OfferCard = () => {
         cornerSmoothing={1}
       >
         <Flex className='h-44 bg-orange-100'>.</Flex>
-        <Flex>
-          <Flex>
-            <Image />
-          </Flex>
-        </Flex>
+        {/* <Flex>
+          <Flex><Image /></Flex>
+        </Flex> */}
       </Squircle>
     </button>
   );
