@@ -3,7 +3,7 @@
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Squircle } from '@squircle-js/react';
 
-import { Text } from '@/src/shared/ui/text';
+import { Text } from '@/src/shared/ui/primitives/text';
 
 export const Search = () => {
   return (

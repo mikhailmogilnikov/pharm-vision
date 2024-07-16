@@ -8,7 +8,7 @@ import { Providers } from './providers';
 
 import { siteConfig } from '@/src/shared/config/site';
 import { fontSans } from '@/src/shared/config/fonts';
-import { Flex } from '@/src/shared/ui/flex';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 export const metadata: Metadata = {
   title: {

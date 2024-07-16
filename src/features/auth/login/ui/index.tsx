@@ -6,10 +6,12 @@ import { useState } from 'react';
 import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 
-import { Flex } from '@/src/shared/ui/flex';
+
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
-import { Text } from '@/src/shared/ui/text';
+import { Flex } from '@/src/shared/ui/primitives/flex';
+import { Text } from '@/src/shared/ui/primitives/text';
+
 
 type Props = {
   promotion?: string;

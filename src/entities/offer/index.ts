@@ -1,0 +1,1 @@
+export { OfferCard } from './ui';

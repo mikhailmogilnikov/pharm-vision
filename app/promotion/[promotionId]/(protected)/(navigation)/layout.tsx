@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 import { CustomerNavigation } from '@/src/widgets/navigation/customer-navigation';
-import { Flex } from '@/src/shared/ui/flex';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = PropsWithChildren<{ params: { promotionId: string } }>;
 

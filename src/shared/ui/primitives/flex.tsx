@@ -13,6 +13,8 @@ type Props = {
     | 'span'
     | 'article'
     | 'nav'
+    | 'ul'
+    | 'ol'
     | 'main';
   className?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';

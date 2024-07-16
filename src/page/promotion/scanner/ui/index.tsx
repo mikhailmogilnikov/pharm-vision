@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 import { QrScanner } from '@/src/features/scan-qr';
-import { Flex } from '@/src/shared/ui/flex';
 import { EnterQrManuallyButton } from '@/src/features/enter-qr-manually';
 import { updateThemeColor } from '@/src/shared/lib/utils/update-theme-color';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = { promotionId: string };
 

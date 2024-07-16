@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
+import { useEffect, useState } from 'react';
 
 import { CustomerRoutes } from '../config/routes';
 
-import { Flex } from '@/src/shared/ui/flex';
 import { ScanQrButton } from '@/src/features/scan-qr';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = {
   promotionId: string;
@@ -15,6 +16,16 @@ type Props = {
 
 export const CustomerNavigation = ({ promotionId }: Props) => {
   const pathname = usePathname();
+
+  const [homeNavTab, setHomeNavTab] = useState<string | null>();
+
+  useEffect(() => {
+    const homeNavigationTab = localStorage.getItem(
+      `customer-${promotionId}-nav`,
+    );
+
+    setHomeNavTab(homeNavigationTab);
+  }, [pathname]);
 
   return (
     <Flex
@@ -24,6 +35,22 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
       tag='nav'
     >
       {CustomerRoutes.map(({ id, path, icon: Icon }) => {
+        if (id === 'home' && homeNavTab) {
+          const iconClassnames = clsx({
+            'opacity-50': homeNavTab !== pathname,
+          });
+
+          return (
+            <Link
+              key={id}
+              className='w-full h-full flex items-center justify-center'
+              href={homeNavTab}
+            >
+              <Icon className={iconClassnames} size={26} weight='bold' />
+            </Link>
+          );
+        }
+
         const routePath = `/promotion/${promotionId}${path}`;
         const iconClassnames = clsx({
           'opacity-50': routePath !== pathname,

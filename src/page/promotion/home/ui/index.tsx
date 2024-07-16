@@ -1,12 +1,16 @@
 import { Image } from '@nextui-org/image';
 import { Squircle } from '@squircle-js/react';
 import NextImage from 'next/image';
+import { ReactNode } from 'react';
+
+import { PromotionHomeNavigationRoutes } from '../config/routes';
 
 import { Search } from '@/src/features/search';
+import { NavigationTabs } from '@/src/shared/ui/navigation-tabs';
 
-type Props = { promotionId: string };
+type Props = { promotionId: string; children: ReactNode };
 
-export const PromotionHomePage = ({ promotionId }: Props) => {
+export const PromotionHomePage = ({ promotionId, children }: Props) => {
   return (
     <>
       <Squircle
@@ -16,6 +20,7 @@ export const PromotionHomePage = ({ promotionId }: Props) => {
       >
         <Image
           fill
+          priority
           alt='NextUI hero Image'
           as={NextImage}
           classNames={{
@@ -29,6 +34,19 @@ export const PromotionHomePage = ({ promotionId }: Props) => {
       </Squircle>
 
       <Search />
+
+      <Squircle
+        className='w-full h-12 shadow-lg relative bg-default flex pt-[2px]'
+        cornerRadius={14}
+        cornerSmoothing={1}
+      >
+        <NavigationTabs
+          items={PromotionHomeNavigationRoutes(promotionId)}
+          localStorageKey={`customer-${promotionId}-nav`}
+        />
+      </Squircle>
+
+      {children}
     </>
   );
 };

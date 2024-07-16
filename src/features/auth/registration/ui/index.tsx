@@ -13,12 +13,13 @@ import {
 } from '../config/initial-data';
 import { validateRegistration } from '../lib/validate-project';
 
-import { Flex } from '@/src/shared/ui/flex';
+
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
-import { Text } from '@/src/shared/ui/text';
 import { CityPicker } from '@/src/shared/ui/inputs/city-picker';
-import { MotionLayout } from '@/src/shared/ui/motion-layout';
+import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
+import { Flex } from '@/src/shared/ui/primitives/flex';
+import { Text } from '@/src/shared/ui/primitives/text';
 
 type Props = {
   promotionId: string;

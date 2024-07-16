@@ -5,10 +5,10 @@ import { CaretLeft } from '@phosphor-icons/react/dist/ssr';
 
 import { QrFinder } from './finder';
 
-import { MotionLayout } from '@/src/shared/ui/motion-layout';
-import { Flex } from '@/src/shared/ui/flex';
-import { Text } from '@/src/shared/ui/text';
+import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { BackButton } from '@/src/shared/ui/buttons/back-button';
+import { Flex } from '@/src/shared/ui/primitives/flex';
+import { Text } from '@/src/shared/ui/primitives/text';
 
 type Props = {
   onChange: (result: IDetectedBarcode[]) => void;

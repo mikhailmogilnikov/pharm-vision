@@ -1,5 +1,5 @@
 import { LoginForm } from '@/src/features/auth/login';
-import { Flex } from '@/src/shared/ui/flex';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = {
   promotion?: string;
