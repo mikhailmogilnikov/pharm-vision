@@ -13,6 +13,8 @@ type Props = { promotionId: string; children: ReactNode };
 export const PromotionHomePage = ({ promotionId, children }: Props) => {
   return (
     <>
+      <Search />
+
       <Squircle
         className='w-full aspect-[3/2] bg-default relative !z-10'
         cornerRadius={20}
@@ -32,8 +34,6 @@ export const PromotionHomePage = ({ promotionId, children }: Props) => {
           src='https://pharmprom.ru/wp-content/uploads/r-pharm-v.jpg'
         />
       </Squircle>
-
-      <Search />
 
       <Squircle
         className='w-full h-12 shadow-lg relative bg-default flex pt-[2px]'

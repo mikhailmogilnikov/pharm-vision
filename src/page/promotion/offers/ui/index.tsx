@@ -1,12 +1,13 @@
 import { OfferCard } from '@/src/entities/offer';
-import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = { promotionId: string };
 
 export const PromotionOffersPage = ({ promotionId }: Props) => {
   return (
-    <Flex col tag='ul'>
+    <article className='grid gap-4 md:grid-cols-2'>
       <OfferCard />
-    </Flex>
+      <OfferCard />
+      <OfferCard />
+    </article>
   );
 };
