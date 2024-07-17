@@ -1,0 +1,56 @@
+import { IOffer } from '@/src/entities/offer';
+
+export const OffersMockData: IOffer[] = [
+  {
+    id: 1,
+    profit: 10,
+    profitType: 'from',
+    condition: {
+      variant: 'amount',
+      type: 'from_to',
+      from_value: 1,
+      to_value: 5,
+    },
+    banner_image: '/nurofen.png',
+    banner_color: '#ffedd5',
+    title: 'Нурофен',
+    description: 'Средство от головной боли',
+    avatar_image: '/nurofen_logo.png',
+    date_from: Date.now() - 86400000,
+    date_to: Date.now() + 86400000,
+  },
+  {
+    id: 2,
+    profit: 20,
+    profitType: 'static',
+    condition: {
+      variant: 'price',
+      type: 'from',
+      from_value: 500,
+    },
+    banner_image: '/teraflu.png',
+    banner_color: '#f6ffd5',
+    title: 'Терафлю',
+    description: 'От гриппа и простуды',
+    avatar_image: '/theraflu_logo.png',
+    date_from: Date.now() - 86400000,
+    date_to: Date.now() + 86400000 * 30,
+  },
+  {
+    id: 3,
+    profit: 15,
+    profitType: 'from',
+    condition: {
+      variant: 'amount',
+      type: 'from',
+      from_value: 2,
+    },
+    banner_image: '/grammidin.gif',
+    banner_color: '#d5f0ff',
+    title: 'Граммидин',
+    description: 'Таблетки от боли в горле',
+    avatar_image: '/grammidin_logo.png',
+    date_from: Date.now() - 86400000,
+    date_to: Date.now() + 86400000 * 10,
+  },
+];

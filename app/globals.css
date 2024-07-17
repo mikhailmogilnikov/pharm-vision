@@ -53,7 +53,7 @@ p {
 
 /* Scrollbar for WebKit (Chrome, Safari) */
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -64,7 +64,7 @@ p {
 
 *::-webkit-scrollbar-track {
   background-color: transparent;
-} */
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

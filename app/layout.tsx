@@ -38,6 +38,7 @@ export default function RootLayout({
       <head>
         <meta content='#000000' name='theme-color' />
         <meta content='telephone=no' name='format-detection' />
+        <meta content='date=no' name='format-detection' />
       </head>
       <body
         className={clsx(
