@@ -23,7 +23,7 @@ module.exports = {
       },
       animation: {
         preloaderPulse: 'preloadPulse 2s linear infinite',
-        appear: 'appear linear',
+        appear: 'enter 0.7s cubic-bezier(0,1,0,1)',
       },
       maxWidth: {
         '8xl': '1440px',
@@ -36,6 +36,18 @@ module.exports = {
           '0%': { opacity: '0.09' },
           '50%': { opacity: '0.14' },
           '100%': { opacity: '0.09' },
+        },
+        enter: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(100px)',
+            filter: 'blur(24px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+            filter: 'blur(0px)',
+          },
         },
       },
     },
