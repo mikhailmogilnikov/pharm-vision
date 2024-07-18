@@ -1,4 +1,4 @@
-import { IOffer } from '../model/offer.type';
+import { TOfferCondition } from '../model/offer.type';
 
 import { pluralCreative } from '@/src/shared/lib/utils/plural';
 import { NUMBERS_CREATIVE_CASE } from '@/src/shared/model/numbers-creative-case';
@@ -8,7 +8,7 @@ export const generateOfferCondition = ({
   type,
   from_value,
   to_value,
-}: IOffer['condition']) => {
+}: TOfferCondition) => {
   const AmountCreativePluralForms = {
     one: 'позиции',
     other: 'позиций',
