@@ -1,14 +1,16 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { clsx } from 'clsx';
 import { useEffect, useState } from 'react';
-
-import { CustomerRoutes } from '../config/routes';
+import { SealPercent } from '@phosphor-icons/react/dist/ssr';
+import { User } from '@phosphor-icons/react';
+import { useRouter } from 'next/navigation';
+import { getCookie } from 'cookies-next';
 
 import { ScanQrButton } from '@/src/features/scan-qr';
 import { Flex } from '@/src/shared/ui/primitives/flex';
+import { useModal } from '@/src/entities/modal';
+import { AuthBannerModal } from '@/src/features/auth/login';
 
 type Props = {
   promotionId: string;
@@ -16,6 +18,10 @@ type Props = {
 
 export const CustomerNavigation = ({ promotionId }: Props) => {
   const pathname = usePathname();
+  const { replace } = useRouter();
+  const token = getCookie('token');
+
+  const { setModal } = useModal();
 
   const [homeNavTab, setHomeNavTab] = useState<string | null>();
 
@@ -27,6 +33,18 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
     setHomeNavTab(homeNavigationTab);
   }, [pathname]);
 
+  const handleNavigateToHome = () => {
+    homeNavTab ? replace(homeNavTab) : replace(`/promotion/${promotionId}`);
+  };
+
+  const handleNavigateToProfile = () => {
+    if (!token) {
+      return setModal(<AuthBannerModal promotionId={promotionId} />);
+    }
+
+    replace(`/promotion/${promotionId}/profile`);
+  };
+
   return (
     <Flex
       center
@@ -34,39 +52,21 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
       gap={14}
       tag='nav'
     >
-      {CustomerRoutes.map(({ id, path, icon: Icon }) => {
-        if (id === 'home' && homeNavTab) {
-          const iconClassnames = clsx({
-            'opacity-50': homeNavTab !== pathname,
-          });
+      <button
+        className='w-full h-full flex items-center justify-center'
+        onClick={handleNavigateToHome}
+      >
+        <SealPercent size={24} weight='bold' />
+      </button>
 
-          return (
-            <Link
-              key={id}
-              className='w-full h-full flex items-center justify-center'
-              href={homeNavTab}
-            >
-              <Icon className={iconClassnames} size={26} weight='bold' />
-            </Link>
-          );
-        }
-
-        const routePath = `/promotion/${promotionId}${path}`;
-        const iconClassnames = clsx({
-          'opacity-50': routePath !== pathname,
-        });
-
-        return (
-          <Link
-            key={id}
-            className='w-full h-full flex items-center justify-center'
-            href={routePath}
-          >
-            <Icon className={iconClassnames} size={26} weight='bold' />
-          </Link>
-        );
-      })}
       <ScanQrButton promotionId={promotionId} />
+
+      <button
+        className='w-full h-full flex items-center justify-center'
+        onClick={handleNavigateToProfile}
+      >
+        <User size={24} weight='bold' />
+      </button>
     </Flex>
   );
 };

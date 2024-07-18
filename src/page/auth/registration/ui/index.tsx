@@ -7,7 +7,10 @@ type Props = {
 
 export const RegistrationPage = ({ promotionId }: Props) => {
   return (
-    <Flex center className='h-dvh justify-center px-4' tag='section'>
+    <Flex
+      className='h-min items-center justify-center px-4 pt-20 md:pt-[22vh]'
+      tag='section'
+    >
       <RegistationForm promotionId={promotionId} />
     </Flex>
   );

@@ -6,13 +6,13 @@ import { useImmer } from 'use-immer';
 import { FormEventHandler, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import {
   RegistrationInitialData,
   TRegistrationData,
 } from '../config/initial-data';
 import { validateRegistration } from '../lib/validate-project';
-
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
@@ -58,7 +58,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
   return (
     <form action='submit' onSubmit={handleSubmit}>
       <LayoutGroup>
-        <Flex col className='max-w-96'>
+        <Flex col className='max-w-96 md:pb-[22vh]'>
           <MotionLayout className='flex flex-col gap-4'>
             <Text className='mb-4' size={24} weight={600}>
               Регистрация
@@ -148,12 +148,13 @@ export const RegistationForm = ({ promotionId }: Props) => {
 
             <Text className='mt-6' weight={600}>
               <span className='opacity-50'>Уже есть аккаунт? </span>{' '}
-              <a
+              <Link
+                replace
                 className='text-secondary'
                 href={`/login?promotion=${promotionId}`}
               >
                 Войти.
-              </a>
+              </Link>
             </Text>
           </MotionLayout>
         </Flex>

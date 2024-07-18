@@ -5,10 +5,9 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getCookie } from 'cookies-next';
 
-import { AuthBannerModal } from '../../auth/login';
-
 import { updateThemeColor } from '@/src/shared/lib/utils/update-theme-color';
 import { useModal } from '@/src/entities/modal';
+import { AuthBannerModal } from '@/src/features/auth/login';
 
 type Props = {
   promotionId: string;
@@ -24,7 +23,7 @@ export const ScanQrButton = ({ promotionId }: Props) => {
 
   const handlePressQrButton = () => {
     if (!token) {
-      setModal(<AuthBannerModal />);
+      setModal(<AuthBannerModal promotionId={promotionId} />);
 
       return;
     }

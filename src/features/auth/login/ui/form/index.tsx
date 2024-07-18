@@ -6,12 +6,10 @@ import { useState } from 'react';
 import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 
-
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
-
 
 type Props = {
   promotion?: string;
@@ -62,6 +60,7 @@ export const LoginForm = ({ promotion }: Props) => {
           <Text className='mt-4' weight={600}>
             <span className='opacity-50'>Нет аккаунта? </span>{' '}
             <Link
+              replace
               className='text-secondary'
               href={`/promotion/${promotion}/registration`}
             >

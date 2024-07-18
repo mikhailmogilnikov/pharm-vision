@@ -5,7 +5,7 @@ export const ModalScrollableArea = ({ children }: PropsWithChildren) => {
   return (
     <ScrollShadow
       hideScrollBar
-      className='w-full h-full flex flex-col flex-shrink pb-6'
+      className='w-full h-full flex flex-col flex-shrink'
       visibility='bottom'
       onPointerDownCapture={(e: any) => {
         if (e.target.scrollTop > 0) {

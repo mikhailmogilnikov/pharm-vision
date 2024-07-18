@@ -1,17 +1,47 @@
+'use client';
+
 import { Button } from '@nextui-org/button';
+import { useRouter } from 'next/navigation';
 
-import { ModalLayout } from '@/src/entities/modal';
+import { ModalLayout, useModal } from '@/src/entities/modal';
 
-export const AuthBannerModal = () => {
+type Props = {
+  promotionId: string;
+};
+
+export const AuthBannerModal = ({ promotionId }: Props) => {
+  const { push } = useRouter();
+
+  const { setModal } = useModal();
+
+  const handlePressButton = (href: string) => () => {
+    setModal(null);
+    push(href);
+  };
+
   return (
     <ModalLayout
-      description='Чтобы получить кешбек за товар'
+      description='Авторизуйтесь, чтобы получить доступ к сканеру чеков, накоплению кешбека и выводу средств.'
       footer={
         <>
-          <Button fullWidth className='font-semibold' size='lg'>
+          <Button
+            fullWidth
+            className='font-semibold'
+            size='lg'
+            onPress={handlePressButton(`/login?promotion=${promotionId}`)}
+          >
             Вход
           </Button>
-          <Button fullWidth className='font-semibold' color='secondary' size='lg' variant='shadow'>
+          <Button
+            fullWidth
+            className='font-semibold'
+            color='secondary'
+            size='lg'
+            variant='shadow'
+            onPress={handlePressButton(
+              `/promotion/${promotionId}/registration`,
+            )}
+          >
             Регистрация
           </Button>
         </>
