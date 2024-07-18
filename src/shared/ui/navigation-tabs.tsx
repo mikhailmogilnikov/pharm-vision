@@ -21,7 +21,10 @@ export const NavigationTabs = ({ items, localStorageKey }: Props) => {
 
     if (lastTab) {
       setSelectedKey(lastTab);
+    } else {
+      localStorage.setItem(localStorageKey, items[0].href);
     }
+
     items.forEach(({ href }) => {
       router.prefetch(href);
     });

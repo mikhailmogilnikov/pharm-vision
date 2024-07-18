@@ -3,8 +3,12 @@ import { QrCode } from '@phosphor-icons/react';
 import { m } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { getCookie } from 'cookies-next';
+
+import { AuthBannerModal } from '../../auth/login';
 
 import { updateThemeColor } from '@/src/shared/lib/utils/update-theme-color';
+import { useModal } from '@/src/entities/modal';
 
 type Props = {
   promotionId: string;
@@ -12,10 +16,19 @@ type Props = {
 
 export const ScanQrButton = ({ promotionId }: Props) => {
   const { push } = useRouter();
+  const { setModal } = useModal();
+
+  const token = getCookie('token');
 
   const [isQrPressed, setIsQrPressed] = useState(false);
 
   const handlePressQrButton = () => {
+    if (!token) {
+      setModal(<AuthBannerModal />);
+
+      return;
+    }
+
     setIsQrPressed(true);
 
     setTimeout(() => {

@@ -53,4 +53,16 @@ export const OffersMockData: IOffer[] = [
     date_from: Date.now() - 86400000,
     date_to: Date.now() + 86400000 * 10,
   },
+  {
+    id: 4,
+    profit: 30,
+    profitType: 'static',
+    banner_image: '/nurofen.png',
+    banner_color: '#e1d5ff',
+    title: 'Нурофен',
+    description: 'Средство от головной боли',
+    avatar_image: '/nurofen_logo.png',
+    date_from: Date.now() - 86400000,
+    date_to: Date.now() + 86400000,
+  },
 ];

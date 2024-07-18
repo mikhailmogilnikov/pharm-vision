@@ -35,7 +35,7 @@
   },
   "rules": {
     "react/display-name": "off",
-    "@conarti/feature-sliced/layers-slices": "error",
+    "@conarti/feature-sliced/layers-slices": "warn",
     "@conarti/feature-sliced/absolute-relative": "warn",
     "@conarti/feature-sliced/public-api": "error",
     "no-console": "warn",

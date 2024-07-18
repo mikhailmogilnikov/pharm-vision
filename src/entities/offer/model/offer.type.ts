@@ -1,10 +1,10 @@
-export type TOfferBannerColors = '#ffedd5' | '#f6ffd5' | '#d5f0ff';
+export type TOfferBannerColors = '#ffedd5' | '#f6ffd5' | '#d5f0ff' | '#e1d5ff';
 
 export interface IOffer {
   id: number;
   profit: number;
   profitType: 'static' | 'from';
-  condition: {
+  condition?: {
     variant: 'amount' | 'price';
     type: 'from' | 'to' | 'from_to';
     from_value?: number;
