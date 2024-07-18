@@ -1,4 +1,7 @@
+'use client';
+
 import { PropsWithChildren } from 'react';
+import { createPortal } from 'react-dom';
 
 import { CustomerNavigation } from '@/src/widgets/navigation/customer-navigation';
 import { Flex } from '@/src/shared/ui/primitives/flex';
@@ -12,7 +15,10 @@ export default function PromotionNavigationLayout({
   return (
     <Flex col className='max-w-5xl mx-auto p-4 mb-24' gap={5} tag='section'>
       {children}
-      <CustomerNavigation promotionId={promotionId} />
+      {createPortal(
+        <CustomerNavigation promotionId={promotionId} />,
+        document.body,
+      )}
     </Flex>
   );
 }
