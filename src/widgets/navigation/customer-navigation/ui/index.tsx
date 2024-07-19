@@ -19,12 +19,22 @@ type Props = {
 
 export const CustomerNavigation = ({ promotionId }: Props) => {
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const { replace, prefetch } = useRouter();
   const token = getCookie('token');
 
   const { setModal } = useModal();
 
   const [homeNavTab, setHomeNavTab] = useState<string | null>();
+
+  useEffect(() => {
+    if (token) {
+      if (pathname === 'homeNavTab') {
+        prefetch(`/promotion/${promotionId}/profile`);
+      } else {
+        prefetch(homeNavTab || `/promotion/${promotionId}`);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const homeNavigationTab = localStorage.getItem(`customer-${promotionId}-nav`);

@@ -15,7 +15,7 @@ export const OfferBrand = ({ offer, isBlurred = true }: Props) => {
   const { title, description, avatar_image } = offer;
 
   return (
-    <Flex center className='p-4'>
+    <Flex center tag='article'>
       <Image
         fill
         alt={title}

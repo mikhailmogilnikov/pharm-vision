@@ -17,9 +17,7 @@ export const ModalProvider = ({ children }: Props) => {
     <>
       <Modal />
       <AnimatePresence>
-        <m.div animate={modal ? { scale: 0.95, y: 30 } : { scale: 1 }}>
-          {children}
-        </m.div>
+        <m.div animate={modal ? { scale: 0.95, y: 30 } : { scale: 1 }}>{children}</m.div>
       </AnimatePresence>
     </>
   );

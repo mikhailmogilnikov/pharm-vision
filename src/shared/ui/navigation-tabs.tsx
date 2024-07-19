@@ -1,7 +1,7 @@
 'use client';
 
 import { Tabs as NativeTabs, Tab } from '@nextui-org/tabs';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Key, useEffect, useState } from 'react';
 
 import { TNavigation } from '../model/types/index.type';
@@ -13,6 +13,7 @@ type Props = {
 
 export const NavigationTabs = ({ items, localStorageKey }: Props) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const [selectedKey, setSelectedKey] = useState(items[0].href);
 
@@ -26,7 +27,9 @@ export const NavigationTabs = ({ items, localStorageKey }: Props) => {
     }
 
     items.forEach(({ href }) => {
-      router.prefetch(href);
+      if (pathname !== href) {
+        router.prefetch(href);
+      }
     });
   }, []);
 

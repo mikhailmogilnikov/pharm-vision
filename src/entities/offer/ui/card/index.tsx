@@ -9,6 +9,7 @@ import { OfferBanner } from './banner';
 import { OfferBrand } from './brand';
 
 import { useModal } from '@/src/entities/modal';
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = {
   offer: IOffer;
@@ -30,7 +31,9 @@ export const OfferCard = ({ offer }: Props) => {
           cornerSmoothing={1}
         >
           <OfferBanner offer={offer} />
-          <OfferBrand offer={offer} />
+          <Flex className='p-4'>
+            <OfferBrand offer={offer} />
+          </Flex>
         </Squircle>
       </button>
     </li>
