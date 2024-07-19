@@ -10,3 +10,11 @@ start:
 lint:
 	npm run lint
 
+test:
+	npm run test
+
+pre-commit:
+	npx lint-staged
+
+pre-push:
+	make test & make build

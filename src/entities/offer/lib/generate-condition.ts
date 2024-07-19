@@ -21,8 +21,8 @@ export const generateOfferCondition = ({
   };
 
   const priceTypes: Record<typeof type, string> = {
-    from: `От ${from_value}₽ в чеке`,
-    to: `До ${to_value}₽ в чеке`,
+    from: `От ${from_value} ₽ в чеке`,
+    to: `До ${to_value} ₽ в чеке`,
     from_to: `От ${from_value} до ${to_value} ₽ в чеке`,
   };
 
