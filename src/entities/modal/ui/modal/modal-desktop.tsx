@@ -2,6 +2,7 @@ import { m } from 'framer-motion';
 import { ReactNode } from 'react';
 
 import { useModal } from '../../model/modal-store';
+
 import { CloseModalButton } from './close-button';
 
 type Props = {
