@@ -28,7 +28,10 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
 
   useEffect(() => {
     if (token) {
-      if (pathname === homeNavTab || pathname === `/promotion/${promotionId}`) {
+      if (
+        pathname === `/promotion/${promotionId}` ||
+        pathname === `/promotion/${promotionId}/goods`
+      ) {
         prefetch(`/promotion/${promotionId}/profile`);
       } else {
         prefetch(homeNavTab || `/promotion/${promotionId}`);
