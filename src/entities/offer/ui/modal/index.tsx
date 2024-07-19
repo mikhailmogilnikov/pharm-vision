@@ -21,7 +21,7 @@ export const OfferModal = ({ offer }: Props) => {
           <OfferBrand isBlurred={false} offer={offer} />
         </Flex>
 
-        <OfferModalGuide />
+        <OfferModalGuide offer={offer} />
         <br />
         <br />
         <br />
