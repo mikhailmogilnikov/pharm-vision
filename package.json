@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
     "prepare": "husky",
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "test-watch-all": "jest --watchAll"
   },
   "dependencies": {
     "@nextui-org/autocomplete": "^2.1.2",

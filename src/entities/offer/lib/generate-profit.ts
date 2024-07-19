@@ -1,15 +1,12 @@
 import { IOffer } from '../model/offer.type';
 
-export const generateOfferProfit = (
-  profit: IOffer['profit'],
-  profitType: IOffer['profitType'],
-) => {
+export const generateOfferProfit = (profit: IOffer['profit'], profitType: IOffer['profitType']) => {
   switch (profitType) {
     case 'from': {
-      return `Кешбек от ${profit}%`;
+      return `Кешбэк от ${profit}%`;
     }
     case 'static': {
-      return `Кешбек ${profit}%`;
+      return `Кешбэк ${profit}%`;
     }
     default:
       return;

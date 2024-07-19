@@ -26,7 +26,7 @@ export const AuthBannerModal = ({ promotionId }: Props) => {
         <>
           <Button
             fullWidth
-            className='font-semibold'
+            className='font-semibold shadow-base'
             size='lg'
             onPress={handlePressButton(`/login?promotion=${promotionId}`)}
           >
@@ -38,9 +38,7 @@ export const AuthBannerModal = ({ promotionId }: Props) => {
             color='secondary'
             size='lg'
             variant='shadow'
-            onPress={handlePressButton(
-              `/promotion/${promotionId}/registration`,
-            )}
+            onPress={handlePressButton(`/promotion/${promotionId}/registration`)}
           >
             Регистрация
           </Button>

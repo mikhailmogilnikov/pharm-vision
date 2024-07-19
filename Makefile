@@ -4,6 +4,12 @@ install:
 dev:
 	npm run dev
 
+watch: 
+	npm run test-watch
+
+watch-all: 
+	npm run test-watch-all
+
 build:
 	npm run build
 

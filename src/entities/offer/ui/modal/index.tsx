@@ -1,11 +1,18 @@
+import { IOffer } from '../../model/offer.type';
+import { OfferBanner } from '../card/banner';
+
 import { ScanQrOfferButton } from './offer-button';
 
 import { ModalLayout } from '@/src/entities/modal';
 
-export const OfferModal = () => {
+type Props = {
+  offer: IOffer;
+};
+
+export const OfferModal = ({ offer }: Props) => {
   return (
     <ModalLayout footer={<ScanQrOfferButton />}>
-      test <br className='ddas' id='da' />
+      <OfferBanner height={240} offer={offer} />
       test <br />
       test <br />
       test <br />

@@ -1,8 +1,10 @@
-export const plural = (
-  num: number,
-  forms: { one: string; some: string; many: string },
-) => {
+export const plural = (num: number, forms: { one: string; some: string; many: string }) => {
   const lastDigit = num % 10;
+  const lastTwoDigits = num % 100;
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+    return forms.many;
+  }
 
   switch (lastDigit) {
     case 1:
@@ -16,10 +18,7 @@ export const plural = (
   }
 };
 
-export const pluralCreative = (
-  num: number,
-  forms: { one: string; other: string },
-) => {
+export const pluralCreative = (num: number, forms: { one: string; other: string }) => {
   const lastDigit = num % 10;
 
   switch (lastDigit) {

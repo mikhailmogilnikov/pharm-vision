@@ -1,23 +1,6 @@
-export const formatDateToDeadline = (milliseconds: number): string => {
-  const date = new Date(milliseconds);
+export const formatDateToDayAndMonth = (datetime: number): string => {
+  const date = new Date(datetime);
+  const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long' };
 
-  const months = [
-    'января',
-    'февраля',
-    'марта',
-    'апреля',
-    'мая',
-    'июня',
-    'июля',
-    'августа',
-    'сентября',
-    'октября',
-    'ноября',
-    'декабря',
-  ];
-
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-
-  return `До ${day} ${month}`;
+  return date.toLocaleDateString('ru-RU', options);
 };

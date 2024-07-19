@@ -5,14 +5,13 @@ import NextImage from 'next/image';
 import { Image } from '@nextui-org/image';
 
 import { IOffer } from '../../model/offer.type';
-import { generateOfferProfit } from '../../lib/generate-profit';
-import { generateOfferCondition } from '../../lib/generate-condition';
-import { useModal } from '../../../modal';
 import { OfferModal } from '../modal';
+
+import { OfferBanner } from './banner';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
-import { formatDateToDeadline } from '@/src/shared/lib/utils/format-date';
+import { useModal } from '@/src/entities/modal';
 
 type Props = {
   offer: IOffer;
@@ -21,20 +20,10 @@ type Props = {
 export const OfferCard = ({ offer }: Props) => {
   const { setModal } = useModal();
 
-  const {
-    banner_color,
-    title,
-    description,
-    banner_image,
-    profit,
-    profitType,
-    condition,
-    date_to,
-    avatar_image,
-  } = offer;
+  const { title, description, avatar_image } = offer;
 
   const handlePress = () => {
-    setModal(<OfferModal />);
+    setModal(<OfferModal offer={offer} />);
   };
 
   return (
@@ -45,39 +34,8 @@ export const OfferCard = ({ offer }: Props) => {
           cornerRadius={24}
           cornerSmoothing={1}
         >
-          <div
-            className='h-44 bg-orange-100 p-4 flex-shrink-0 relative overflow-clip'
-            style={{ backgroundColor: banner_color }}
-          >
-            <Flex col gap={1} width={'60%'}>
-              <Text className='text-black' size={20} weight={700}>
-                {generateOfferProfit(profit, profitType)}
-              </Text>
-              {condition && (
-                <Text
-                  className='text-black leading-5 mb-1'
-                  size={16}
-                  weight={500}
-                >
-                  {generateOfferCondition(condition)}
-                </Text>
-              )}
-              <Text className='text-black' opacity={0.5} size={16} weight={500}>
-                {formatDateToDeadline(date_to)}
-              </Text>
-            </Flex>
+          <OfferBanner offer={offer} />
 
-            <div className='absolute bottom-0 right-0 w-36 h-36'>
-              <NextImage
-                fill
-                alt={title}
-                draggable={false}
-                quality={100}
-                sizes='128px'
-                src={banner_image}
-              />
-            </div>
-          </div>
           <Flex center className='p-4'>
             <Image
               fill
@@ -99,12 +57,7 @@ export const OfferCard = ({ offer }: Props) => {
               </Text>
 
               {description && (
-                <Text
-                  className='leading-4'
-                  opacity={0.5}
-                  size={14}
-                  weight={500}
-                >
+                <Text className='leading-4' opacity={0.5} size={14} weight={500}>
                   {description}
                 </Text>
               )}

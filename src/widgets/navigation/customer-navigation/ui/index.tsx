@@ -6,6 +6,7 @@ import { SealPercent } from '@phosphor-icons/react/dist/ssr';
 import { User } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { getCookie } from 'cookies-next';
+import { clsx } from 'clsx';
 
 import { ScanQrButton } from '@/src/features/scan-qr';
 import { Flex } from '@/src/shared/ui/primitives/flex';
@@ -26,9 +27,7 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
   const [homeNavTab, setHomeNavTab] = useState<string | null>();
 
   useEffect(() => {
-    const homeNavigationTab = localStorage.getItem(
-      `customer-${promotionId}-nav`,
-    );
+    const homeNavigationTab = localStorage.getItem(`customer-${promotionId}-nav`);
 
     setHomeNavTab(homeNavigationTab);
   }, [pathname]);
@@ -45,6 +44,16 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
     replace(`/promotion/${promotionId}/profile`);
   };
 
+  const BasicNavButtonClassname = 'w-full h-full flex items-center justify-center' as const;
+
+  const HomeClassnames = clsx(BasicNavButtonClassname, {
+    'opacity-50': pathname !== homeNavTab,
+  });
+
+  const ProfileClassnames = clsx(BasicNavButtonClassname, {
+    'opacity-50': pathname !== `/promotion/${promotionId}/profile`,
+  });
+
   return (
     <Flex
       center
@@ -52,19 +61,13 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
       gap={14}
       tag='nav'
     >
-      <button
-        className='w-full h-full flex items-center justify-center'
-        onClick={handleNavigateToHome}
-      >
+      <button className={HomeClassnames} onClick={handleNavigateToHome}>
         <SealPercent size={24} weight='bold' />
       </button>
 
       <ScanQrButton promotionId={promotionId} />
 
-      <button
-        className='w-full h-full flex items-center justify-center'
-        onClick={handleNavigateToProfile}
-      >
+      <button className={ProfileClassnames} onClick={handleNavigateToProfile}>
         <User size={24} weight='bold' />
       </button>
     </Flex>
