@@ -40,7 +40,10 @@ export const PromotionHomePage = ({ promotionId, children }: Props) => {
         cornerRadius={14}
         cornerSmoothing={1}
       >
-        <NavigationTabs items={PromotionHomeNavigationRoutes(promotionId)} />
+        <NavigationTabs
+          items={PromotionHomeNavigationRoutes(promotionId)}
+          localStorageKey={`customer-${promotionId}-nav`}
+        />
       </Squircle>
 
       {children}
