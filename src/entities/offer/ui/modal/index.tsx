@@ -1,3 +1,5 @@
+import { Squircle } from '@squircle-js/react';
+
 import { IOffer } from '../../model/offer.type';
 import { OfferBanner } from '../card/banner';
 import { OfferBrand } from '../card/brand';
@@ -17,9 +19,9 @@ export const OfferModal = ({ offer }: Props) => {
     <ModalLayout footer={<ScanQrOfferButton />}>
       <OfferBanner height={240} offer={offer} />
       <Flex col className='p-4' tag='section'>
-        <Flex className='p-4 bg-default rounded-3xl'>
+        <Squircle className='p-4 bg-default mt-1' cornerRadius={20} cornerSmoothing={1}>
           <OfferBrand isBlurred={false} offer={offer} />
-        </Flex>
+        </Squircle>
 
         <OfferModalGuide offer={offer} />
         <br />
