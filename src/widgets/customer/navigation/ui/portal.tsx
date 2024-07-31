@@ -9,8 +9,5 @@ type Props = {
 };
 
 export const CustomerNavigationWithPortal = ({ promotionId }: Props) => {
-  return createPortal(
-    <CustomerNavigation promotionId={promotionId} />,
-    document.body,
-  );
+  return createPortal(<CustomerNavigation promotionId={promotionId} />, document.body);
 };

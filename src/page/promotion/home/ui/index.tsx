@@ -1,39 +1,24 @@
-import { Image } from '@nextui-org/image';
 import { Squircle } from '@squircle-js/react';
-import NextImage from 'next/image';
 import { ReactNode } from 'react';
 
 import { PromotionHomeNavigationRoutes } from '../config/routes';
 
+import { HomeBanner } from './banner';
+
 import { Search } from '@/src/features/search';
 import { NavigationTabs } from '@/src/shared/ui/navigation-tabs';
+import { CustomerHeader } from '@/src/widgets/customer/header';
 
 type Props = { promotionId: string; children: ReactNode };
 
 export const PromotionHomePage = ({ promotionId, children }: Props) => {
   return (
     <>
+      <CustomerHeader />
+
       <Search />
 
-      <Squircle
-        className='w-full aspect-[3/2] bg-default relative !z-10'
-        cornerRadius={20}
-        cornerSmoothing={1}
-      >
-        <Image
-          fill
-          priority
-          alt='NextUI hero Image'
-          as={NextImage}
-          classNames={{
-            wrapper:
-              'w-full aspect-[3/2] relative !max-w-none !z-10 rounded-none',
-            img: 'snap-start flex-shrink-0 object-cover h-full',
-          }}
-          quality={100}
-          src='https://pharmprom.ru/wp-content/uploads/r-pharm-v.jpg'
-        />
-      </Squircle>
+      <HomeBanner />
 
       <Squircle
         className='w-full h-12 shadow-lg relative bg-default flex pt-[2px]'

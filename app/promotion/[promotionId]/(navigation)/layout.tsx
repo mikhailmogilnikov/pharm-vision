@@ -7,16 +7,13 @@ type Props = PropsWithChildren<{ params: { promotionId: string } }>;
 
 const DynamicCustomerNavigation = dynamic(
   () =>
-    import('@/src/widgets/navigation/customer-navigation').then(
+    import('@/src/widgets/customer/navigation').then(
       (mod) => mod.CustomerNavigationWithPortal,
     ),
   { ssr: false },
 );
 
-export default function PromotionNavigationLayout({
-  children,
-  params: { promotionId },
-}: Props) {
+export default function PromotionNavigationLayout({ children, params: { promotionId } }: Props) {
   return (
     <Flex col className='max-w-5xl mx-auto p-4 mb-24' gap={5} tag='section'>
       {children}
