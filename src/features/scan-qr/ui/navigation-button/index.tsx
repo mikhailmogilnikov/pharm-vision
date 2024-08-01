@@ -43,12 +43,10 @@ export const ScanQrButton = ({ promotionId }: Props) => {
     <>
       <Button
         isIconOnly
-        className='absolute left-1/2 -translate-x-[50%] w-16 h-16'
-        color='secondary'
+        className='absolute left-1/2 -translate-x-[50%] w-16 h-16 bg-[--accent] text-secondary-foreground shadow-[--accent]'
         radius='full'
         size='lg'
         startContent={<QrCode size='50%' weight='bold' />}
-        variant='shadow'
         onPress={handlePressQrButton}
       />
       {isQrPressed && (
@@ -62,7 +60,7 @@ export const ScanQrButton = ({ promotionId }: Props) => {
           className='absolute left-1/2 w-16 h-16 z-50'
           initial={{
             scale: 1,
-            backgroundColor: '#ff5b0b',
+            backgroundColor: 'var(--accent)',
             borderRadius: '100%',
             x: '-50%',
           }}

@@ -8,10 +8,7 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-import {
-  RegistrationInitialData,
-  TRegistrationData,
-} from '../config/initial-data';
+import { RegistrationInitialData, TRegistrationData } from '../config/initial-data';
 import { validateRegistration } from '../lib/validate-project';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
@@ -32,10 +29,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
 
   const [error, setError] = useState<string | null>(null);
 
-  const updateForm = <K extends keyof TRegistrationData>(
-    key: K,
-    value: TRegistrationData[K],
-  ) => {
+  const updateForm = <K extends keyof TRegistrationData>(key: K, value: TRegistrationData[K]) => {
     updateUserData((draft) => {
       draft[key] = value;
     });
@@ -78,9 +72,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
                 placeholder='Фамилия'
                 size='lg'
                 value={surname}
-                onChange={({ target: { value } }) =>
-                  updateForm('surname', value)
-                }
+                onChange={({ target: { value } }) => updateForm('surname', value)}
               />
             </Flex>
 
@@ -104,9 +96,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
               placeholder='Пароль'
               size='lg'
               value={password}
-              onChange={({ target: { value } }) =>
-                updateForm('password', value)
-              }
+              onChange={({ target: { value } }) => updateForm('password', value)}
             />
             <PasswordInput
               autoComplete='new-password'
@@ -115,9 +105,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
               placeholder='Подвердите пароль'
               size='lg'
               value={passwordConfirm}
-              onChange={({ target: { value } }) =>
-                updateForm('passwordConfirm', value)
-              }
+              onChange={({ target: { value } }) => updateForm('passwordConfirm', value)}
             />
           </MotionLayout>
 
@@ -137,8 +125,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
           <MotionLayout>
             <Button
               fullWidth
-              className='mt-4 font-medium'
-              color='secondary'
+              className='mt-4 font-semibold bg-[--accent] text-secondary-foreground'
               size='lg'
               type='submit'
               variant='shadow'
@@ -148,11 +135,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
 
             <Text className='mt-6' weight={600}>
               <span className='opacity-50'>Уже есть аккаунт? </span>{' '}
-              <Link
-                replace
-                className='text-secondary'
-                href={`/login?promotion=${promotionId}`}
-              >
+              <Link replace className='text-[--accent]' href={`/login?promotion=${promotionId}`}>
                 Войти.
               </Link>
             </Text>

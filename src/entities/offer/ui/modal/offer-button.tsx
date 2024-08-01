@@ -30,10 +30,9 @@ export const ScanQrOfferButton = () => {
   return (
     <Button
       fullWidth
-      className='font-semibold'
+      className='font-semibold bg-[--accent]'
       color='secondary'
       size='lg'
-      variant='shadow'
       onPress={handlePress}
     >
       Получить кешбек

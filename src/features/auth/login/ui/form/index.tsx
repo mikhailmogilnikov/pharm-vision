@@ -2,7 +2,7 @@
 
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 
@@ -10,6 +10,7 @@ import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { LightenDarkenColor } from '@/src/shared/lib/utils/lighten-darker-color';
 
 type Props = {
   promotion?: string;
@@ -20,6 +21,18 @@ export const LoginForm = ({ promotion }: Props) => {
 
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    if (promotion) {
+      const root = document.querySelector(':root') as HTMLElement;
+
+      if (root && root.style) {
+        root.style.setProperty('--accent', '#24d254');
+        root.style.setProperty('--accent-30', `#${LightenDarkenColor('24d254', -20)}`);
+        root.style.setProperty('--accent-70', `#${LightenDarkenColor('24d254', 40)}`);
+      }
+    }
+  }, []);
 
   const handleSubmit = () => {
     setCookie('token', phone);
@@ -48,22 +61,16 @@ export const LoginForm = ({ promotion }: Props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button
-          className='mt-4 font-medium'
-          color='secondary'
+          className='mt-4 font-semibold bg-[--accent] text-secondary-foreground'
           size='lg'
           type='submit'
-          variant='shadow'
         >
           Войти
         </Button>
         {promotion && (
           <Text className='mt-4' weight={600}>
             <span className='opacity-50'>Нет аккаунта? </span>{' '}
-            <Link
-              replace
-              className='text-secondary'
-              href={`/promotion/${promotion}/registration`}
-            >
+            <Link replace className='text-[--accent]' href={`/promotion/${promotion}/registration`}>
               Зарегистрироваться.
             </Link>
           </Text>

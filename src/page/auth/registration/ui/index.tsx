@@ -1,5 +1,6 @@
 import { RegistationForm } from '@/src/features/auth/registration';
 import { Flex } from '@/src/shared/ui/primitives/flex';
+import { CustomerHeader } from '@/src/widgets/customer/header';
 
 type Props = {
   promotionId: string;
@@ -7,10 +8,9 @@ type Props = {
 
 export const RegistrationPage = ({ promotionId }: Props) => {
   return (
-    <Flex
-      className='h-min items-center justify-center px-4 pt-20 md:pt-[22vh]'
-      tag='section'
-    >
+    <Flex col className='h-min items-center justify-center p-4' tag='section'>
+      <CustomerHeader promotionId={promotionId} />
+      <br />
       <RegistationForm promotionId={promotionId} />
     </Flex>
   );

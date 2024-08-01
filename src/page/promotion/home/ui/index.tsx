@@ -14,7 +14,7 @@ type Props = { promotionId: string; children: ReactNode };
 export const PromotionHomePage = ({ promotionId, children }: Props) => {
   return (
     <>
-      <CustomerHeader />
+      <CustomerHeader promotionId={promotionId} />
 
       <Search />
 

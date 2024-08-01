@@ -1,3 +1,5 @@
+'use client';
+
 import { m } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 

@@ -8,6 +8,13 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       screens: {
         'max-sm': { max: '639px' },
@@ -24,6 +31,9 @@ module.exports = {
       animation: {
         preloaderPulse: 'preloadPulse 2s linear infinite',
         appear: 'enter 0.7s cubic-bezier(0,1,0,1)',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        gradient: 'gradient 8s linear infinite',
       },
       maxWidth: {
         '8xl': '1440px',
@@ -47,6 +57,11 @@ module.exports = {
             opacity: '1',
             transform: 'translateY(0)',
             filter: 'blur(0px)',
+          },
+        },
+        gradient: {
+          to: {
+            backgroundPosition: 'var(--bg-size) 0',
           },
         },
       },
@@ -118,5 +133,6 @@ module.exports = {
         },
       },
     }),
+    require('tailwindcss-animate'),
   ],
 };
