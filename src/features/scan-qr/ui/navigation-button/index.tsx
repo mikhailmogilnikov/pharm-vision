@@ -47,7 +47,7 @@ export const ScanQrButton = ({ promotionId }: Props) => {
         radius='full'
         size='lg'
         startContent={<QrCode size='50%' weight='bold' />}
-        onPress={handlePressQrButton}
+        onClick={handlePressQrButton}
       />
       {isQrPressed && (
         <m.div
