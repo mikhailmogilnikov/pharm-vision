@@ -1,0 +1,1 @@
+export { PromotionWihdrawHistoryPage } from './ui';
