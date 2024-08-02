@@ -15,7 +15,7 @@ export const PromotionProfilePage = ({ promotionId }: Props) => {
       <CashbackAmount />
       <EnterQrManuallyProfileButton />
       <NavigationList tabs={ProfileNavListTabs(promotionId)} />
-      <LogoutButton />
+      <LogoutButton redirectUrl={`/promotion/${promotionId}`} />
     </>
   );
 };
