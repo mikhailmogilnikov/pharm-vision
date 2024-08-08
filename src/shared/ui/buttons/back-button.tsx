@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { useOriginContext } from '../../lib/providers/origin-tracker-provider';
 
-type Props = PropsWithChildren<{ fallbackUrl: string } & ButtonProps>;
+type Props = PropsWithChildren<{ fallbackUrl?: string } & ButtonProps>;
 
 export const BackButton = ({ children, fallbackUrl = '/', ...rest }: Props) => {
   const router = useRouter();

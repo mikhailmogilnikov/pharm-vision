@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
+import { ArrowLeft } from 'lucide-react';
 
 import { Flex } from '../primitives/flex';
 import { Text } from '../primitives/text';
+import { BackButton } from '../buttons/back-button';
 
 type Props = {
   title: string;
@@ -19,9 +21,17 @@ export const SectionWithTitleLayout = ({
   return (
     <Flex col>
       <Flex center className='justify-between mt-4' tag='article'>
-        <Text className='leading-5' size={32} weight={600}>
-          {title}
-        </Text>
+        <Flex center>
+          {isBack && (
+            <BackButton isIconOnly className='rounded-full'>
+              <ArrowLeft />
+            </BackButton>
+          )}
+          <Text className='leading-5' size={32} weight={600}>
+            {title}
+          </Text>
+        </Flex>
+
         {actionButtons && (
           <Flex gap={3} width='min-content'>
             {actionButtons}

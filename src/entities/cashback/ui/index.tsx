@@ -1,11 +1,11 @@
 import { Squircle } from '@squircle-js/react';
 import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
-import { Button } from '@nextui-org/button';
 
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { AnimatedGradientText } from '@/src/shared/ui/magicui/animated-gradient-text';
 import { cn } from '@/src/shared/lib/utils';
+import { WithdrawAction } from '@/src/features/withdraw';
 
 export const CashbackAmount = () => {
   return (
@@ -29,9 +29,7 @@ export const CashbackAmount = () => {
           бонус доступен
         </Text>
       </Flex>
-      <Button className='bg-[--accent] text-secondary-foreground font-semibold' size='lg'>
-        Вывести
-      </Button>
+      <WithdrawAction />
     </Squircle>
   );
 };

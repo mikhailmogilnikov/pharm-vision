@@ -1,4 +1,4 @@
-import { ClockCounterClockwise, Receipt } from '@phosphor-icons/react/dist/ssr';
+import { ClockCounterClockwise, Receipt, Money } from '@phosphor-icons/react/dist/ssr';
 import { Icon } from '@phosphor-icons/react';
 
 import { TNavigation } from '@/src/shared/model/types/index.type';
@@ -15,5 +15,11 @@ export const ProfileNavListTabs = (promotionId: string): (TNavigation & { icon: 
     name: 'Мои чеки',
     href: `/promotion/${promotionId}/checks`,
     icon: Receipt,
+  },
+  {
+    id: 3,
+    name: 'Способы выплаты',
+    href: `/promotion/${promotionId}/profile/withdraw-variants`,
+    icon: Money,
   },
 ];
