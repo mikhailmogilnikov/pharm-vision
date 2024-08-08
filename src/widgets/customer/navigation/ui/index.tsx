@@ -7,11 +7,13 @@ import { User } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { getCookie } from 'cookies-next';
 import { clsx } from 'clsx';
+import { AnimatePresence } from 'framer-motion';
 
 import { ScanQrButton } from '@/src/features/scan-qr';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { useModal } from '@/src/entities/modal';
 import { AuthBannerModal } from '@/src/features/auth/login';
+import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 
 type Props = {
   promotionId: string;
@@ -67,22 +69,40 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
     'opacity-50': pathname !== `/promotion/${promotionId}/profile`,
   });
 
+  const pathArr = pathname.split('/');
+
+  const shouldRenderNav = pathArr.length <= 4;
+
   return (
-    <Flex
-      center
-      className='fixed bottom-6 left-1/2 -translate-x-[50%] !w-56 h-14 bg-default/50 backdrop-blur-lg rounded-2xl border-1 border-white/10 shadow-base z-40'
-      gap={14}
-      tag='nav'
-    >
-      <button className={HomeClassnames} onClick={handleNavigateToHome}>
-        <SealPercent size={24} weight='bold' />
-      </button>
+    <AnimatePresence>
+      {shouldRenderNav && (
+        <div className='fixed bottom-6 left-1/2 !-translate-x-[50%] !w-56 h-14 z-40'>
+          <MotionLayout
+            animate={{ y: 0 }}
+            className='w-full h-full'
+            exit={{ y: 100 }}
+            initial={{ y: 100 }}
+            transition={{ bounce: 0.4, type: 'spring', duration: 0.5 }}
+          >
+            <Flex
+              center
+              className='w-full h-full bg-default/50 backdrop-blur-lg rounded-2xl border-1 border-white/10 shadow-base'
+              gap={14}
+              tag='nav'
+            >
+              <button className={HomeClassnames} onClick={handleNavigateToHome}>
+                <SealPercent size={24} weight='bold' />
+              </button>
 
-      <ScanQrButton promotionId={promotionId} />
+              <ScanQrButton promotionId={promotionId} />
 
-      <button className={ProfileClassnames} onClick={handleNavigateToProfile}>
-        <User size={24} weight='bold' />
-      </button>
-    </Flex>
+              <button className={ProfileClassnames} onClick={handleNavigateToProfile}>
+                <User size={24} weight='bold' />
+              </button>
+            </Flex>
+          </MotionLayout>
+        </div>
+      )}
+    </AnimatePresence>
   );
 };

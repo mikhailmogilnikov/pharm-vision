@@ -34,10 +34,10 @@ export const WithdrawVariants = ({
         {list.map((item, index) => (
           <MotionLayout
             key={item.id}
-            animate={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             className='w-full'
-            initial={{ opacity: 0, x: 20 }}
-            transition={{ delay: index / 10 }}
+            initial={{ opacity: 0, y: 10 }}
+            transition={{ delay: (index + 1) / 20 }}
           >
             <WithdrawItem
               icon={VariantsIcons[type][item.type as keyof TIcons]}

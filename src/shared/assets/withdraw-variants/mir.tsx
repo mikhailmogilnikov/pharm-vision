@@ -1,5 +1,5 @@
 export const MirIcon = () => (
-  <svg height='auto' viewBox='0 0 400 120' width='100%' xmlns='http://www.w3.org/2000/svg'>
+  <svg height='100%' viewBox='0 0 400 120' width='100%' xmlns='http://www.w3.org/2000/svg'>
     <linearGradient gradientUnits='userSpaceOnUse' id='a' x1='370' x2='290'>
       <stop stopColor='#1F5CD7' />
       <stop offset='1' stopColor='#02AEFF' />

@@ -1,6 +1,6 @@
 export const BeelineIcon = () => (
   <svg
-    height='auto'
+    height='100%'
     version='1.1'
     viewBox='5 0 220.00428 135'
     width='100%'

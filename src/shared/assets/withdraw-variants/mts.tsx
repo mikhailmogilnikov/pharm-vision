@@ -1,7 +1,7 @@
 export const MtsIcon = () => (
   <svg
     fill='none'
-    height='auto'
+    height='100%'
     viewBox='0 0 44 44'
     width='100%'
     xmlns='http://www.w3.org/2000/svg'

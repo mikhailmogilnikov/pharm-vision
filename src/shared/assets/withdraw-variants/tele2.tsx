@@ -1,6 +1,6 @@
 export const Tele2Icon = () => (
   <svg
-    height='auto'
+    height='100%'
     version='1.1'
     viewBox='0 -30 350 200'
     width='100%'
