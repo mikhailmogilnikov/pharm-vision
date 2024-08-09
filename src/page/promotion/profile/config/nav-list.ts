@@ -13,7 +13,7 @@ export const ProfileNavListTabs = (promotionId: string): (TNavigation & { icon: 
   {
     id: 2,
     name: 'Мои чеки',
-    href: `/promotion/${promotionId}/checks`,
+    href: `/promotion/${promotionId}/profile/my-receipts`,
     icon: Receipt,
   },
   {

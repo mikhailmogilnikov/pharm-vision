@@ -1,8 +1,10 @@
+'use client';
+
 import { ReactNode } from 'react';
 
 import { cn } from '../../lib/utils';
 
-export const AnimatedGradientText = ({
+export const AnimatedGradientTextLayout = ({
   children,
   className,
 }: {
