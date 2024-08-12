@@ -26,7 +26,11 @@ export const WithdrawContainer = ({
   selectedValue,
 }: Props) => {
   return (
-    <Squircle className='bg-default flex flex-col h-min p-5' cornerRadius={18} cornerSmoothing={1}>
+    <Squircle
+      className='bg-default flex flex-col h-min p-5 animate-appear'
+      cornerRadius={18}
+      cornerSmoothing={1}
+    >
       <Text className='mb-3' size={22} tag={'h2'}>
         {WithdrawTitles[type]}
       </Text>
