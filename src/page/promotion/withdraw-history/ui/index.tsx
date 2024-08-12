@@ -3,5 +3,9 @@ import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-tit
 type Props = { promotionId: string };
 
 export const PromotionWihdrawHistoryPage = ({ promotionId }: Props) => {
-  return <SectionWithTitleLayout title='История выводов'>d</SectionWithTitleLayout>;
+  return (
+    <SectionWithTitleLayout isBack title='История выводов'>
+      d
+    </SectionWithTitleLayout>
+  );
 };
