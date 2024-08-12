@@ -1,5 +1,3 @@
-import { Squircle } from '@squircle-js/react';
-
 import { TCard, TPhone, TWithdrawType } from '../model/withdraw.type';
 import { WithdrawTitles } from '../config/withdrow-titles';
 import { VariantsIcons } from '../config/variants-icons';
@@ -7,8 +5,7 @@ import { TIcons } from '../model/variants-icons.type';
 
 import { WithdrawItem } from './withdraw-item';
 
-import { Text } from '@/src/shared/ui/primitives/text';
-import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
+import { Article } from '@/src/shared/ui/primitives/article';
 
 type Props = {
   list: TCard[] | TPhone[];
@@ -26,34 +23,19 @@ export const WithdrawContainer = ({
   selectedValue,
 }: Props) => {
   return (
-    <Squircle
-      className='bg-default flex flex-col h-min p-5 animate-appear'
-      cornerRadius={18}
-      cornerSmoothing={1}
-    >
-      <Text className='mb-3' size={22} tag={'h2'}>
-        {WithdrawTitles[type]}
-      </Text>
-      <ul>
+    <Article title={WithdrawTitles[type]} titleClassname='mt-4'>
+      <ul className='flex flex-col gap-2'>
         {list.map((item, index) => (
-          <MotionLayout
+          <WithdrawItem
             key={item.id}
-            animate={{ opacity: 1, y: 0 }}
-            className='w-full'
-            initial={{ opacity: 0, y: 10 }}
-            transition={{ delay: (index + 1) / 15 }}
-          >
-            <WithdrawItem
-              icon={VariantsIcons[type][item.type as keyof TIcons]}
-              id={item.id}
-              selectedValue={selectedValue}
-              setSelectedValue={setSelectedValue}
-              title={item.title}
-            />
-          </MotionLayout>
+            icon={VariantsIcons[type][item.type as keyof TIcons]}
+            id={item.id}
+            selectedValue={selectedValue}
+            setSelectedValue={setSelectedValue}
+            title={item.title}
+          />
         ))}
       </ul>
-      {action}
-    </Squircle>
+    </Article>
   );
 };

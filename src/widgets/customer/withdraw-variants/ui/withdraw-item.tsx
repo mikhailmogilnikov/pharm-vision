@@ -20,14 +20,14 @@ export const WithdrawItem = ({ title, icon, id, setSelectedValue, selectedValue 
   };
 
   return (
-    <li className='w-full flex items-center'>
+    <li className='w-full list-none'>
       <button className='w-full flex py-2 justify-between items-center' onClick={handleClick}>
         <Flex center>
           <RadioButton value={`${id}`} onSelectionChange={setSelectedValue} />
           <div className='h-6 w-10 overflow-hidden bg-white rounded-md p-1 flex items-center justify-center -ml-2'>
             {icon}
           </div>
-          <Text className='transition-opacity -ml-2' opacity={selectedValue === `${id}` ? 1 : 0.5}>
+          <Text className='transition-opacity' opacity={selectedValue === `${id}` ? 1 : 0.5}>
             {title}
           </Text>
         </Flex>
