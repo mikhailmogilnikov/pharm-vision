@@ -10,17 +10,17 @@ import { getTime } from '@/src/shared/lib/utils/get-time';
 export const Receipt = ({ name, cashback, date, price, id }: TReceipt) => {
   return (
     <SeeMoreLayout id={id}>
-      <Flex center className='h-min w-full hover:-ml-1 transition-all'>
-        <Flex col>
+      <Flex center className='h-min w-full active:scale-95 transition-transform'>
+        <Flex col gap={1}>
           <Flex className='justify-between'>
-            <Text size={20} tag={'h2'}>
+            <Text size={18} tag={'h2'} weight={600}>
               {name}
             </Text>
-            <Text className='text-nowrap' size={22} tag='h3'>
+            <Text className='text-nowrap' size={18} tag='h3' weight={600}>
               {price} ₽
             </Text>
           </Flex>
-          <Flex className='justify-between -mt-4'>
+          <Flex className='justify-between'>
             <Text opacity={0.5}>{getTime(new Date(date))}</Text>
             <CashbackAmountBlock>{cashback}</CashbackAmountBlock>
           </Flex>
