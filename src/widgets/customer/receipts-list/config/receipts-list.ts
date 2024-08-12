@@ -1,7 +1,7 @@
 export const ReceiptsListConst = [
   {
     id: 1,
-    name: 'Нурофен',
+    name: 'ООО Ригла',
     price: 2200,
     cashback: 200,
     number: 24342424234,
@@ -10,7 +10,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 2,
-    name: 'Терафлю',
+    name: 'ООО АльфаФарм',
     price: 3200,
     cashback: 300,
     number: 2423442234,
@@ -19,7 +19,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 3,
-    name: 'Граммидин',
+    name: 'ООО Аптечная сеть Оз',
     price: 24500,
     cashback: 150,
     number: 2434243434,
@@ -28,7 +28,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 4,
-    name: 'Нурофен',
+    name: 'ООО Ригла',
     price: 2200,
     cashback: 200,
     number: 24342424234,
@@ -37,7 +37,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 5,
-    name: 'Терафлю',
+    name: 'ООО АльфаФарм',
     price: 3200,
     cashback: 300,
     number: 2423442234,
@@ -46,7 +46,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 6,
-    name: 'Граммидин',
+    name: 'ООО Аптечная сеть Оз',
     price: 24500,
     cashback: 150,
     number: 2434243434,
@@ -55,7 +55,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 7,
-    name: 'Нурофен',
+    name: 'ООО Ригла',
     price: 2200,
     cashback: 200,
     number: 24342424234,
@@ -64,7 +64,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 8,
-    name: 'Граммидин',
+    name: 'ООО АльфаФарм',
     price: 3200,
     cashback: 300,
     number: 2423442234,
@@ -73,7 +73,7 @@ export const ReceiptsListConst = [
   },
   {
     id: 9,
-    name: 'Граммидин',
+    name: 'ООО Аптечная сеть Оз',
     price: 24500,
     cashback: 150,
     number: 2434243434,

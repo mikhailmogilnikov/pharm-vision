@@ -1,18 +1,18 @@
 'use client';
 
+import { PropsWithChildren } from 'react';
+
 import { useModal } from '../../modal';
 
 import { ReceiptModal } from './modal';
 
-type Props = {
-  children: React.ReactNode;
-};
+type Props = { id: number } & PropsWithChildren;
 
-export const SeeMoreLayout = ({ children }: Props) => {
+export const SeeMoreLayout = ({ children, id }: Props) => {
   const { setModal } = useModal();
 
   const handleClick = () => {
-    setModal(<ReceiptModal />);
+    setModal(<ReceiptModal id={id} />);
   };
 
   return (

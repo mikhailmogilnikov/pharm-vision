@@ -10,12 +10,27 @@ import { formatDateToDayAndMonth } from '@/src/shared/lib/utils/format-date';
 export const ReceiptsList = () => {
   const formatedReceipts = formatReceipts(ReceiptsListConst);
 
+  const getDate = (value: string) => {
+    const dateNow = new Date().toISOString().slice(0, 10);
+
+    const yesterday = new Date();
+
+    yesterday.setDate(new Date().getDate() - 1);
+
+    const yesterdayString = yesterday.toISOString().slice(0, 10);
+
+    if (dateNow === value.slice(0, 10)) return 'Сегодня';
+    if (yesterdayString === value.slice(0, 10)) return 'Вчера';
+
+    return formatDateToDayAndMonth(new Date(value).getTime());
+  };
+
   return (
     <Flex col>
       {formatedReceipts.map((day, i1) => (
-        <Flex key={day.date} col className='mt-4'>
-          <Text size={22} tag='h2'>
-            {formatDateToDayAndMonth(new Date(day.date).getTime())}
+        <Flex key={day.date} col className='mt-8'>
+          <Text size={26} tag='h2' weight={700}>
+            {getDate(day.date)}
           </Text>
           <Flex col gap={6}>
             {day.receipts.map((receipt, i2) => (
