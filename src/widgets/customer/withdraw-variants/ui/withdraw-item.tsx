@@ -39,7 +39,7 @@ export const WithdrawItem = ({ title, icon, id, setSelectedValue, selectedValue 
         description='Вы уверены, что хотите удалить способ оплаты? Это действее необратимо.'
         modalButtonContent={
           <>
-            <Trash2Icon size={16} />
+            <Trash2Icon size={18} />
             Удалить
           </>
         }
