@@ -1,4 +1,5 @@
 import { nextui } from '@nextui-org/theme';
+import { Scale } from 'lucide-react';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -34,6 +35,7 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         gradient: 'gradient 8s linear infinite',
+        bounceUp: 'bounceUp 0.3s ease-in forwards',
       },
       maxWidth: {
         '8xl': '1440px',
@@ -42,6 +44,19 @@ module.exports = {
         'transform-shadow': 'transform, box-shadow',
       },
       keyframes: {
+        bounceUp: {
+          '0%': {
+            bottom: '-20px',
+            opacity: '0',
+          },
+          '60%': {
+            bottom: '32px',
+            opacity: '1',
+          },
+          '100%': {
+            bottom: '24px',
+          },
+        },
         preloadPulse: {
           '0%': { opacity: '0.09' },
           '50%': { opacity: '0.14' },
