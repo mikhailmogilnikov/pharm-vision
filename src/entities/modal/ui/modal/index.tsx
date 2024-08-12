@@ -1,7 +1,7 @@
 'use client';
 
 import { RemoveScroll } from 'react-remove-scroll';
-import { AnimatePresence, m, useWillChange } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { useMedia } from 'react-use';
 
 import { useModal } from '../../model/modal-store';
@@ -12,7 +12,6 @@ import { ModalDesktop } from './modal-desktop';
 export const Modal = () => {
   const isMobile = useMedia('(max-width: 768px)', false);
   const { modal, setModal } = useModal();
-  const willChange = useWillChange();
 
   const closeModal = () => {
     setModal(false);
@@ -29,11 +28,7 @@ export const Modal = () => {
             initial={{ opacity: 0 }}
             onClick={closeModal}
           />
-          {isMobile ? (
-            <ModalMobile willChange={willChange}>{modal}</ModalMobile>
-          ) : (
-            <ModalDesktop willChange={willChange}>{modal}</ModalDesktop>
-          )}
+          {isMobile ? <ModalMobile>{modal}</ModalMobile> : <ModalDesktop>{modal}</ModalDesktop>}
         </RemoveScroll>
       ) : null}
     </AnimatePresence>

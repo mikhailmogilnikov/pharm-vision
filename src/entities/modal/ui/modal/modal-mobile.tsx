@@ -7,10 +7,9 @@ import { CloseModalButton } from './close-button';
 
 type Props = {
   children: ReactNode;
-  willChange: any;
 };
 
-export const ModalMobile = ({ children, willChange }: Props) => {
+export const ModalMobile = ({ children }: Props) => {
   const { setModal } = useModal();
 
   const closeModal = () => setModal(null);
@@ -38,7 +37,6 @@ export const ModalMobile = ({ children, willChange }: Props) => {
         filter: 'blur(24px)',
       }}
       initial={{ y: '150%' }}
-      style={{ willChange }}
       onDragEnd={handleDragEnd}
     >
       <div className='absolute top-0 left-1/2 -translate-x-[50%] w-72 h-8 flex items-center justify-center z-50'>

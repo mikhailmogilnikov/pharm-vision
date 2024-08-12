@@ -1,5 +1,4 @@
 import { nextui } from '@nextui-org/theme';
-import { Scale } from 'lucide-react';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
