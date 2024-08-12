@@ -5,7 +5,7 @@ import { WithdrawVariants } from '@/src/widgets/customer/withdraw-variants';
 
 export const WithdrawVariantsPage = () => {
   return (
-    <SectionWithTitleLayout isBack title='Способы выплаты'>
+    <SectionWithTitleLayout isBack title='Способы выплат'>
       <WithdrawVariants variantsList={[...CardsList, ...PhonesList]} />
     </SectionWithTitleLayout>
   );

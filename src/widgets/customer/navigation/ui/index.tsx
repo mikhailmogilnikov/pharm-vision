@@ -80,9 +80,8 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
           <MotionLayout
             animate={{ y: 0 }}
             className='w-full h-full'
-            exit={{ y: 100 }}
-            initial={{ y: 100 }}
-            transition={{ bounce: 0.4, type: 'spring', duration: 0.5 }}
+            exit={{ y: '300%' }}
+            initial={{ y: '300%' }}
           >
             <Flex
               center

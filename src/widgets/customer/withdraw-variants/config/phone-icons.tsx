@@ -1,4 +1,4 @@
-import { MoreHorizontal } from 'lucide-react';
+import { DotsThree } from '@phosphor-icons/react/dist/ssr';
 
 import { TPhonesIcons } from '../model/variants-icons.type';
 
@@ -12,5 +12,5 @@ export const PhoneIcons: TPhonesIcons = {
   tele2: <Tele2Icon />,
   mts: <MtsIcon />,
   beeline: <BeelineIcon />,
-  other: <MoreHorizontal color='black' />,
+  other: <DotsThree color='black' size={24} weight='bold' />,
 };

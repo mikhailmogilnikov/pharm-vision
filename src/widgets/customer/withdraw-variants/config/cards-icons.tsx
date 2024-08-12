@@ -1,4 +1,4 @@
-import { MoreHorizontal } from 'lucide-react';
+import { DotsThree } from '@phosphor-icons/react/dist/ssr';
 
 import { TCardsIcons } from '../model/variants-icons.type';
 
@@ -10,5 +10,5 @@ export const CardIcons: TCardsIcons = {
   mir: <MirIcon />,
   masterCard: <MastercardIcon />,
   visa: <VisaIcon />,
-  other: <MoreHorizontal color='black' />,
+  other: <DotsThree color='black' size={24} weight='bold' />,
 };
