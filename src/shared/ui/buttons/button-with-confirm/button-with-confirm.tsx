@@ -32,7 +32,7 @@ export const ButtonWithConfirm = ({
   };
 
   return (
-    <Button {...restProps} color={color} onClick={hadleClick}>
+    <Button color={color} {...restProps} onClick={hadleClick}>
       {children}
     </Button>
   );

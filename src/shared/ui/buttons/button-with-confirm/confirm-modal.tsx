@@ -6,11 +6,17 @@ type Props = {
   action: VoidFunction;
   description: string;
   modalButtonContent: React.ReactNode;
-
+  title?: string;
   color: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
 };
 
-export const ConfirmModal = ({ action, description, color, modalButtonContent }: Props) => {
+export const ConfirmModal = ({
+  action,
+  title = 'Подтвердите действие',
+  description,
+  color,
+  modalButtonContent,
+}: Props) => {
   const { setModal } = useModal();
 
   const closeModal = () => {
@@ -22,15 +28,15 @@ export const ConfirmModal = ({ action, description, color, modalButtonContent }:
       description={description}
       footer={
         <>
-          <Button className='w-full' onClick={closeModal}>
+          <Button className='w-full' size='lg' onClick={closeModal}>
             Отмена
           </Button>
-          <Button className='w-full' color={color} onClick={action}>
+          <Button className='w-full' color={color} size='lg' variant='shadow' onClick={action}>
             {modalButtonContent}
           </Button>
         </>
       }
-      title='Подвердите действие'
+      title={title}
     />
   );
 };

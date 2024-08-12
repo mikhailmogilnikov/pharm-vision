@@ -1,4 +1,4 @@
-import { Trash2Icon } from 'lucide-react';
+import { Trash } from '@phosphor-icons/react';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
@@ -36,16 +36,17 @@ export const WithdrawItem = ({ title, icon, id, setSelectedValue, selectedValue 
         isIconOnly
         action={() => {}}
         color='danger'
-        description='Вы уверены, что хотите удалить способ оплаты? Это действее необратимо.'
+        description='Вы уверены, что хотите удалить этот способ оплаты? Это действие необратимо.'
         modalButtonContent={
           <>
-            <Trash2Icon size={18} />
+            <Trash size={18} weight='bold' />
             Удалить
           </>
         }
         size='sm'
+        variant='flat'
       >
-        <Trash2Icon size={16} />
+        <Trash size={16} weight='bold' />
       </ButtonWithConfirm>
     </li>
   );
