@@ -1,3 +1,5 @@
+'use client';
+
 import { HTMLMotionProps, m } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 

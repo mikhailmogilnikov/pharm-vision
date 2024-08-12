@@ -42,3 +42,9 @@ describe('shared/pluralCreative', () => {
   test('edged', () => {});
   test('incorrect', () => {});
 });
+
+describe('shared/sortByDate', () => {
+  test('correct', () => {});
+  test('edged', () => {});
+  test('incorrect', () => {});
+});
