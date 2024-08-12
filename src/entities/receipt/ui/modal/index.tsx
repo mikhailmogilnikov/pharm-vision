@@ -6,7 +6,7 @@ import { formatDate } from '../../lib/utils/format-date';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { ModalLayout } from '@/src/entities/modal';
 import { Text } from '@/src/shared/ui/primitives/text';
-import { CashbackAmountBlock } from '@/src/shared/ui/cashback-amount';
+import { CashbackAmountBlock } from '@/src/entities/cashback';
 
 type Props = {
   id: number;

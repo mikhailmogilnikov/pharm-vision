@@ -1,10 +1,10 @@
 import { TReceipt } from '../model/receipt.type';
+import { CashbackAmountBlock } from '../../cashback';
 
 import { SeeMoreLayout } from './see-more-layout';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
-import { CashbackAmountBlock } from '@/src/shared/ui/cashback-amount';
 import { getTime } from '@/src/shared/lib/utils/get-time';
 
 export const Receipt = ({ name, cashback, date, price, id }: TReceipt) => {

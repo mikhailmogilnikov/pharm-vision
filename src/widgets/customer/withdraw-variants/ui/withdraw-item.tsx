@@ -20,7 +20,7 @@ export const WithdrawItem = ({ title, icon, id, setSelectedValue, selectedValue 
   };
 
   return (
-    <li className='w-full list-none'>
+    <li className='w-full list-none flex items-center'>
       <button className='w-full flex py-2 justify-between items-center' onClick={handleClick}>
         <Flex center>
           <RadioButton value={`${id}`} onSelectionChange={setSelectedValue} />
