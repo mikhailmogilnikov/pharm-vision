@@ -25,7 +25,7 @@ export const WithdrawContainer = ({
   return (
     <Article title={WithdrawTitles[type]} titleClassname='mt-4'>
       <ul className='flex flex-col gap-2'>
-        {list.map((item, index) => (
+        {list.map((item) => (
           <WithdrawItem
             key={item.id}
             icon={VariantsIcons[type][item.type as keyof TIcons]}
