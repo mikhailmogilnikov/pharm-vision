@@ -1,8 +1,10 @@
+import { Divider } from '@nextui-org/divider';
+import { Fragment } from 'react';
+
 import { ReceiptsListConst } from '../config/receipts-list';
 import { formatReceipts } from '../lib/utils/format-receipts';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { Receipt } from '@/src/entities/receipt';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { formatDateToDayAndMonth } from '@/src/shared/lib/utils/format-date';
@@ -27,22 +29,17 @@ export const ReceiptsList = () => {
 
   return (
     <Flex col>
-      {formatedReceipts.map((day, i1) => (
-        <Flex key={day.date} col className='mt-8'>
+      {formatedReceipts.map((day) => (
+        <Flex key={day.date} col className='my-4' gap={6}>
           <Text size={26} tag='h2' weight={700}>
             {getDate(day.date)}
           </Text>
-          <Flex col gap={6}>
-            {day.receipts.map((receipt, i2) => (
-              <MotionLayout
-                key={receipt.id}
-                animate={{ y: 0, opacity: 1 }}
-                className='cursor-pointer '
-                initial={{ y: 10, opacity: 0 }}
-                transition={{ delay: Number(`${i1}${i2}`) / 20 }}
-              >
+          <Flex col gap={3}>
+            {day.receipts.map((receipt, index) => (
+              <Fragment key={receipt.id}>
                 <Receipt {...receipt} />
-              </MotionLayout>
+                {index < day.receipts.length - 1 && <Divider />}
+              </Fragment>
             ))}
           </Flex>
         </Flex>

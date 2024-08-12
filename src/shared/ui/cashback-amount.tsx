@@ -6,9 +6,11 @@ import { Text } from './primitives/text';
 
 export const CashbackAmountBlock = ({ children }: PropsWithChildren) => {
   return (
-    <Flex center className='bg-default-200 px-3 rounded-full' width={'fit-content'}>
-      <DiamondsFour className='text-[--accent] -mr-3' size={14} weight='bold' />
-      <Text className='text-[--accent] leading-1'>{children}</Text>
+    <Flex center className='bg-default-200 px-2 rounded-full h-5' gap={1} width={'fit-content'}>
+      <DiamondsFour className='text-[--accent]' size={10} weight='fill' />
+      <Text className='text-[--accent] leading-1' size={14} weight={600}>
+        {children}
+      </Text>
     </Flex>
   );
 };
