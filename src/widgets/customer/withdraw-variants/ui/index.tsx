@@ -1,12 +1,7 @@
-'use client';
-
-import { useState } from 'react';
-import { RadioGroup } from '@nextui-org/radio';
-
 import { TCard, TPhone, TWithdrawType } from '../model/withdraw.type';
-import { findSelectedValue } from '../lib/utils/find-selection-value';
 
 import { WithdrawContainer } from './withdraw-container';
+import { ActiveVariant } from './active-variant';
 
 import { WithdrawList } from '@/src/page/promotion/withdraw-variants/config/withdraw-list';
 
@@ -15,20 +10,14 @@ type Props = {
 };
 
 export const WithdrawVariants = ({ variantsList }: Props) => {
-  const [selectedValue, setSelectedValue] = useState(variantsList.reduce(findSelectedValue, ''));
+  const activeVariant = variantsList.find((item) => item.isActive);
 
   return (
-    <RadioGroup value={selectedValue}>
+    <>
+      {activeVariant && <ActiveVariant {...activeVariant} />}
       {WithdrawList.map((item) => (
-        <WithdrawContainer
-          key={item.type}
-          action={<></>}
-          list={item.list}
-          selectedValue={selectedValue}
-          setSelectedValue={setSelectedValue}
-          type={item.type as TWithdrawType}
-        />
+        <WithdrawContainer key={item.type} list={item.list} type={item.type as TWithdrawType} />
       ))}
-    </RadioGroup>
+    </>
   );
 };

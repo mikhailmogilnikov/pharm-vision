@@ -1,40 +1,31 @@
 import { TCard, TPhone, TWithdrawType } from '../model/withdraw.type';
 import { WithdrawTitles } from '../config/withdrow-titles';
-import { VariantsIcons } from '../config/variants-icons';
-import { TIcons } from '../model/variants-icons.type';
 
 import { WithdrawItem } from './withdraw-item';
 
 import { Article } from '@/src/shared/ui/primitives/article';
+import { AddWithdrawVariant } from '@/src/features/withdraw/add-withdraw-variant.tsx';
 
 type Props = {
   list: TCard[] | TPhone[];
   type: TWithdrawType;
-  action: React.ReactNode;
-  setSelectedValue: (value: string) => void;
-  selectedValue: string;
 };
 
-export const WithdrawContainer = ({
-  list,
-  type,
-  action,
-  setSelectedValue,
-  selectedValue,
-}: Props) => {
+export const WithdrawContainer = ({ list, type }: Props) => {
   return (
-    <Article title={WithdrawTitles[type]} titleClassname='mt-4'>
+    <Article
+      actionButton={<AddWithdrawVariant type={type} />}
+      className='mt-4'
+      title={WithdrawTitles[type]}
+    >
       <ul className='flex flex-col gap-2'>
-        {list.map((item) => (
-          <WithdrawItem
-            key={item.id}
-            icon={VariantsIcons[type][item.type as keyof TIcons]}
-            id={item.id}
-            selectedValue={selectedValue}
-            setSelectedValue={setSelectedValue}
-            title={item.title}
-          />
-        ))}
+        {list.map((item) => {
+          return item.isActive ? null : (
+            <li key={item.id} className='w-full list-none flex items-center px-4'>
+              <WithdrawItem {...item} />
+            </li>
+          );
+        })}
       </ul>
     </Article>
   );
