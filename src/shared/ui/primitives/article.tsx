@@ -4,14 +4,31 @@ import { Squircle } from '@squircle-js/react';
 import { Flex } from './flex';
 import { Text } from './text';
 
-type Props = PropsWithChildren<{ title: string; radius?: number; titleClassname?: string }>;
+type Props = PropsWithChildren<{
+  title: string;
+  radius?: number;
+  titleClassname?: string;
+  actionButton?: React.ReactNode;
+  className?: string;
+}>;
 
-export const Article = ({ children, title, radius = 18, titleClassname }: Props) => {
+export const Article = ({
+  children,
+  title,
+  radius = 18,
+  titleClassname,
+  actionButton,
+  className,
+}: Props) => {
   return (
-    <Flex col gap={3} tag='article'>
-      <Text className={titleClassname} tag='h3'>
-        {title}
-      </Text>
+    <Flex col className={className} gap={3} tag='article'>
+      <Flex center>
+        <Text className={titleClassname} tag='h3'>
+          {title}
+        </Text>
+        {actionButton}
+      </Flex>
+
       <Squircle
         className='bg-default flex flex-col h-min gap-4 p-4'
         cornerRadius={radius}

@@ -4,16 +4,20 @@ import { WithdrawTitles } from '../config/withdrow-titles';
 import { WithdrawItem } from './withdraw-item';
 
 import { Article } from '@/src/shared/ui/primitives/article';
+import { AddWithdrawVariant } from '@/src/features/withdraw/add-withdraw-variant.tsx';
 
 type Props = {
   list: TCard[] | TPhone[];
   type: TWithdrawType;
-  action: React.ReactNode;
 };
 
-export const WithdrawContainer = ({ list, type, action }: Props) => {
+export const WithdrawContainer = ({ list, type }: Props) => {
   return (
-    <Article title={WithdrawTitles[type]} titleClassname='mt-4'>
+    <Article
+      actionButton={<AddWithdrawVariant type={type} />}
+      className='mt-4'
+      title={WithdrawTitles[type]}
+    >
       <ul className='flex flex-col gap-2'>
         {list.map((item) => {
           return item.isActive ? null : (

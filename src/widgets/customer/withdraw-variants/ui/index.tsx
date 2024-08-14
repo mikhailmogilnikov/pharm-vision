@@ -16,12 +16,7 @@ export const WithdrawVariants = ({ variantsList }: Props) => {
     <>
       {activeVariant && <ActiveVariant {...activeVariant} />}
       {WithdrawList.map((item) => (
-        <WithdrawContainer
-          key={item.type}
-          action={<></>}
-          list={item.list}
-          type={item.type as TWithdrawType}
-        />
+        <WithdrawContainer key={item.type} list={item.list} type={item.type as TWithdrawType} />
       ))}
     </>
   );
