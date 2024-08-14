@@ -1,1 +1,1 @@
-export { WithdrawVariantLayput } from './ui';
+export { WithdrawVariantLayout } from './ui';

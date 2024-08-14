@@ -7,14 +7,14 @@ type Props = {
   description: string;
   modalButtonContent: React.ReactNode;
   title?: string;
-  color: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
+  confirmColor?: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
 };
 
 export const ConfirmModal = ({
   action,
   title = 'Подтвердите действие',
   description,
-  color,
+  confirmColor,
   modalButtonContent,
 }: Props) => {
   const { setModal } = useModal();
@@ -28,10 +28,16 @@ export const ConfirmModal = ({
       description={description}
       footer={
         <>
-          <Button className='w-full' size='lg' onClick={closeModal}>
+          <Button className='w-full font-medium' size='lg' onClick={closeModal}>
             Отмена
           </Button>
-          <Button className='w-full' color={color} size='lg' variant='shadow' onClick={action}>
+          <Button
+            className='w-full font-medium'
+            color={confirmColor}
+            size='lg'
+            variant='shadow'
+            onClick={action}
+          >
             {modalButtonContent}
           </Button>
         </>

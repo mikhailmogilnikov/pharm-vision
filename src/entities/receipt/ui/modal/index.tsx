@@ -37,18 +37,22 @@ export const ReceiptModal = ({ id }: Props) => {
           <CashbackAmountBlock>{cashback}</CashbackAmountBlock>
         </Flex>
 
-        <Article title='Список покупок'>
+        <Article title='Покупки с кешбэком'>
           <>
             {items.map((item) => (
-              <li key={item.vendor} className='flex justify-between py-1 items-end'>
-                <Text opacity={0.5} size={16}>
-                  {item.vendor} {item.name}
-                </Text>
-                <Flex center width={'fit content'}>
-                  {item.cashback && <CashbackAmountBlock>{item.cashback}</CashbackAmountBlock>}
-                  <Text>{item.price} ₽</Text>
+              <Flex key={item.vendor} className='flex justify-between py-1 items-end' tag='li'>
+                <Flex col gap={1}>
+                  <Text size={16}>{item.name}</Text>
+                  <Text opacity={0.5} size={14}>
+                    {item.vendor}
+                  </Text>
                 </Flex>
-              </li>
+
+                <Flex center col gap={1} width={'fit-content'}>
+                  <Text>{item.price} ₽</Text>
+                  {item.cashback && <CashbackAmountBlock>{item.cashback}</CashbackAmountBlock>}
+                </Flex>
+              </Flex>
             ))}
           </>
         </Article>

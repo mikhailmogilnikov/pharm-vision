@@ -15,6 +15,7 @@ type Props = {
     | 'nav'
     | 'ul'
     | 'ol'
+    | 'li'
     | 'main';
   className?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
@@ -53,9 +54,7 @@ export const Flex = ({
     <Tag
       className={tagClassName}
       style={
-        !editable
-          ? { flexDirection: col ? 'column' : direction, gap: gap * 4, width }
-          : undefined
+        !editable ? { flexDirection: col ? 'column' : direction, gap: gap * 4, width } : undefined
       }
     >
       {children}

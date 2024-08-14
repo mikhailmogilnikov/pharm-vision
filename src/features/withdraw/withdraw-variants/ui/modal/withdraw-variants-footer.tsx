@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { Trash } from '@phosphor-icons/react';
+import { Star, Trash } from '@phosphor-icons/react';
 
 import { ButtonWithConfirm } from '@/src/shared/ui/buttons/button-with-confirm/button-with-confirm';
 
@@ -10,16 +10,12 @@ type Props = {
 export const WithdrawVariantsFooter = ({ isActive }: Props) => {
   return (
     <>
-      {isActive ? (
-        <Button className='w-full text-medium'>Убрать из основного</Button>
-      ) : (
-        <Button className='w-full bg-[--accent] text-medium'>Сделать основным</Button>
-      )}
-
       <ButtonWithConfirm
+        fromModal
         isIconOnly
         action={() => {}}
-        color='danger'
+        className='font-medium text-danger shadow-base'
+        confirmColor='danger'
         description='Вы уверены, что хотите удалить этот способ оплаты? Это действие необратимо.'
         modalButtonContent={
           <>
@@ -27,10 +23,21 @@ export const WithdrawVariantsFooter = ({ isActive }: Props) => {
             Удалить
           </>
         }
-        variant='flat'
       >
-        <Trash size={16} weight='bold' />
+        <Trash size={20} weight='bold' />
       </ButtonWithConfirm>
+
+      {isActive ? (
+        <Button className='w-full bg-[--accent] text-secondary-foreground font-medium' size='lg'>
+          <Star weight='fill' />
+          Убрать из основного
+        </Button>
+      ) : (
+        <Button className='w-full shadow-base text-[--accent] text-medium font-medium' size='lg'>
+          <Star weight='bold' />
+          Сделать основным
+        </Button>
+      )}
     </>
   );
 };

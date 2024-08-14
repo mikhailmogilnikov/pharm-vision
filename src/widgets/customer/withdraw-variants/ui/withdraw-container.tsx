@@ -4,7 +4,7 @@ import { WithdrawTitles } from '../config/withdrow-titles';
 import { WithdrawItem } from './withdraw-item';
 
 import { Article } from '@/src/shared/ui/primitives/article';
-import { AddWithdrawVariant } from '@/src/features/withdraw/add-withdraw-variant.tsx';
+import { AddWithdrawVariant } from '@/src/features/withdraw/add-withdraw-variant';
 
 type Props = {
   list: TCard[] | TPhone[];

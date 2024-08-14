@@ -23,7 +23,7 @@ export const CardsList: TCard[] = [
     id: 4,
     isActive: false,
     title: 'OtherBank ... 999',
-    type: 'other',
+    type: 'credit',
   },
 ];
 

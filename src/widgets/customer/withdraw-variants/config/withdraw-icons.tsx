@@ -1,4 +1,4 @@
-import { DotsThree } from '@phosphor-icons/react/dist/ssr';
+import { CreditCard, DotsThree } from '@phosphor-icons/react/dist/ssr';
 
 import { BeelineIcon } from '@/src/shared/assets/withdraw-variants/beeline';
 import { MegafonIcon } from '@/src/shared/assets/withdraw-variants/megafon';
@@ -17,4 +17,5 @@ export const WithdrawIcons = {
   mir: <MirIcon />,
   masterCard: <MastercardIcon />,
   visa: <VisaIcon />,
+  credit: <CreditCard color='black' opacity={0.5} size='90%' weight='bold' />,
 };

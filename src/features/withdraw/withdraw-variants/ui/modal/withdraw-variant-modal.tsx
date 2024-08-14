@@ -14,7 +14,7 @@ type Props = {
 export const WithdrawVariantModal = ({ title, icon, id, isActive }: Props) => {
   return (
     <ModalLayout footer={<WithdrawVariantsFooter isActive={isActive} />} title='Способ выплаты'>
-      <Flex center col className='p-8 justify-center -mt-16'>
+      <Flex center col className='justify-center -mt-8 mb-16'>
         <div className='h-20 w-20 rounded-full overflow-hidden bg-white  py-3 px-1 flex items-center justify-center'>
           {icon}
         </div>

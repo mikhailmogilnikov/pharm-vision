@@ -7,7 +7,7 @@ export type TCard = {
   isActive: boolean;
 };
 
-export type TCardType = 'mir' | 'visa' | 'masterCard' | 'other';
+export type TCardType = 'mir' | 'visa' | 'masterCard' | 'credit';
 
 export type TPhone = {
   id: number;

@@ -22,8 +22,8 @@ export const Article = ({
 }: Props) => {
   return (
     <Flex col className={className} gap={3} tag='article'>
-      <Flex center>
-        <Text className={titleClassname} tag='h3'>
+      <Flex center className='justify-between'>
+        <Text className={titleClassname} opacity={0.7} tag='h3' weight={600}>
           {title}
         </Text>
         {actionButton}

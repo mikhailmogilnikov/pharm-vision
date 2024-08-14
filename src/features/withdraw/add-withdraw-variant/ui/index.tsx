@@ -1,6 +1,6 @@
 'use client';
 
-import { PlusCircle } from '@phosphor-icons/react';
+import { Plus } from '@phosphor-icons/react';
 import { Button } from '@nextui-org/button';
 
 import { AddCardModal } from './modal/add-card-modal';
@@ -25,15 +25,9 @@ export const AddWithdrawVariant = ({ type }: Props) => {
   };
 
   return (
-    <Button
-      isIconOnly
-      className=' -ml-1'
-      radius='full'
-      size='sm'
-      variant='light'
-      onClick={handleClick}
-    >
-      <PlusCircle size={22} />
+    <Button className='font-semibold shadow-base' radius='full' size='sm' onClick={handleClick}>
+      <Plus size={18} weight='bold' />
+      Добавить
     </Button>
   );
 };

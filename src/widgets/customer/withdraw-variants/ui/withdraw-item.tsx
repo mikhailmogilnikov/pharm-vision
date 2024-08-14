@@ -1,7 +1,7 @@
 import { WithdrawIcons } from '../config/withdraw-icons';
 import { TCard, TPhone } from '../model/withdraw.type';
 
-import { WithdrawVariantLayput } from '@/src/features/withdraw/withdraw-variants';
+import { WithdrawVariantLayout } from '@/src/features/withdraw/withdraw-variants';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 
@@ -11,7 +11,7 @@ export const WithdrawItem = ({ title, type, isActive, id }: Props) => {
   const icon = WithdrawIcons[type];
 
   return (
-    <WithdrawVariantLayput
+    <WithdrawVariantLayout
       isActive={isActive}
       variant={{
         title,
@@ -27,6 +27,6 @@ export const WithdrawItem = ({ title, type, isActive, id }: Props) => {
           {title}
         </Text>
       </Flex>
-    </WithdrawVariantLayput>
+    </WithdrawVariantLayout>
   );
 };

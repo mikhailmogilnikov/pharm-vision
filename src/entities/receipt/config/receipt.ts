@@ -5,7 +5,6 @@ export const ReceiptConst = {
   cashback: 200,
   number: 24342424234,
   date: '2024-08-09T13:50:32.060Z',
-  img: '/nurofen_logo.png',
   address: '125171, г. Москва, Ленинградское шоссе, д. 8/3, корп. 2',
   items: [
     { vendor: '12313', name: 'Нурофен таб. 12шт', cashback: 100, price: 600 },

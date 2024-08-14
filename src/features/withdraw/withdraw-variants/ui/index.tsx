@@ -15,7 +15,7 @@ type Props = {
   isActive: boolean;
 } & PropsWithChildren;
 
-export const WithdrawVariantLayput = ({ children, variant, isActive }: Props) => {
+export const WithdrawVariantLayout = ({ children, variant, isActive }: Props) => {
   const { setModal } = useModal();
   const handleClick = () => {
     setModal(<WithdrawVariantModal {...variant} isActive={isActive} />);

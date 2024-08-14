@@ -7,32 +7,53 @@ import { useModal } from '@/src/entities/modal';
 type Props = {
   action: VoidFunction;
   description: string;
-  color: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
+  color?: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
+  confirmColor?: 'danger' | 'default' | 'primary' | 'secondary' | 'success';
   modalButtonContent: React.ReactNode;
+  fromModal?: boolean;
 } & ButtonProps;
 
 export const ButtonWithConfirm = ({
   children,
   action,
   description,
-  color,
+  color = 'default',
+  confirmColor = 'default',
   modalButtonContent,
+  fromModal = false,
   ...restProps
 }: Props) => {
   const { setModal } = useModal();
-  const hadleClick = () => {
-    setModal(
-      <ConfirmModal
-        action={action}
-        color={color}
-        description={description}
-        modalButtonContent={modalButtonContent}
-      />,
-    );
+
+  const handleClick = () => {
+    if (fromModal) {
+      setModal(null);
+      setTimeout(() => {
+        setModal(
+          <ConfirmModal
+            action={action}
+            color={color}
+            confirmColor={confirmColor}
+            description={description}
+            modalButtonContent={modalButtonContent}
+          />,
+        );
+      }, 450);
+    } else {
+      setModal(
+        <ConfirmModal
+          action={action}
+          color={color}
+          confirmColor={confirmColor}
+          description={description}
+          modalButtonContent={modalButtonContent}
+        />,
+      );
+    }
   };
 
   return (
-    <Button color={color} {...restProps} onClick={hadleClick}>
+    <Button color={color} size='lg' {...restProps} onClick={handleClick}>
       {children}
     </Button>
   );
