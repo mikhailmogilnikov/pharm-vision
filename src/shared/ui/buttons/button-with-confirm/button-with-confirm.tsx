@@ -32,7 +32,6 @@ export const ButtonWithConfirm = ({
         setModal(
           <ConfirmModal
             action={action}
-            color={color}
             confirmColor={confirmColor}
             description={description}
             modalButtonContent={modalButtonContent}
@@ -43,7 +42,6 @@ export const ButtonWithConfirm = ({
       setModal(
         <ConfirmModal
           action={action}
-          color={color}
           confirmColor={confirmColor}
           description={description}
           modalButtonContent={modalButtonContent}
