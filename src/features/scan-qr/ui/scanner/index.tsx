@@ -20,7 +20,7 @@ export const QrScanner = ({ onChange, fallbackUrl }: Props) => {
     <>
       <MotionLayout
         animate={{ opacity: 1, transition: { delay: 0.2 } }}
-        className='w-full'
+        className='w-full h-full'
         initial={{ opacity: 0 }}
       >
         <Flex
@@ -46,7 +46,7 @@ export const QrScanner = ({ onChange, fallbackUrl }: Props) => {
         </Flex>
         <QrFinder />
         <Scanner
-          classNames={{ video: 'object-cover' }}
+          classNames={{ video: 'object-cover', container: 'w-dvw h-dvh' }}
           components={{ audio: false, finder: false, tracker: outline }}
           constraints={{ facingMode: 'outline' }}
           onScan={onChange}
