@@ -1,3 +1,5 @@
+import { Button } from '@nextui-org/button';
+
 import { ReceiptConst } from '../../config/receipt';
 import { formatDate } from '../../lib/utils/format-date';
 
@@ -58,10 +60,12 @@ export const ReceiptModal = ({ id }: Props) => {
         </Article>
 
         <Article title='Адрес'>
-          <Text opacity={0.5} tag='h4'>
-            {address}
-          </Text>
+          <Text tag='h4'>{address}</Text>
         </Article>
+
+        <Button fullWidth className='font-medium' color='warning' size='lg' variant='flat'>
+          Оспорить кешбэк
+        </Button>
       </Flex>
     </ModalLayout>
   );

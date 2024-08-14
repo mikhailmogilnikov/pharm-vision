@@ -39,8 +39,8 @@ export const ModalMobile = ({ children }: Props) => {
       initial={{ y: '150%' }}
       onDragEnd={handleDragEnd}
     >
-      <div className='absolute top-0 left-1/2 -translate-x-[50%] w-72 h-8 flex items-center justify-center z-50'>
-        <div className='w-9 h-[6px] backdrop-invert rounded-full opacity-50 ' />
+      <div className='absolute top-0 left-1/2 -translate-x-[50%] w-72 h-12 flex items-center justify-center z-50'>
+        <div className='w-9 h-[6px] backdrop-invert rounded-full opacity-50 mb-4 ' />
       </div>
 
       <CloseModalButton onClick={() => closeModal()} />

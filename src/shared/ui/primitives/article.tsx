@@ -8,6 +8,7 @@ type Props = PropsWithChildren<{
   title: string;
   radius?: number;
   titleClassname?: string;
+  blockClassname?: string;
   actionButton?: React.ReactNode;
   className?: string;
 }>;
@@ -17,6 +18,7 @@ export const Article = ({
   title,
   radius = 18,
   titleClassname,
+  blockClassname = 'gap-4 p-4',
   actionButton,
   className,
 }: Props) => {
@@ -30,7 +32,7 @@ export const Article = ({
       </Flex>
 
       <Squircle
-        className='bg-default flex flex-col h-min gap-4 p-4'
+        className={`bg-default flex flex-col h-min ${blockClassname}`}
         cornerRadius={radius}
         cornerSmoothing={1}
       >
