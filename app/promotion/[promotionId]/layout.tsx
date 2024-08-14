@@ -12,7 +12,7 @@ export default function PromotionLayout({ children }: Props) {
   useEffect(() => {
     const root = document.querySelector(':root') as HTMLElement;
 
-    if (root && root.style) {
+    if (root && root.style && false) {
       root.style.setProperty('--accent', '#24d254');
       root.style.setProperty('--accent-30', `#${LightenDarkenColor('24d254', -20)}`);
       root.style.setProperty('--accent-70', `#${LightenDarkenColor('24d254', 40)}`);

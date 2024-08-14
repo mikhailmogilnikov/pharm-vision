@@ -1,4 +1,9 @@
-import { ClockCounterClockwise, Receipt, CreditCard } from '@phosphor-icons/react/dist/ssr';
+import {
+  ClockCounterClockwise,
+  Receipt,
+  CreditCard,
+  Question,
+} from '@phosphor-icons/react/dist/ssr';
 import { Icon } from '@phosphor-icons/react';
 
 import { TNavigation } from '@/src/shared/model/types/index.type';
@@ -21,5 +26,11 @@ export const ProfileNavListTabs = (promotionId: string): (TNavigation & { icon: 
     name: 'Способы выплат',
     href: `/promotion/${promotionId}/profile/withdraw-variants`,
     icon: CreditCard,
+  },
+  {
+    id: 4,
+    name: 'Поддержка',
+    href: `/promotion/${promotionId}/profile/support`,
+    icon: Question,
   },
 ];

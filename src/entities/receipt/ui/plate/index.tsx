@@ -1,11 +1,11 @@
 import { TReceipt } from '../../model/receipt.type';
-import { CashbackAmountBlock } from '../../../cashback';
 
 import { SeeMoreLayout } from './see-more-layout';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { getTime } from '@/src/shared/lib/utils/get-time';
+import { CashbackAmountBlock } from '@/src/entities/cashback';
 
 export const Receipt = ({ name, cashback, date, price, id }: TReceipt) => {
   return (
@@ -16,7 +16,7 @@ export const Receipt = ({ name, cashback, date, price, id }: TReceipt) => {
             <Text size={18} tag={'h2'} weight={600}>
               {name}
             </Text>
-            <Text className='text-nowrap' size={18} tag='h3' weight={600}>
+            <Text className='text-nowrap' tag='h3'>
               {price} ₽
             </Text>
           </Flex>

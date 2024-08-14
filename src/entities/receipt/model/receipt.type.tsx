@@ -18,4 +18,10 @@ export type TFullReceipt = {
   items: TReceiptItem[];
 };
 
-export type TReceiptItem = { vendor: string; name: string; cashback: number | null; price: number };
+export type TReceiptItem = {
+  vendor: string;
+  name: string;
+  cashback: number | null;
+  price: number;
+  avatar: string | null;
+};
