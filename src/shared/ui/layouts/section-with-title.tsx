@@ -25,7 +25,7 @@ export const SectionWithTitleLayout = ({
         <Flex center>
           {isBack ? (
             <>
-              <BackButton disableRipple className='bg-transparent rounded-full p-0'>
+              <BackButton disableRipple className='bg-transparent p-0' radius='none'>
                 <CaretLeft className='flex-shrink-0' size={24} weight='bold' />
                 <Text className='leading-5' size={28} weight={600}>
                   {title}

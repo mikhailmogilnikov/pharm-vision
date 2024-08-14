@@ -1,5 +1,5 @@
-import { TReceipt } from '../model/receipt.type';
-import { CashbackAmountBlock } from '../../cashback';
+import { TReceipt } from '../../model/receipt.type';
+import { CashbackAmountBlock } from '../../../cashback';
 
 import { SeeMoreLayout } from './see-more-layout';
 

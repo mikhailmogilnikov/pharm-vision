@@ -2,9 +2,9 @@
 
 import { PropsWithChildren } from 'react';
 
-import { useModal } from '../../modal';
+import { ReceiptModal } from '../modal';
 
-import { ReceiptModal } from './modal';
+import { useModal } from '@/src/entities/modal';
 
 type Props = { id: number } & PropsWithChildren;
 
