@@ -1,11 +1,11 @@
 {
   "name": "pharm-vision",
-  "version": "0.0.1",
+  "version": "0.1.12",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start",
+    "dev": "APP_VERSION=$npm_package_version next dev --turbo",
+    "build": "APP_VERSION=$npm_package_version next build",
+    "start": "APP_VERSION=$npm_package_version next start",
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
     "prepare": "husky",
     "test": "jest",

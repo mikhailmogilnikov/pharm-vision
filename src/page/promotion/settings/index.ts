@@ -1,0 +1,1 @@
+export { PromotionSettingsPage } from './ui';

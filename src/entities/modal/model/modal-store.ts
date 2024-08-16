@@ -5,6 +5,7 @@ import { immer } from 'zustand/middleware/immer';
 interface ModalStateI {
   modal: React.ReactNode | null;
   setModal: (value: React.ReactNode | null) => void;
+  closeModal: () => void;
 }
 
 export const useModalStore = create<ModalStateI>()(
@@ -14,6 +15,10 @@ export const useModalStore = create<ModalStateI>()(
       setModal: (value) =>
         set((state) => {
           state.modal = value;
+        }),
+      closeModal: () =>
+        set((state) => {
+          state.modal = null;
         }),
     })),
   ),
