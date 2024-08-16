@@ -3,7 +3,7 @@ import { IWithdrawInfo } from '@/src/features/withdraw/withdraw-info';
 export const MockWithdrawHistory: IWithdrawInfo[] = [
   {
     id: 1,
-    date: '2024-08-16T10:33:05Z',
+    date: '2024-08-16T13:31:05Z',
     receiver_type: 'phone',
     receiver_data: '+7 (932) 050-54-97',
     amount: 140,
@@ -11,7 +11,7 @@ export const MockWithdrawHistory: IWithdrawInfo[] = [
   },
   {
     id: 2,
-    date: '2024-08-15T10:33:05Z',
+    date: '2024-08-15T05:54:05Z',
     receiver_type: 'phone',
     receiver_data: '+7 (312) 421-64-43',
     amount: 421,
@@ -19,7 +19,7 @@ export const MockWithdrawHistory: IWithdrawInfo[] = [
   },
   {
     id: 3,
-    date: '2024-08-14T10:33:05Z',
+    date: '2024-08-14T23:12:05Z',
     receiver_type: 'phone',
     receiver_data: '+7 (454) 975-31-11',
     amount: 6453,
@@ -35,7 +35,7 @@ export const MockWithdrawHistory: IWithdrawInfo[] = [
   },
   {
     id: 5,
-    date: '2024-08-10T10:33:05Z',
+    date: '2024-08-10T14:10:05Z',
     receiver_type: 'card',
     receiver_data: '6544',
     amount: 654,
@@ -43,7 +43,7 @@ export const MockWithdrawHistory: IWithdrawInfo[] = [
   },
   {
     id: 6,
-    date: '2024-08-06T10:33:05Z',
+    date: '2024-08-06T19:33:05Z',
     receiver_type: 'card',
     receiver_data: '1226',
     amount: 743,

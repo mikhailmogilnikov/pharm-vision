@@ -1,5 +1,5 @@
 import { Icon } from '@phosphor-icons/react';
-import { CheckCircle, Question, XCircle } from '@phosphor-icons/react/dist/ssr';
+import { CheckCircle, ClockCountdown, XCircle } from '@phosphor-icons/react/dist/ssr';
 
 type TChipData = {
   color: 'success' | 'warning' | 'danger';
@@ -13,6 +13,6 @@ export const ChipData: Record<'success' | 'pending' | 'declined', TChipData> = {
     text: 'Выполнено',
     icon: CheckCircle,
   },
-  pending: { color: 'warning', text: 'На рассмотрении', icon: Question },
+  pending: { color: 'warning', text: 'На рассмотрении', icon: ClockCountdown },
   declined: { color: 'danger', text: 'Отклонено', icon: XCircle },
 };
