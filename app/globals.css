@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --accent: #ff6710;
-  --accent-30: #cb4e06;
-  --accent-70: #ff7e34;
+  --accent: #ff681000;
+  --accent-30: #cb4e0600;
+  --accent-70: #ff7e3400;
   --scrollbar: #c0c0c0;
 }
 
 [class='dark'] {
-  --accent: #ff6710;
-  --accent-30: #cb4e06;
-  --accent-70: #ff7e34;
+  --accent: #ff681000;
+  --accent-30: #cb4e0600;
+  --accent-70: #ff7e3400;
   --scrollbar: #2b2b2b;
 }
 

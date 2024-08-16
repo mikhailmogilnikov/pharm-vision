@@ -7,6 +7,7 @@ type Props = {
   opacity?: number;
   size?: number;
   weight?: number;
+  isCopyable?: boolean;
 };
 
 export const Text = ({
@@ -16,13 +17,19 @@ export const Text = ({
   opacity = 1,
   size,
   weight = 500,
+  isCopyable = false,
 }: Props) => {
   const Tag = tag;
 
   return (
     <Tag
       className={className}
-      style={{ opacity, fontSize: size, fontWeight: weight }}
+      style={{
+        opacity,
+        fontSize: size,
+        fontWeight: weight,
+        userSelect: isCopyable ? 'text' : 'none',
+      }}
     >
       {children}
     </Tag>

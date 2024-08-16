@@ -30,10 +30,10 @@ export const ReceiptModal = ({ id }: Props) => {
         </Text>
 
         <Flex center col>
-          <Text size={24} tag='h2' weight={600}>
+          <Text isCopyable size={24} tag='h2' weight={600}>
             {name}
           </Text>
-          <Text className='-mt-4' opacity={0.5}>
+          <Text isCopyable className='-mt-4' opacity={0.5}>
             Чек №{number}
           </Text>
         </Flex>
