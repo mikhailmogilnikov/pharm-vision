@@ -92,7 +92,7 @@ module.exports = {
           colors: {
             background: '#f5f5f7',
             foreground: '#11181C',
-            divider: 'rgba(17, 17, 17, 0.15)',
+            divider: 'rgba(17, 17, 17, 0.1)',
             focus: 'transparent',
             default: {
               DEFAULT: '#ffffff',
