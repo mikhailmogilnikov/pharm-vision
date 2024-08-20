@@ -3,6 +3,7 @@ import {
   Receipt,
   CreditCard,
   Question,
+  BookOpenText,
 } from '@phosphor-icons/react/dist/ssr';
 import { Icon } from '@phosphor-icons/react';
 
@@ -32,5 +33,11 @@ export const ProfileNavListTabs = (promotionId: string): (TNavigation & { icon: 
     name: 'Поддержка',
     href: `/promotion/${promotionId}/profile/support`,
     icon: Question,
+  },
+  {
+    id: 5,
+    name: 'Положения и условия',
+    href: `/promotion/${promotionId}/profile/terms`,
+    icon: BookOpenText,
   },
 ];

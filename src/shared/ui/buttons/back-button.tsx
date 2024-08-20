@@ -14,7 +14,7 @@ export const BackButton = ({ children, fallbackUrl = '/', ...rest }: Props) => {
 
   const handleClick = useCallback(() => {
     if (isWithinPage) router.back();
-    else router.push(fallbackUrl);
+    else router.replace(fallbackUrl);
   }, [isWithinPage, router]);
 
   return (

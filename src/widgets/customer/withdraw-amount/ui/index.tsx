@@ -2,7 +2,7 @@
 
 import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { Slider } from '@nextui-org/slider';
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Button } from '@nextui-org/button';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Link from 'next/link';
@@ -13,6 +13,7 @@ import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
+import { NumberInput } from '@/src/shared/ui/inputs/number-input';
 
 type Props = {
   amount: number;
@@ -23,20 +24,28 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
   const promotionId = pathname.split('/')[1];
   const [selectedAmount, setSelectedAmount] = useState(Math.round(amount / 2));
 
+  const handleChangeInput = (value: number) => {
+    setSelectedAmount(value);
+  };
+
   const handleChangeSlider = (newAmount: number | number[]) => {
     setSelectedAmount(newAmount as number);
   };
+
+  useLayoutEffect(() => {
+    if (amount < selectedAmount) {
+      setSelectedAmount(amount);
+    }
+  }, [selectedAmount]);
 
   return (
     <>
       <Flex center gap={2}>
         <DiamondsFour className='text-[--accent]' size={32} weight='bold' />
-        <input
+        <NumberInput
           className='bg-transparent text-5xl font-bold outline-none text-[--accent]'
-          max={amount}
-          placeholder={amount.toString()}
           value={selectedAmount}
-          onChange={(e) => setSelectedAmount(Number(e.target.value))}
+          onChange={handleChangeInput}
         />
       </Flex>
       <Slider
@@ -47,6 +56,7 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
           thumb: 'bg-[--accent]',
         }}
         color='secondary'
+        isDisabled={amount < 1}
         maxValue={amount}
         size='lg'
         value={selectedAmount}
@@ -86,8 +96,14 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
           </Button>
           <Text className='text-center w-72 mx-auto' opacity={0.5} size={14}>
             Запрашивая выплату, вы подтверждаете{' '}
-            <span className='underline'>положения и условия</span>, а так же факт ознакомления с{' '}
-            <span className='underline'>часто задаваемыми вопросами</span>.
+            <Link className='underline' href={`/promotion/${promotionId}/profile/terms`}>
+              положения и условия
+            </Link>
+            , а так же факт ознакомления с{' '}
+            <Link className='underline' href={`/promotion/${promotionId}/profile/support`}>
+              часто задаваемыми вопросами
+            </Link>
+            .
           </Text>
         </MotionLayout>
       </LayoutGroup>

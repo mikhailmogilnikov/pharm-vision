@@ -3,5 +3,5 @@ import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-tit
 type Props = { promotionId: string };
 
 export const PromotionSupportPage = ({ promotionId }: Props) => {
-  return <SectionWithTitleLayout isBack title='Поддержка' />;
+  return <SectionWithTitleLayout isBack title='Центр помощи' />;
 };
