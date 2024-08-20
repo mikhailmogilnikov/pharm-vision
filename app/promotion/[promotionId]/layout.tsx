@@ -25,7 +25,7 @@ const colors = {
 };
 
 export default function PromotionLayout({ children }: Props) {
-  const color = colors.golden;
+  const color = colors.orange;
 
   useEffect(() => {
     const root = document.querySelector(':root') as HTMLElement;

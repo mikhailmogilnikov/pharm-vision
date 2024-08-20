@@ -32,6 +32,7 @@
     "@react-aria/ssr": "3.9.4",
     "@react-aria/visually-hidden": "3.8.12",
     "@react-input/mask": "^1.2.5",
+    "@react-input/number-format": "^1.0.27",
     "@squircle-js/react": "^1.2.0",
     "@yudiel/react-qr-scanner": "^2.0.4",
     "class-variance-authority": "^0.7.0",
