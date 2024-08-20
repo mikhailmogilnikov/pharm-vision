@@ -3,7 +3,6 @@
 import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { Slider } from '@nextui-org/slider';
 import { useLayoutEffect, useState } from 'react';
-import { Button } from '@nextui-org/button';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,6 +13,7 @@ import { Text } from '@/src/shared/ui/primitives/text';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { NumberInput } from '@/src/shared/ui/inputs/number-input';
+import { WithdrawButton } from '@/src/features/withdraw/withdraw-button';
 
 type Props = {
   amount: number;
@@ -62,6 +62,7 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
         value={selectedAmount}
         onChange={handleChangeSlider}
       />
+
       <InfoBlock>
         Срок начисления средств на счёт получателя может составлять до 48 часов. Следите за
         актуальным статусом платежа в разделе{' '}
@@ -87,13 +88,8 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
         </AnimatePresence>
 
         <MotionLayout className='flex flex-col gap-4'>
-          <Button
-            className='bg-[--accent] text-secondary-foreground font-semibold'
-            isDisabled={selectedAmount < 100}
-            size='lg'
-          >
-            Запросить выплату
-          </Button>
+          <WithdrawButton selectedAmount={selectedAmount} />
+
           <Text className='text-center w-72 mx-auto' opacity={0.5} size={14}>
             Запрашивая выплату, вы подтверждаете{' '}
             <Link className='underline' href={`/promotion/${promotionId}/profile/terms`}>

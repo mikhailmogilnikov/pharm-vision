@@ -1,0 +1,1 @@
+export { PromotionWithdrawConfirmPage } from './ui';
