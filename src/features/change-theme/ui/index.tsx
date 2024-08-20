@@ -43,7 +43,12 @@ export const ChangeThemeButton = ({ ...buttonProps }) => {
           title='Тема оформления'
         >
           {Themes.map(({ id, name, icon: Icon }) => (
-            <DropdownItem key={id} startContent={<Icon weight='bold' />} variant='faded'>
+            <DropdownItem
+              key={id}
+              startContent={<Icon weight='bold' />}
+              textValue={name}
+              variant='faded'
+            >
               <Text className=' leading-5' size={14} weight={500}>
                 {name}
               </Text>

@@ -9,7 +9,7 @@ type Props = TCard | TPhone;
 
 export const ActiveVariant = (props: Props) => {
   return (
-    <Article title='Основной способ' titleClassname='mt-4'>
+    <Article titleInside title='Основной способ' titleClassname='mt-4'>
       <Flex className='px-4'>
         <WithdrawItem {...props} isActive />
       </Flex>

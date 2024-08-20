@@ -1,0 +1,1 @@
+export { PromotionWithdrawAmountPage } from './ui';

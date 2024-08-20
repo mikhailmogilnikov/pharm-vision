@@ -13,10 +13,7 @@ type Props = {
 export const CashbackStats = ({ cashbackForWeek, cashbackForAllTime }: Props) => {
   return (
     <Flex>
-      <Article blockClassname='p-4 gap-3'>
-        <Text opacity={0.5} weight={600}>
-          За неделю
-        </Text>
+      <Article titleInside blockClassname='p-4 gap-3' title='За неделю'>
         <Flex center className='pb-1' gap={1}>
           <DiamondsFour className='text-[--accent]' size={20} weight='bold' />
           <Text className='text-[--accent] leading-6' size={30} weight={700}>
@@ -25,10 +22,7 @@ export const CashbackStats = ({ cashbackForWeek, cashbackForAllTime }: Props) =>
         </Flex>
       </Article>
 
-      <Article blockClassname='p-4 gap-3'>
-        <Text opacity={0.5} weight={600}>
-          За все время
-        </Text>
+      <Article titleInside blockClassname='p-4 gap-3' title='За все время'>
         <Flex center className='pb-1' gap={1}>
           <DiamondsFour className='text-[--accent]' size={20} weight='bold' />
           <Text className='text-[--accent] leading-6' size={30} weight={700}>
