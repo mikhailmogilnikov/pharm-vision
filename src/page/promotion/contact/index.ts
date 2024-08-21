@@ -1,0 +1,1 @@
+export { PromotionContactPage } from './ui';
