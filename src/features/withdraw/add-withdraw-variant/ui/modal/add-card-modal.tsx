@@ -24,7 +24,7 @@ export const AddCardModal = () => {
     >
       <Flex col className='px-4 pb-8 -mt-10'>
         <CardInput />
-        <Text opacity={0.5} size={16}>
+        <Text className='px-1' opacity={0.5} size={16}>
           Перед сохранением убедитесь в корректности введённых данных.
         </Text>
       </Flex>

@@ -24,12 +24,14 @@ type Props = {
   editable?: boolean;
   wrap?: boolean;
   col?: boolean;
+  id?: string;
   center?: boolean;
 };
 
 export const Flex = ({
   children,
   className,
+  id,
   tag = 'div',
   direction = 'row',
   gap = 4,
@@ -53,6 +55,7 @@ export const Flex = ({
   return (
     <Tag
       className={tagClassName}
+      id={id}
       style={
         !editable ? { flexDirection: col ? 'column' : direction, gap: gap * 4, width } : undefined
       }

@@ -24,7 +24,7 @@ export const AddPhoneModal = () => {
     >
       <Flex col className='px-4 pb-8 py-4 -mt-10' gap={3}>
         <PhoneInput />
-        <Text opacity={0.5} size={16}>
+        <Text className='px-1' opacity={0.5} size={16}>
           Для подтверждения владения номером необходимо будет ввести код из SMS.
         </Text>
       </Flex>
