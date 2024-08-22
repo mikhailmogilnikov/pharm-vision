@@ -13,7 +13,7 @@ export const WithdrawButton = ({ selectedAmount }: Props) => {
   const promotionId = pathname.split('/')[2];
 
   const handleWithdraw = () => {
-    push(`/promotion/${promotionId}/profile/withdraw/confirm`);
+    push(`/promotion/${promotionId}/profile/confirm?type=payment`);
   };
 
   return (

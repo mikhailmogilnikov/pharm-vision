@@ -9,11 +9,11 @@ import { usePathname } from 'next/navigation';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
-import { Text } from '@/src/shared/ui/primitives/text';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { NumberInput } from '@/src/shared/ui/inputs/number-input';
 import { WithdrawButton } from '@/src/features/withdraw/withdraw-button';
+import { UserAgreementUnder } from '@/src/entities/user-agreement';
 
 type Props = {
   amount: number;
@@ -89,18 +89,7 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
 
         <MotionLayout className='flex flex-col gap-4'>
           <WithdrawButton selectedAmount={selectedAmount} />
-
-          <Text className='text-center w-72 mx-auto' opacity={0.5} size={14}>
-            Запрашивая выплату, вы подтверждаете{' '}
-            <Link className='underline' href={`/promotion/${promotionId}/profile/terms`}>
-              положения и условия
-            </Link>
-            , а так же факт ознакомления с{' '}
-            <Link className='underline' href={`/promotion/${promotionId}/profile/support`}>
-              часто задаваемыми вопросами
-            </Link>
-            .
-          </Text>
+          <UserAgreementUnder />
         </MotionLayout>
       </LayoutGroup>
     </>

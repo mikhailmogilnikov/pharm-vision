@@ -6,7 +6,12 @@ import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 
-export const WithdrawSuccessBlock = () => {
+type Props = {
+  title: string;
+  description: string;
+};
+
+export const SuccessBlock = ({ title, description }: Props) => {
   return (
     <Flex center col className='h-[calc(100dvh-96px-32px)] justify-center relative'>
       <MotionLayout
@@ -26,7 +31,7 @@ export const WithdrawSuccessBlock = () => {
         transition={{ delay: 0.5, type: 'spring', stiffness: 400, damping: 54 }}
       >
         <Text className='text-success' size={20} tag='h2' weight={600}>
-          Заявка отправлена!
+          {title}
         </Text>
       </MotionLayout>
 
@@ -38,7 +43,7 @@ export const WithdrawSuccessBlock = () => {
         transition={{ delay: 0.6, type: 'spring', stiffness: 400, damping: 54 }}
       >
         <Text className='w-80 text-center' opacity={0.5} size={16} tag='h2' weight={600}>
-          В случае одобрения деньги зачислятся на Ваш счёт в течение двух дней.
+          {description}
         </Text>
       </MotionLayout>
 

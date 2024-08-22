@@ -1,1 +1,0 @@
-export { WithdrawSuccessBlock } from './ui';
