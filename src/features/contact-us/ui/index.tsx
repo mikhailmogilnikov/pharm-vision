@@ -13,11 +13,12 @@ export const ContactWithUsForm = () => {
   const [email, setEmail] = useState('qwewr@mail.ru');
   const [reason, setReason] = useState(['1']);
 
-  const Form = ContactForms[reason[0]] || null;
+  const Form = ContactForms[reason[0]];
 
   return (
     <Flex col className='mt-3' gap={6}>
       <Input
+        classNames={{ inputWrapper: '!bg-default' }}
         label='Почта для связи'
         labelPlacement='outside'
         placeholder='Ваш email'
@@ -34,7 +35,7 @@ export const ContactWithUsForm = () => {
         variants={ContactReasons}
         onSelectionChange={(value) => setReason([...value])}
       />
-      <Form />
+      <Form email={email} reason={reason} />
     </Flex>
   );
 };
