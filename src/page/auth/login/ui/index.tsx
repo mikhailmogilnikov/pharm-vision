@@ -8,8 +8,9 @@ type Props = {
 
 export const LoginPage = ({ promotion }: Props) => {
   return (
-    <Flex center col className='h-dvh p-4' tag='section'>
+    <Flex center col className='h-dvh max-w-5xl mx-auto p-4' tag='section'>
       {promotion && <CustomerHeader promotionId={promotion} />}
+      <br />
       <LoginForm promotion={promotion} />
     </Flex>
   );

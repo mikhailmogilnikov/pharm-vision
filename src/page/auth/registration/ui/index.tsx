@@ -8,7 +8,7 @@ type Props = {
 
 export const RegistrationPage = ({ promotionId }: Props) => {
   return (
-    <Flex col className='h-min items-center justify-center p-4' tag='section'>
+    <Flex col className='h-min max-w-5xl mx-auto items-center justify-center p-4' tag='section'>
       <CustomerHeader promotionId={promotionId} />
       <br />
       <RegistationForm promotionId={promotionId} />

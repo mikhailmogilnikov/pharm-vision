@@ -12,6 +12,7 @@ import { EnterQrManuallyProfileButton } from '@/src/features/enter-qr-manually';
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
 import { NavigationList } from '@/src/shared/ui/navigation-list';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { siteConfig } from '@/src/shared/config/site';
 
 type Props = { promotionId: string };
 
@@ -47,7 +48,7 @@ export const PromotionProfilePage = ({ promotionId }: Props) => {
       <NavigationList tabs={ProfileNavListTabs(promotionId)} />
       <LogoutButton redirectUrl={`/promotion/${promotionId}`} />
       <Text className='text-center mt-6' opacity={0.5}>
-        Версия приложения {process.env.APP_VERSION}
+        Версия приложения {siteConfig.version}
       </Text>
     </SectionWithTitleLayout>
   );
