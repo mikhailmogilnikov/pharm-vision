@@ -46,9 +46,10 @@ export const LoginForm = ({ promotion }: Props) => {
           Войти
         </Text>
         <PhoneInput
+          autoComplete='tel'
           name='phone'
           placeholder='Номер телефона'
-          type='phone'
+          type='tel'
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
@@ -68,12 +69,21 @@ export const LoginForm = ({ promotion }: Props) => {
           Войти
         </Button>
         {promotion && (
-          <Text className='mt-4' weight={600}>
-            <span className='opacity-50'>Нет аккаунта? </span>{' '}
-            <Link replace className='text-[--accent]' href={`/promotion/${promotion}/registration`}>
-              Зарегистрироваться.
-            </Link>
-          </Text>
+          <>
+            <Text className='mt-4' weight={600}>
+              <span className='opacity-50'>Нет аккаунта? </span>{' '}
+              <Link
+                replace
+                className='text-[--accent]'
+                href={`/promotion/${promotion}/registration`}
+              >
+                Зарегистрироваться.
+              </Link>
+            </Text>
+            <Text className='-mt-3' opacity={0.5} weight={600}>
+              Тестовые логин и пароль: admin admin
+            </Text>
+          </>
         )}
       </Flex>
     </form>

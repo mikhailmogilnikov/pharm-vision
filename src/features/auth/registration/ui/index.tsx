@@ -25,7 +25,7 @@ type Props = {
 export const RegistationForm = ({ promotionId }: Props) => {
   const { push } = useRouter();
   const [userData, updateUserData] = useImmer(RegistrationInitialData);
-  const { name, surname, phone, password, passwordConfirm } = userData;
+  const { name, surname, patronymic, phone, password, passwordConfirm } = userData;
 
   const [error, setError] = useState<string | null>(null);
 
@@ -57,15 +57,15 @@ export const RegistationForm = ({ promotionId }: Props) => {
             <Text className='mb-4' size={24} weight={600}>
               Регистрация
             </Text>
+            <Input
+              classNames={{ inputWrapper: '!bg-default' }}
+              name='name'
+              placeholder='Имя'
+              size='lg'
+              value={name}
+              onChange={({ target: { value } }) => updateForm('name', value)}
+            />
             <Flex>
-              <Input
-                classNames={{ inputWrapper: '!bg-default' }}
-                name='name'
-                placeholder='Имя'
-                size='lg'
-                value={name}
-                onChange={({ target: { value } }) => updateForm('name', value)}
-              />
               <Input
                 classNames={{ inputWrapper: '!bg-default' }}
                 name='surname'
@@ -73,6 +73,14 @@ export const RegistationForm = ({ promotionId }: Props) => {
                 size='lg'
                 value={surname}
                 onChange={({ target: { value } }) => updateForm('surname', value)}
+              />
+              <Input
+                classNames={{ inputWrapper: '!bg-default' }}
+                name='patronymic'
+                placeholder='Отчество'
+                size='lg'
+                value={patronymic}
+                onChange={({ target: { value } }) => updateForm('patronymic', value)}
               />
             </Flex>
 

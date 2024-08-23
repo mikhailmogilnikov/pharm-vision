@@ -2,10 +2,7 @@ import { Key, useEffect, useState } from 'react';
 import { useDebounce } from 'react-use';
 
 import { getGeoSuggestions } from '../../api/geosuggestions';
-import {
-  TGeomark,
-  TGeoSuggestionsResponse,
-} from '../../model/types/index.type';
+import { TGeomark, TGeoSuggestionsResponse } from '../../model/types/index.type';
 
 import { AutocompleteInput } from './autocomplete';
 
@@ -43,9 +40,7 @@ export const CityPicker = ({ setCity }: Props) => {
   }, [debouncedValue]);
 
   useEffect(() => {
-    const selectedSuggestion = suggestions.find(
-      (suggestion) => suggestion.id === id,
-    );
+    const selectedSuggestion = suggestions.find((suggestion) => suggestion.id === id);
 
     setCity(selectedSuggestion as TGeomark);
   }, [id]);
