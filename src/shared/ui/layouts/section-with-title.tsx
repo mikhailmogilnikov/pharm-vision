@@ -11,6 +11,7 @@ type Props = {
   actionButtons?: ReactNode;
   isBack?: boolean;
   children?: ReactNode;
+  fallbackUrl?: string;
 };
 
 export const SectionWithTitleLayout = ({
@@ -18,6 +19,7 @@ export const SectionWithTitleLayout = ({
   title,
   isBack = false,
   children,
+  fallbackUrl,
 }: Props) => {
   return (
     <Flex col>
@@ -25,7 +27,12 @@ export const SectionWithTitleLayout = ({
         <Flex center>
           {isBack ? (
             <>
-              <BackButton disableRipple className='bg-transparent p-0' radius='none'>
+              <BackButton
+                disableRipple
+                className='bg-transparent p-0'
+                fallbackUrl={fallbackUrl}
+                radius='none'
+              >
                 <CaretLeft className='flex-shrink-0' size={24} weight='bold' />
                 <Text className='leading-5' size={28} weight={600}>
                   {title}

@@ -6,8 +6,8 @@ import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-tit
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { AnimatedGradientText } from '@/src/shared/ui/animated-gradient-text';
 import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
+import { AnimatedGradientText } from '@/src/shared/ui/magicui/animated-gradient-text';
 
 type Props = { promotionId: string };
 
