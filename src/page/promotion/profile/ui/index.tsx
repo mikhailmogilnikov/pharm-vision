@@ -47,7 +47,7 @@ export const PromotionProfilePage = ({ promotionId }: Props) => {
       <EnterQrManuallyProfileButton />
       <NavigationList tabs={ProfileNavListTabs(promotionId)} />
       <LogoutButton redirectUrl={`/promotion/${promotionId}`} />
-      <Text className='text-center mt-6' opacity={0.5}>
+      <Text className='text-center mt-3' opacity={0.5}>
         Версия приложения {siteConfig.version}
       </Text>
     </SectionWithTitleLayout>

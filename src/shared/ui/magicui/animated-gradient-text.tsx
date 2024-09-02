@@ -1,28 +1,24 @@
 'use client';
 
-import { ReactNode } from 'react';
-
 import { cn } from '../../lib/utils';
 
-export const AnimatedGradientTextLayout = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={cn(
-        'group relative flex max-w-fit flex-row items-center justify-center font-medium transition-shadow duration-500 ease-out [--bg-size:300%]',
-        className,
-      )}
-    >
-      <div
-        className={`absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] ![mask-composite:subtract] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
-      />
+import { AnimatedGradientTextLayout } from './animated-gradient-text-layout';
 
-      {children}
-    </div>
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+export const AnimatedGradientText = ({ children, className }: Props) => {
+  return (
+    <AnimatedGradientTextLayout>
+      <span
+        className={cn(
+          `inline animate-gradient bg-gradient-to-r from-[--accent-70] via-[--accent-30] to-[--accent-70] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent ${className}`,
+        )}
+      >
+        {children}
+      </span>
+    </AnimatedGradientTextLayout>
   );
 };

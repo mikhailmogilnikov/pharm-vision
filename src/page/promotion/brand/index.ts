@@ -1,0 +1,1 @@
+export { PromotionBrandPage } from './ui';

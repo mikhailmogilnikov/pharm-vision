@@ -2,6 +2,8 @@ import type { NextRequest } from 'next/server';
 
 import { NextResponse } from 'next/server';
 
+import { siteConfig } from './src/shared/config/site';
+
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
 
@@ -14,7 +16,7 @@ export function middleware(request: NextRequest) {
       const promotionId = promotionPath.split('/')[1];
       const currentPath = promotionPath.split(`/${promotionId}`)[1];
 
-      const PromotionPublicRoutes = ['', '/registration', '/goods'];
+      const PromotionPublicRoutes = siteConfig.publicRoutes;
 
       if (!PromotionPublicRoutes.includes(currentPath)) {
         return NextResponse.redirect(`${origin}/login?promotion=${promotionId}`);

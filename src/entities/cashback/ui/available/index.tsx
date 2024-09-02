@@ -4,7 +4,7 @@ import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { WithdrawAction } from '@/src/features/withdraw/withdraw-action';
-import { AnimatedGradientText } from '@/src/shared/ui/animated-gradient-text';
+import { AnimatedGradientText } from '@/src/shared/ui/magicui/animated-gradient-text';
 
 export const CashbackAmount = () => {
   return (
