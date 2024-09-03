@@ -1,1 +1,0 @@
-export { PromotionGoodsPage } from './ui';

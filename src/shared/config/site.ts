@@ -4,5 +4,5 @@ export const siteConfig = {
   name: 'Pharm Vision',
   description: 'Агрегатор кешбека фарм-компаний',
   version: '0.1.19',
-  publicRoutes: ['', '/registration', '/goods'],
+  publicRoutes: ['', '/registration', '/brands', '/brand/[0-9]*'],
 };

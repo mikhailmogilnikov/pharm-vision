@@ -16,9 +16,21 @@ export function middleware(request: NextRequest) {
       const promotionId = promotionPath.split('/')[1];
       const currentPath = promotionPath.split(`/${promotionId}`)[1];
 
-      const PromotionPublicRoutes = siteConfig.publicRoutes;
+      const { publicRoutes } = siteConfig;
 
-      if (!PromotionPublicRoutes.includes(currentPath)) {
+      const isPublicRoute = publicRoutes.some((route) => {
+        const regex = new RegExp(route);
+
+        console.log(route, currentPath, regex.test(currentPath))
+
+        if (route === '') {
+          return currentPath === '';
+        }
+
+        return regex.test(currentPath);
+      });
+
+      if (!isPublicRoute) {
         return NextResponse.redirect(`${origin}/login?promotion=${promotionId}`);
       }
     }
