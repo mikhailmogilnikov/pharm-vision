@@ -16,7 +16,6 @@ export const BrandInfo = ({ title, description, logo }: Props) => {
       <Flex center>
         <Image
           fill
-          isBlurred
           alt={title}
           as={NextImage}
           className='rounded-full'

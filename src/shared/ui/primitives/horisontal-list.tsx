@@ -9,7 +9,7 @@ type Props = PropsWithChildren<{ title: string; href?: string }>;
 
 export const HorisontalList = ({ children, title, href }: Props) => {
   return (
-    <Flex col gap={2}>
+    <Flex col gap={1}>
       {href ? (
         <Link href={href}>
           <Flex center className='justify-between'>
@@ -25,7 +25,10 @@ export const HorisontalList = ({ children, title, href }: Props) => {
         </Text>
       )}
 
-      <Flex className='!w-[calc(100%+32px)] py-2 overflow-y-hidden overflow-x-scroll scrollbar-hide -mx-4 px-4'>
+      <Flex
+        className='!w-[calc(100%+32px)] py-4 overflow-y-hidden overflow-x-scroll scrollbar-hide -mx-4 px-4'
+        tag='ul'
+      >
         {children}
       </Flex>
     </Flex>
