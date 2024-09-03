@@ -1,2 +1,3 @@
+export { BrandInfo } from './ui/info';
 export { BrandTab } from './ui/tab';
-export type { IBrand } from './model/brand.type';
+export type { IBrand, IBrandFull } from './model/brand.type';
