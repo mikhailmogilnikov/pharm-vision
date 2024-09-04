@@ -18,12 +18,12 @@ export const NavigationTabs = ({ items, localStorageKey }: Props) => {
   const [selectedKey, setSelectedKey] = useState(items[0].href);
 
   useEffect(() => {
-    const lastTab = localStorage.getItem(localStorageKey);
+    const lastTab = sessionStorage.getItem(localStorageKey);
 
     if (lastTab) {
       setSelectedKey(lastTab);
     } else {
-      localStorage.setItem(localStorageKey, items[0].href);
+      sessionStorage.setItem(localStorageKey, items[0].href);
     }
 
     items.forEach(({ href }) => {
@@ -34,7 +34,7 @@ export const NavigationTabs = ({ items, localStorageKey }: Props) => {
   }, []);
 
   const handleChange = (value: Key) => {
-    localStorage.setItem(localStorageKey, value as string);
+    sessionStorage.setItem(localStorageKey, value as string);
     setSelectedKey(value as string);
     router.replace(value as string, { scroll: false });
   };

@@ -22,7 +22,7 @@ export const PromotionScannerPage = ({ promotionId }: Props) => {
     };
   }, []);
 
-  console.log('qr data:', scanValue);
+  console.log(scanValue);
 
   return (
     <RemoveScroll className='w-dvw h-dvh bg-black'>
