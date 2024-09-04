@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/button';
 import { AddCardModal } from './modal/add-card-modal';
 import { AddPhoneModal } from './modal/add-phone-modal';
 
-import { TWithdrawType } from '@/src/widgets/customer/withdraw-variants';
+import { TWithdrawType } from '@/src/widgets/withdraw-variants';
 import { useModal } from '@/src/entities/modal';
 
 type Props = {

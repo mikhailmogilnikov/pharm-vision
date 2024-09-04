@@ -1,6 +1,6 @@
 import { LoginForm } from '@/src/features/auth/login';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { CustomerHeader } from '@/src/widgets/customer/header';
+import { CustomerHeader } from '@/src/widgets/header';
 
 type Props = {
   promotion?: string;

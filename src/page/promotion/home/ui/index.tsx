@@ -7,7 +7,7 @@ import { HomeBanner } from './banner';
 
 import { Search } from '@/src/features/search';
 import { NavigationTabs } from '@/src/shared/ui/navigation-tabs';
-import { CustomerHeader } from '@/src/widgets/customer/header';
+import { CustomerHeader } from '@/src/widgets/header';
 
 type Props = { promotionId: string; children: ReactNode };
 

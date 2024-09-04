@@ -1,6 +1,6 @@
 import { RegistationForm } from '@/src/features/auth/registration';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { CustomerHeader } from '@/src/widgets/customer/header';
+import { CustomerHeader } from '@/src/widgets/header';
 
 type Props = {
   promotionId: string;

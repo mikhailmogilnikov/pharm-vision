@@ -10,7 +10,7 @@ import { TReasonFromProps } from '../../model/reason-forms-props.type';
 import { ValidateCashbackFormSchema } from '../../model/validator';
 
 import { UserAgreementUnder } from '@/src/entities/user-agreement';
-import { ReceiptsListConst } from '@/src/widgets/customer/receipts-list/config/receipts-list';
+import { ReceiptsListConst } from '@/src/widgets/receipts-list/config/receipts-list';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { formatDate } from '@/src/entities/receipt/lib/utils/format-date';

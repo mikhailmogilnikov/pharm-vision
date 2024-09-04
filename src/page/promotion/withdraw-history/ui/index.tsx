@@ -2,7 +2,7 @@ import { MockWithdrawHistory } from '../config/mock-data';
 
 import { CashbackStats } from '@/src/entities/cashback';
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
-import { WithdrawHistoryList } from '@/src/widgets/customer/withdraw-history-list';
+import { WithdrawHistoryList } from '@/src/widgets/withdraw-history-list';
 
 type Props = { promotionId: string };
 

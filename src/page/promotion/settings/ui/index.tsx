@@ -1,7 +1,7 @@
 import { MockCustomer } from '../config/mock-customer';
 
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
-import { UserSettingsBlock } from '@/src/widgets/customer/user-settings';
+import { UserSettingsBlock } from '@/src/widgets/user-settings';
 
 type Props = { promotionId: string };
 
