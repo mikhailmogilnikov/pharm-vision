@@ -31,6 +31,10 @@ export const NavigationTabs = ({ items, localStorageKey }: Props) => {
         router.prefetch(href);
       }
     });
+
+    if (lastTab !== pathname) {
+      setSelectedKey(pathname);
+    }
   }, []);
 
   const handleChange = (value: Key) => {

@@ -1,14 +1,13 @@
 import { MockBrandInfo } from '../config/mock-brand';
-import { OffersMockData } from '../../offers/config/mock-data';
 
 import { GetCashbackButton } from './get-cashback-button';
 
 import { BrandInfo } from '@/src/entities/brand';
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { HorisontalList } from '@/src/shared/ui/primitives/horisontal-list';
-import { OfferCard } from '@/src/entities/offer';
 import { NavTabPersistUpdater } from '@/src/shared/lib/providers/nav-tab-persist-updater';
+import { OffersHorisontalList } from '@/src/widgets/offers-horisontal-list';
+import { ProductsList } from '@/src/widgets/product-list';
 
 type Props = {
   promotionId: string;
@@ -16,7 +15,7 @@ type Props = {
 };
 
 export const PromotionBrandPage = ({ promotionId, brandId }: Props) => {
-  const { name, description, logo } = MockBrandInfo;
+  const { name, description, logo, products, offers } = MockBrandInfo;
 
   return (
     <NavTabPersistUpdater
@@ -27,13 +26,8 @@ export const PromotionBrandPage = ({ promotionId, brandId }: Props) => {
         <Flex col className='mt-4' gap={8}>
           <BrandInfo description={description} logo={logo} title={name} />
           <GetCashbackButton promotionId={promotionId} />
-          <HorisontalList href={`${brandId}/offers`} title='Спецпредложения'>
-            {OffersMockData.map((offer) => (
-              <div key={offer.id} className='w-[336px] flex-shrink-0'>
-                <OfferCard offer={offer} />
-              </div>
-            ))}
-          </HorisontalList>
+          <OffersHorisontalList brandId={brandId} offers={offers} />
+          <ProductsList products={products} />
         </Flex>
       </SectionWithTitleLayout>
     </NavTabPersistUpdater>

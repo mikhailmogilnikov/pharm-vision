@@ -15,8 +15,6 @@ export const ScanQrOfferButton = () => {
 
   const promotionId = pathname.split('/promotion/')[1].split('/')[0];
 
-  console.log(promotionId);
-
   const handlePress = () => {
     setModal(null);
 

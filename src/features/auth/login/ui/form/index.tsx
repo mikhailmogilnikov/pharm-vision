@@ -11,6 +11,7 @@ import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { LightenDarkenColor } from '@/src/shared/lib/utils/lighten-darker-color';
+import { NavTabPersistUpdater } from '@/src/shared/lib/providers/nav-tab-persist-updater';
 
 type Props = {
   promotion?: string;
@@ -62,14 +63,17 @@ export const LoginForm = ({ promotion }: Props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button
-          className='mt-4 font-semibold bg-[--accent] text-secondary-foreground'
+          className={`mt-4 font-semibold  ${promotion ? 'bg-[--accent]' : 'bg-secondary'} text-secondary-foreground`}
           size='lg'
           type='submit'
         >
           Войти
         </Button>
         {promotion && (
-          <>
+          <NavTabPersistUpdater
+            storageKey={`customer-${promotion}-nav`}
+            value={`/promotion/${promotion}`}
+          >
             <Text className='mt-4' weight={600}>
               <span className='opacity-50'>Нет аккаунта? </span>{' '}
               <Link
@@ -83,7 +87,7 @@ export const LoginForm = ({ promotion }: Props) => {
             <Text className='-mt-3' opacity={0.5} weight={600}>
               Тестовые логин и пароль: admin admin
             </Text>
-          </>
+          </NavTabPersistUpdater>
         )}
       </Flex>
     </form>
