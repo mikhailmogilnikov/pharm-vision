@@ -1,5 +1,5 @@
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
-import { WithdrawAmountBlock } from '@/src/widgets/customer/withdraw-amount';
+import { WithdrawAmountBlock } from '@/src/widgets/withdraw-amount';
 
 type Props = { promotionId: string };
 

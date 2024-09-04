@@ -13,7 +13,7 @@ export const ScanQrOfferButton = () => {
   const token = getCookie('token');
   const { setModal } = useModal();
 
-  const promotionId = pathname.split('/promotion/')[1];
+  const promotionId = pathname.split('/promotion/')[1].split('/')[0];
 
   const handlePress = () => {
     setModal(null);

@@ -1,7 +1,7 @@
 import { CardsList, PhonesList } from '../config/withdraw-list';
 
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
-import { WithdrawVariants } from '@/src/widgets/customer/withdraw-variants';
+import { WithdrawVariants } from '@/src/widgets/withdraw-variants';
 
 export const WithdrawVariantsPage = () => {
   return (

@@ -40,7 +40,7 @@ export const CustomerNavigation = ({ promotionId }: Props) => {
   }, []);
 
   useEffect(() => {
-    const homeNavigationTab = localStorage.getItem(`customer-${promotionId}-nav`);
+    const homeNavigationTab = sessionStorage.getItem(`customer-${promotionId}-nav`);
 
     setHomeNavTab(homeNavigationTab);
   }, [pathname]);

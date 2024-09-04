@@ -2,7 +2,7 @@
 
 import { ConfirmVariants } from '../config/variants';
 
-import { SuccessBlock } from '@/src/widgets/customer/success-block';
+import { SuccessBlock } from '@/src/widgets/success-block';
 
 type Props = { promotionId: string; type: 'payment' | 'support' };
 

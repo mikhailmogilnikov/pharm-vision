@@ -1,15 +1,12 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { PropsWithChildren, useEffect } from 'react';
 
-type Props = PropsWithChildren<{ localStorageKey: string }>;
+type Props = PropsWithChildren<{ storageKey: string; value: string }>;
 
-export const NavTabPersistUpdater = ({ children, localStorageKey }: Props) => {
-  const pathname = usePathname();
-
+export const NavTabPersistUpdater = ({ children, storageKey, value }: Props) => {
   useEffect(() => {
-    localStorage.setItem(localStorageKey, pathname);
+    sessionStorage.setItem(storageKey, value);
   }, []);
 
   return <>{children}</>;

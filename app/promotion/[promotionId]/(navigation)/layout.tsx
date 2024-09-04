@@ -7,7 +7,7 @@ type Props = PropsWithChildren<{ params: { promotionId: string } }>;
 
 const DynamicCustomerNavigation = dynamic(
   () =>
-    import('@/src/widgets/customer/navigation').then(
+    import('@/src/widgets/navigation').then(
       (mod) => mod.CustomerNavigationWithPortal,
     ),
   { ssr: false },
