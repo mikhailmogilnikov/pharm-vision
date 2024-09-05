@@ -9,5 +9,7 @@ type Props = {
 };
 
 export const CustomerNavigationWithPortal = ({ promotionId }: Props) => {
+  if (typeof window === 'undefined') return null;
+
   return createPortal(<CustomerNavigation promotionId={promotionId} />, document.body);
 };
