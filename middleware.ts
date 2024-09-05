@@ -21,8 +21,6 @@ export function middleware(request: NextRequest) {
       const isPublicRoute = publicRoutes.some((route) => {
         const regex = new RegExp(route);
 
-        console.log(route, currentPath, regex.test(currentPath))
-
         if (route === '') {
           return currentPath === '';
         }

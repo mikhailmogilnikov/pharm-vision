@@ -14,6 +14,7 @@ export const RegistrationPage = ({ promotionId }: Props) => {
       <CustomerHeader promotionId={promotionId} />
       <Spacer />
       <RegistationForm promotionId={promotionId} />
+      <Spacer className='h-48' />
     </Flex>
   );
 };

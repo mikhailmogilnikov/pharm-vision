@@ -12,7 +12,6 @@ import { RegistrationInitialData, TRegistrationData } from '../config/initial-da
 import { validateRegistration } from '../lib/validate-project';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
-import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
 import { CityPicker } from '@/src/shared/ui/inputs/city-picker';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { Flex } from '@/src/shared/ui/primitives/flex';
@@ -25,7 +24,7 @@ type Props = {
 export const RegistationForm = ({ promotionId }: Props) => {
   const { push } = useRouter();
   const [userData, updateUserData] = useImmer(RegistrationInitialData);
-  const { name, surname, patronymic, phone, password, passwordConfirm } = userData;
+  const { name, surname, patronymic, email, password, passwordConfirm } = userData;
 
   const [error, setError] = useState<string | null>(null);
 
@@ -84,11 +83,13 @@ export const RegistationForm = ({ promotionId }: Props) => {
               />
             </Flex>
 
-            <PhoneInput
-              name='phone'
-              placeholder='Номер телефона'
-              value={phone}
-              onChange={({ target: { value } }) => updateForm('phone', value)}
+            <Input
+              classNames={{ inputWrapper: '!bg-default' }}
+              name='email'
+              placeholder='Email'
+              size='lg'
+              value={email}
+              onChange={({ target: { value } }) => updateForm('email', value)}
             />
 
             <CityPicker setCity={(id) => updateForm('address', id)} />
@@ -121,7 +122,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
             {error && (
               <MotionLayout
                 animate={{ opacity: 1, filter: 'blur(0px)' }}
-                className='px-4 py-3 rounded-large bg-danger/20 text-danger mt-4'
+                className='px-4 py-3 rounded-large bg-danger/20 text-danger font-medium mt-4'
                 exit={{ opacity: 0, filter: 'blur(24px)' }}
                 initial={{ opacity: 0, filter: 'blur(24px)' }}
               >

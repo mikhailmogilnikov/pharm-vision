@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
+import { Input } from '@nextui-org/input';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
-import { PhoneInput } from '@/src/shared/ui/inputs/phone-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { LightenDarkenColor } from '@/src/shared/lib/utils/lighten-darker-color';
@@ -20,7 +20,7 @@ type Props = {
 export const LoginForm = ({ promotion }: Props) => {
   const { refresh } = useRouter();
 
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const LoginForm = ({ promotion }: Props) => {
   }, []);
 
   const handleSubmit = () => {
-    setCookie('token', phone);
+    setCookie('token', email);
     refresh();
   };
 
@@ -46,15 +46,19 @@ export const LoginForm = ({ promotion }: Props) => {
         <Text className='mb-4' size={24} weight={600}>
           Войти
         </Text>
-        <PhoneInput
-          autoComplete='tel'
-          name='phone'
-          placeholder='Номер телефона'
-          type='tel'
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+        <Input
+          required
+          autoComplete='email'
+          classNames={{ inputWrapper: '!bg-default' }}
+          name='email'
+          placeholder='Почта'
+          size='lg'
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <PasswordInput
+          required
           classNames={{ inputWrapper: '!bg-default' }}
           name='password'
           placeholder='Пароль'
@@ -85,7 +89,7 @@ export const LoginForm = ({ promotion }: Props) => {
               </Link>
             </Text>
             <Text className='-mt-3' opacity={0.5} weight={600}>
-              Тестовые логин и пароль: admin admin
+              Тестовые логин и пароль: admin@test.com admin
             </Text>
           </NavTabPersistUpdater>
         )}

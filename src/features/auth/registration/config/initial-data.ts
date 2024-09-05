@@ -6,7 +6,7 @@ export const RegistrationInitialData = {
   name: '',
   surname: '',
   patronymic: '',
-  phone: '',
+  email: '',
   address: null as TGeomark | null,
   password: '',
   passwordConfirm: '',
