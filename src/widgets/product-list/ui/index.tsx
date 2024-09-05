@@ -27,13 +27,17 @@ export const ProductsList = ({ products }: Props) => {
         </Text>
         <Button
           isIconOnly
-          className='shadow-base'
-          color={isShowInfo ? 'primary' : 'default'}
+          className={`shadow-base ${isShowInfo && 'bg-[--accent]'}`}
           radius='full'
           size='sm'
           onClick={() => setIsShowInfo(!isShowInfo)}
         >
-          <Question opacity={isShowInfo ? 1 : 0.5} size={22} weight='bold' />
+          <Question
+            className={isShowInfo ? 'text-secondary-foreground' : ''}
+            opacity={isShowInfo ? 1 : 0.5}
+            size={22}
+            weight='bold'
+          />
         </Button>
       </Flex>
 
