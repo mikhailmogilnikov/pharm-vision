@@ -1,12 +1,13 @@
 import { Button } from '@nextui-org/button';
 import { Image } from '@nextui-org/image';
 import NextImage from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import { ReceiptConst } from '../../config/receipt';
 import { formatDate } from '../../lib/utils/format-date';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { ModalLayout } from '@/src/entities/modal';
+import { ModalLayout, useModal } from '@/src/entities/modal';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { CashbackAmountBlock } from '@/src/entities/cashback';
 import { Article } from '@/src/shared/ui/primitives/article';
@@ -16,11 +17,19 @@ type Props = {
 };
 
 export const ReceiptModal = ({ id }: Props) => {
+  const { closeModal } = useModal();
+  const { push } = useRouter();
+
   //request
   const { number, name, date, price, cashback, address, items } = ReceiptConst;
 
   const itemsWithCashback = items.filter(({ cashback }) => !!cashback);
   const itemsWithoutCashback = items.filter(({ cashback }) => !cashback);
+
+  const handleDisputeCashback = () => {
+    closeModal();
+    push(`contact?receiptId=${number}`);
+  };
 
   return (
     <ModalLayout>
@@ -106,7 +115,14 @@ export const ReceiptModal = ({ id }: Props) => {
           <Text tag='h4'>{address}</Text>
         </Article>
 
-        <Button fullWidth className='font-medium' color='warning' size='lg' variant='flat'>
+        <Button
+          fullWidth
+          className='font-medium'
+          color='warning'
+          size='lg'
+          variant='flat'
+          onClick={handleDisputeCashback}
+        >
           Оспорить кешбэк
         </Button>
       </Flex>

@@ -54,7 +54,7 @@ export const SuccessBlock = ({ title, description }: Props) => {
         layout={false}
         transition={{ delay: 0.7, type: 'spring', stiffness: 400, damping: 54 }}
       >
-        <Button as={Link} className='font-medium shadow-base' href='/' size='lg'>
+        <Button as={Link} className='font-medium shadow-base bg-opacity-50' href='/' size='lg'>
           Вернуться на главную
         </Button>
       </MotionLayout>

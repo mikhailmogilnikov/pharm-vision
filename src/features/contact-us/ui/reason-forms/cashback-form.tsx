@@ -2,12 +2,13 @@
 import { Button } from '@nextui-org/button';
 import { Textarea } from '@nextui-org/input';
 import { Select, SelectItem } from '@nextui-org/select';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
 import { TReasonFromProps } from '../../model/reason-forms-props.type';
 import { ValidateCashbackFormSchema } from '../../model/validator';
+import { ReceiptContext } from '..';
 
 import { UserAgreementUnder } from '@/src/entities/user-agreement';
 import { ReceiptsListConst } from '@/src/widgets/receipts-list/config/receipts-list';
@@ -20,8 +21,9 @@ import { Article } from '@/src/shared/ui/primitives/article';
 
 export const ContactCashbackForm = ({ email, reason }: TReasonFromProps) => {
   const { replace } = useRouter();
+  const receiptId = useContext(ReceiptContext);
 
-  const [receipt, setCheck] = useState<string[]>([]);
+  const [receipt, setCheck] = useState<string[]>(receiptId ? [`${receiptId}`] : []);
   const [description, setDescription] = useState('');
 
   const [validateError, setValidateErrors] = useState<string | null>(null);
