@@ -3,7 +3,7 @@ export const ReceiptConst = {
   name: 'ООО Ригла',
   price: 2200,
   cashback: 200,
-  number: 24342424234,
+  number: 243432424234,
   date: '2024-08-09T13:50:32.060Z',
   address: '125171, г. Москва, Ленинградское шоссе, д. 8/3, корп. 2',
   items: [

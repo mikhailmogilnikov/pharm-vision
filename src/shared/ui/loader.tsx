@@ -10,7 +10,12 @@ type Props = {
 export const Loader = ({ fullscreen = false }: Props) => {
   return fullscreen ? (
     <Flex center className='justify-center fixed inset-0'>
-      <CircleNotch className='animate-spin origin-center' opacity={0.4} size={36} weight='bold' />
+      <CircleNotch
+        className='animate-spin origin-center flex-shrink-0'
+        opacity={0.4}
+        size={36}
+        weight='bold'
+      />
     </Flex>
   ) : (
     <Flex center className='justify-center mt-4'>

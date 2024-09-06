@@ -33,7 +33,7 @@ export const WithdrawInfo = ({ info }: Props) => {
 
   const Icon = ChipData[status].icon;
 
-  const handleOpenModal = () => setModal(<WithdrawInfoModal />);
+  const handleOpenModal = () => setModal(<WithdrawInfoModal info={info} />);
 
   return (
     <button
