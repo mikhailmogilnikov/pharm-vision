@@ -8,9 +8,10 @@ import { AutocompleteInput } from './autocomplete';
 
 type Props = {
   setCity: (city: TGeomark | null) => void;
+  initialValue?: string;
 };
 
-export const CityPicker = ({ setCity }: Props) => {
+export const CityPicker = ({ setCity, initialValue }: Props) => {
   const [id, setId] = useState<Key | null>('');
   const [debouncedValue, setDebouncedValue] = useState('');
   const [inputValue, setInputValue] = useState('');
@@ -47,6 +48,7 @@ export const CityPicker = ({ setCity }: Props) => {
 
   return (
     <AutocompleteInput
+      defaultInputValue={initialValue}
       placeholder='Ваш город'
       setValue={setId}
       title='value'

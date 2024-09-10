@@ -1,8 +1,6 @@
-import { EUserSettings } from '../model/user-settings.enum';
-import { UserSettingsTitles } from '../config/user-settings-titles';
-
 import { EditSettingButton } from './edit-setting-button';
 
+import { EUserSettings, UserSettingsTitles } from '@/src/features/change-user-info';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { Text } from '@/src/shared/ui/primitives/text';
 
@@ -14,7 +12,7 @@ type Props = {
 export const UserSetting = ({ id, value }: Props) => {
   return (
     <Article
-      actionButton={<EditSettingButton />}
+      actionButton={<EditSettingButton id={id} initValue={value} />}
       blockClassname='-mt-1 p-4'
       title={UserSettingsTitles[id]}
     >

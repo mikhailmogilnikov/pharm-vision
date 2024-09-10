@@ -3,7 +3,16 @@
 import { Button } from '@nextui-org/button';
 import { PencilSimple } from '@phosphor-icons/react';
 
-export const EditSettingButton = () => {
+import { ChangeUserInfoModal, EUserSettings } from '@/src/features/change-user-info';
+import { useModal } from '@/src/entities/modal';
+
+export const EditSettingButton = ({ id, initValue }: { id: EUserSettings; initValue: string }) => {
+  const { setModal } = useModal();
+
+  const handleOpenModal = () => {
+    setModal(<ChangeUserInfoModal field={id} initValue={initValue} />);
+  };
+
   return (
     <Button
       isIconOnly
@@ -11,6 +20,7 @@ export const EditSettingButton = () => {
       radius='full'
       size='sm'
       startContent={<PencilSimple size={18} weight='bold' />}
+      onClick={handleOpenModal}
     />
   );
 };

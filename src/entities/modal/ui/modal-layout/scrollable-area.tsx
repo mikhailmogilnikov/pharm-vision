@@ -1,3 +1,5 @@
+'use client';
+
 import { ScrollShadow } from '@nextui-org/scroll-shadow';
 import { PropsWithChildren, useState } from 'react';
 
