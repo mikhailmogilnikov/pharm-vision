@@ -7,3 +7,11 @@ export const UserSettingsTitles: Record<EUserSettings, string> = {
   [EUserSettings.EMAIL]: 'Почта',
   [EUserSettings.ADDRESS]: 'Адрес',
 };
+
+export const UserSettingsTitlesParent: Record<EUserSettings, string> = {
+  [EUserSettings.NAME]: 'имя',
+  [EUserSettings.SURNAME]: 'фамилию',
+  [EUserSettings.PATRONYMIC]: 'отчество',
+  [EUserSettings.EMAIL]: 'почту',
+  [EUserSettings.ADDRESS]: 'адрес',
+};

@@ -1,8 +1,7 @@
-import { EUserSettings } from '../model/user-settings.enum';
-
 import { UserSettingsActions } from './actions';
 import { UserSetting } from './setting';
 
+import { EUserSettings } from '@/src/features/change-user-info';
 import { ICustomer } from '@/src/entities/customer';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 
