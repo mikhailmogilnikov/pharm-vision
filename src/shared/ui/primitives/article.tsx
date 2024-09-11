@@ -36,6 +36,7 @@ export const Article = ({
       )}
 
       <Squircle
+        suppressHydrationWarning
         className={`bg-default flex flex-col h-min ${blockClassname}`}
         cornerRadius={radius}
         cornerSmoothing={1}
