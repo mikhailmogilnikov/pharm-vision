@@ -12,6 +12,7 @@ import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { LightenDarkenColor } from '@/src/shared/lib/utils/lighten-darker-color';
 import { NavTabPersistUpdater } from '@/src/shared/lib/providers/nav-tab-persist-updater';
+import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
 
 type Props = {
   promotion?: string;
@@ -67,7 +68,7 @@ export const LoginForm = ({ promotion }: Props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button
-          className={`mt-4 font-semibold  ${promotion ? 'bg-[--accent]' : 'bg-secondary'} text-secondary-foreground`}
+          className={`mt-2 font-semibold  ${promotion ? 'bg-[--accent]' : 'bg-secondary'} text-secondary-foreground`}
           size='lg'
           type='submit'
         >
@@ -78,18 +79,26 @@ export const LoginForm = ({ promotion }: Props) => {
             storageKey={`customer-${promotion}-nav`}
             value={`/promotion/${promotion}`}
           >
-            <Text className='mt-4' weight={600}>
+            <InfoBlock className='my-2 p-4'>
+              Подсказка: чтобы вернуться на главную, нажмите на логотип.
+            </InfoBlock>
+
+            <Text size={16} weight={600}>
               <span className='opacity-50'>Нет аккаунта? </span>{' '}
-              <Link
-                replace
-                className='text-[--accent]'
-                href={`/promotion/${promotion}/registration`}
-              >
+              <Link className='text-[--accent]' href={`/promotion/${promotion}/registration`}>
                 Зарегистрироваться.
               </Link>
             </Text>
-            <Text className='-mt-3' opacity={0.5} weight={600}>
-              Тестовые логин и пароль: admin@test.com admin
+
+            <Text className='-mt-3' size={16} weight={600}>
+              <span className='opacity-50'>Забыли пароль? </span>{' '}
+              <Link href={`/promotion/${promotion}/registration`}>Восстановить.</Link>
+            </Text>
+
+            <Text className='mt-2' opacity={0.5} size={16} weight={600}>
+              Тестовая почта и пароль: <br />
+              admin@test.com <br />
+              admin
             </Text>
           </NavTabPersistUpdater>
         )}

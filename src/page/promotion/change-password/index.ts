@@ -1,0 +1,1 @@
+export { PromotionChangePasswordPage } from './ui';

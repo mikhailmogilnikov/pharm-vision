@@ -9,9 +9,12 @@ import { Article } from '@/src/shared/ui/primitives/article';
 export const UserSettingsActions = () => {
   return (
     <Article blockClassname='' title='Действия'>
-      <button className='font-semibold h-16 flex justify-between px-4 items-center active:bg-default-200 transition-colors'>
+      <Link
+        className='font-semibold h-16 flex justify-between px-4 items-center active:bg-default-200 transition-colors'
+        href='change-password'
+      >
         Изменить пароль <Password size={24} weight='bold' />
-      </button>
+      </Link>
       <Divider />
       <Link
         className='font-semibold h-16 flex justify-between px-4 items-center active:bg-default-200 transition-colors'

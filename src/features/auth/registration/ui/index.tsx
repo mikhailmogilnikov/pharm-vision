@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 import { RegistrationInitialData, TRegistrationData } from '../config/initial-data';
 import { validateRegistration } from '../lib/validate-project';
+import { PasswordStrengthBar } from '../../check-password-strength';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { CityPicker } from '@/src/shared/ui/inputs/city-picker';
@@ -27,6 +28,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
   const { name, surname, patronymic, email, password, passwordConfirm } = userData;
 
   const [error, setError] = useState<string | null>(null);
+  const [isValidPassword, setIsValidPassword] = useState(false);
 
   const updateForm = <K extends keyof TRegistrationData>(key: K, value: TRegistrationData[K]) => {
     updateUserData((draft) => {
@@ -116,6 +118,11 @@ export const RegistationForm = ({ promotionId }: Props) => {
               value={passwordConfirm}
               onChange={({ target: { value } }) => updateForm('passwordConfirm', value)}
             />
+            <PasswordStrengthBar
+              className='mt-3'
+              password={password}
+              setIsVerified={setIsValidPassword}
+            />
           </MotionLayout>
 
           <AnimatePresence>
@@ -135,6 +142,7 @@ export const RegistationForm = ({ promotionId }: Props) => {
             <Button
               fullWidth
               className='mt-4 font-semibold bg-[--accent] text-secondary-foreground'
+              isDisabled={!isValidPassword}
               size='lg'
               type='submit'
               variant='shadow'
