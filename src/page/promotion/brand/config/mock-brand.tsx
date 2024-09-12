@@ -9,6 +9,7 @@ export const MockBrandInfo: IBrandFull = {
   description: 'Средство от головной боли',
   logo: '/nurofen_logo.png',
   createdAt: '123123412',
+  updatedAt: '34324',
   products: [
     {
       id: 1,
