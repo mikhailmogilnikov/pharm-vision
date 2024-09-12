@@ -22,9 +22,13 @@ const DynamicChangeThemeButton = dynamic(
 export const CustomerHeader = ({ promotionId }: Props) => {
   const { replace } = useRouter();
 
+  const handleNavigate = () => {
+    replace(`/promotion/${promotionId}`);
+  };
+
   return (
     <Flex center className='justify-between' tag='header'>
-      <button onClick={() => replace(`/promotion/${promotionId}`)}>
+      <button onClick={handleNavigate}>
         <Image
           priority
           alt='logo'

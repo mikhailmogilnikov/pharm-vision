@@ -14,7 +14,17 @@ type Props = {
 };
 
 export const BrandTab = ({ brand }: Props) => {
-  const { name, logo, id } = brand;
+  const { name, logo, id, amount, percent } = brand;
+  const maxCashback = (() => {
+    if (percent) {
+      return `${percent.max}%`;
+    }
+    if (amount) {
+      return amount.max;
+    }
+
+    return '0%';
+  })();
 
   return (
     <Link className='h-20 flex gap-4 items-center px-4' href={`brand/${id}`}>
@@ -35,20 +45,19 @@ export const BrandTab = ({ brand }: Props) => {
           {name}
         </Text>
 
-        {/* {description && (
-          <Text className='leading-4' opacity={0.5} size={14} weight={500}>
-            {description}
-          </Text>
-        )} */}
-
         <Chip
-          className='h-5 pr-0'
-          classNames={{ content: 'font-semibold' }}
+          className='h-5 px-0'
+          classNames={{ content: 'font-semibold flex gap-1 items-center' }}
           color='warning'
-          startContent={<DiamondsFour className='mr-[2px]' weight='fill' />}
           variant='flat'
         >
-          от 50 до 1000
+          Кешбэк до{' '}
+          {typeof maxCashback === 'number' && (
+            <span>
+              <DiamondsFour className='-mr-[2px]' weight='fill' />{' '}
+            </span>
+          )}
+          {maxCashback}
         </Chip>
       </Flex>
       <CaretRight className='flex-shrink-0' opacity={0.5} size={20} weight='bold' />
