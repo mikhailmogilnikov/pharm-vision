@@ -17,12 +17,14 @@ export const ChangePasswordForm = () => {
     <form action='submit'>
       <Flex col>
         <PasswordInput
+          classNames={{ inputWrapper: '!bg-default' }}
           placeholder='Старый пароль'
           size='lg'
           value={oldPassword}
           onChange={({ target }) => setOldPassword(target.value)}
         />
         <PasswordInput
+          classNames={{ inputWrapper: '!bg-default' }}
           placeholder='Новый пароль'
           size='lg'
           value={newPassword}
