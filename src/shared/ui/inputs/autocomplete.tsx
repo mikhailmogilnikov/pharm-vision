@@ -1,8 +1,4 @@
-import {
-  Autocomplete,
-  AutocompleteItem,
-  AutocompleteProps,
-} from '@nextui-org/autocomplete';
+import { Autocomplete, AutocompleteItem, AutocompleteProps } from '@nextui-org/autocomplete';
 import { Key } from 'react';
 
 type VariantBase = {

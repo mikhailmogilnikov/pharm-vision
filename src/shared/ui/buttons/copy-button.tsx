@@ -27,12 +27,7 @@ export const CopyButton = ({ copyText, ...rest }: Props) => {
   }, [isCopied]);
 
   return (
-    <Button
-      {...rest}
-      isIconOnly
-      color={isCopied ? 'success' : 'default'}
-      onPress={handleClick}
-    >
+    <Button {...rest} isIconOnly color={isCopied ? 'success' : 'default'} onPress={handleClick}>
       {!isCopied ? (
         <Copy className='w-1/2 h-1/2' weight='bold' />
       ) : (

@@ -11,12 +11,7 @@ export type ModalLayoutProps = {
   footer?: ReactNode;
 };
 
-export const ModalLayout = ({
-  title,
-  description,
-  children,
-  footer,
-}: ModalLayoutProps) => {
+export const ModalLayout = ({ title, description, children, footer }: ModalLayoutProps) => {
   return (
     <>
       <ModalScrollableArea>

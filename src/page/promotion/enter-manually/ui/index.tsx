@@ -1,4 +1,4 @@
-import { Flex } from "@/src/shared/ui/primitives/flex";
+import { Flex } from '@/src/shared/ui/primitives/flex';
 
 type Props = { promotionId: string };
 

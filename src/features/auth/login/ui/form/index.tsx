@@ -92,7 +92,7 @@ export const LoginForm = ({ promotion }: Props) => {
 
             <Text className='-mt-3' size={16} weight={600}>
               <span className='opacity-50'>Забыли пароль? </span>{' '}
-              <Link href={`/promotion/${promotion}/registration`}>Восстановить.</Link>
+              <Link href={`/promotion/${promotion}/password-recovery`}>Восстановить.</Link>
             </Text>
 
             <Text className='mt-2' opacity={0.5} size={16} weight={600}>

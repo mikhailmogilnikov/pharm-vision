@@ -23,9 +23,12 @@ export const UserSettingsActions = () => {
         Настроить способы вывода <CreditCard size={24} weight='bold' />
       </Link>
       <Divider />
-      <button className='font-semibold h-16 flex justify-between px-4 items-center active:bg-default-200 transition-colors text-danger'>
+      <Link
+        className='font-semibold h-16 flex justify-between px-4 items-center active:bg-default-200 transition-colors text-danger'
+        href='delete-account'
+      >
         Удалить мой аккаунт <UserMinus size={24} weight='bold' />
-      </button>
+      </Link>
     </Article>
   );
 };

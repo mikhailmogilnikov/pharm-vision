@@ -22,11 +22,7 @@ export const OriginTrackerProvider = ({ children }: React.PropsWithChildren) => 
     return () => setIsWithinPage(false);
   }, [pathname]);
 
-  return (
-    <OriginContext.Provider value={isWithinPage}>
-      {children}
-    </OriginContext.Provider>
-  );
+  return <OriginContext.Provider value={isWithinPage}>{children}</OriginContext.Provider>;
 };
 
 export const useOriginContext = () => useContext(OriginContext);

@@ -7,8 +7,7 @@ export const validateRegistration = async (userData: TRegistrationData) => {
   try {
     await ValidateRegistrationSchema.validate(userData);
 
-    if (userData.passwordConfirm !== userData.password)
-      return 'Подтвердите пароль';
+    if (userData.passwordConfirm !== userData.password) return 'Подтвердите пароль';
 
     return null;
   } catch (error) {
