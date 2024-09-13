@@ -9,9 +9,16 @@ import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 type Props = {
   title: string;
   description: string;
+  url?: string;
+  buttonText?: string;
 };
 
-export const SuccessBlock = ({ title, description }: Props) => {
+export const SuccessBlock = ({
+  title,
+  description,
+  url = '/',
+  buttonText = 'Вернуться на главную',
+}: Props) => {
   return (
     <Flex center col className='h-[calc(100dvh-96px-32px)] justify-center relative'>
       <MotionLayout
@@ -54,8 +61,8 @@ export const SuccessBlock = ({ title, description }: Props) => {
         layout={false}
         transition={{ delay: 0.7, type: 'spring', stiffness: 400, damping: 54 }}
       >
-        <Button as={Link} className='font-medium shadow-base bg-opacity-50' href='/' size='lg'>
-          Вернуться на главную
+        <Button as={Link} className='font-medium shadow-base bg-opacity-50' href={url} size='lg'>
+          {buttonText}
         </Button>
       </MotionLayout>
 

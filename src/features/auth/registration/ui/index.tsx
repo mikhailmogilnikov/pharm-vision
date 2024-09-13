@@ -5,7 +5,6 @@ import { Input } from '@nextui-org/input';
 import { useImmer } from 'use-immer';
 import { FormEventHandler, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import { RegistrationInitialData, TRegistrationData } from '../config/initial-data';
@@ -17,16 +16,17 @@ import { CityPicker } from '@/src/shared/ui/inputs/city-picker';
 import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { SuccessBlock } from '@/src/widgets/success-block';
 
 type Props = {
   promotionId: string;
 };
 
 export const RegistationForm = ({ promotionId }: Props) => {
-  const { push } = useRouter();
   const [userData, updateUserData] = useImmer(RegistrationInitialData);
   const { name, surname, patronymic, email, password, passwordConfirm } = userData;
 
+  const [isSubmited, setIsSubmited] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isValidPassword, setIsValidPassword] = useState(false);
 
@@ -45,12 +45,12 @@ export const RegistationForm = ({ promotionId }: Props) => {
       if (error) {
         setError(error);
       } else {
-        push('/');
+        setIsSubmited(true);
       }
     });
   };
 
-  return (
+  return !isSubmited ? (
     <form action='submit' onSubmit={handleSubmit}>
       <LayoutGroup>
         <Flex col className='max-w-96 md:pb-[22vh]'>
@@ -160,5 +160,14 @@ export const RegistationForm = ({ promotionId }: Props) => {
         </Flex>
       </LayoutGroup>
     </form>
+  ) : (
+    <Flex className='bg-background z-20 fixed inset-0'>
+      <SuccessBlock
+        buttonText='Вернуться ко входу'
+        description='Завершите регистрацию, перейдя по ссылке из письма, отправленное на указанный вами email-адрес'
+        title='Аккаунт создан'
+        url={`/login?promotion=${promotionId}`}
+      />
+    </Flex>
   );
 };

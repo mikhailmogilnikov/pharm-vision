@@ -17,11 +17,5 @@ export const PasswordInput = ({ ...rest }: InputProps) => {
     </button>
   );
 
-  return (
-    <Input
-      endContent={ShowPasswordButton}
-      type={isVisible ? 'text' : 'password'}
-      {...rest}
-    />
-  );
+  return <Input endContent={ShowPasswordButton} type={isVisible ? 'text' : 'password'} {...rest} />;
 };
