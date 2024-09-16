@@ -1,17 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 import { Button } from '@nextui-org/button';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { SuccessBlock } from '@/src/widgets/success-block';
 
 export const DeleteAccountForm = () => {
   const [password, setPassword] = useState('');
+  const [isSubmited, setIsSubmited] = useState(false);
 
-  return (
-    <form className='mt-4'>
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    setIsSubmited(true);
+  };
+
+  return !isSubmited ? (
+    <form className='mt-4' onSubmit={handleSubmit}>
       <Flex col>
         <Text opacity={0.5} weight={600}>
           После удаления все невыведенные бонусы и чеки становятся недоступными.
@@ -36,5 +43,12 @@ export const DeleteAccountForm = () => {
         </Button>
       </Flex>
     </form>
+  ) : (
+    <Flex className='bg-background z-20 fixed inset-0'>
+      <SuccessBlock
+        description='Для подтверждения удаления аккаунта следуйте инструкциям в письме.'
+        title='Письмо отправлено'
+      />
+    </Flex>
   );
 };
