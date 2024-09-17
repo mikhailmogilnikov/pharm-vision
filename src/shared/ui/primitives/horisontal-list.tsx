@@ -26,7 +26,7 @@ export const HorisontalList = ({ children, title, href }: Props) => {
       )}
 
       <Flex
-        className='!w-[calc(100%+32px)] py-4 overflow-y-hidden overflow-x-scroll scrollbar-hide -mx-4 px-4'
+        className='!w-[calc(100%+32px)] justify-start py-4 overflow-y-hidden overflow-x-scroll scrollbar-hide -mx-4 px-4'
         tag='ul'
       >
         {children}

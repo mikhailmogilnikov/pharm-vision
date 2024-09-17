@@ -1,2 +1,2 @@
 export { Product } from './ui';
-export type { IProduct } from './model/product.type';
+export type { IProduct, IProductWithBrand } from './model/product.type';

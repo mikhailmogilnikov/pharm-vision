@@ -5,6 +5,7 @@ import { CaretRight, DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { Chip } from '@nextui-org/chip';
 
 import { IBrand } from '../../model/brand.type';
+import { getMaxCashback } from '../../lib/get-max-cashback';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
@@ -14,17 +15,9 @@ type Props = {
 };
 
 export const BrandTab = ({ brand }: Props) => {
-  const { name, logo, id, amount, percent } = brand;
-  const maxCashback = (() => {
-    if (percent) {
-      return `${percent.max}%`;
-    }
-    if (amount) {
-      return amount.max;
-    }
+  const { name, logo, id } = brand;
 
-    return '0%';
-  })();
+  const maxCashback = getMaxCashback(brand);
 
   return (
     <Link className='h-20 flex gap-4 items-center px-4' href={`brand/${id}`}>

@@ -1,20 +1,27 @@
 'use client';
 
 import { Button } from '@nextui-org/button';
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 
 import { PasswordStrengthBar } from '../../check-password-strength';
 
 import { PasswordInput } from '@/src/shared/ui/inputs/password-input';
 import { Flex } from '@/src/shared/ui/primitives/flex';
+import { SuccessBlock } from '@/src/widgets/success-block';
 
 export const ChangePasswordForm = () => {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [isValidPassword, setIsValidPassword] = useState(false);
+  const [isSubmited, setIsSubmited] = useState(false);
 
-  return (
-    <form action='submit'>
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    setIsSubmited(true);
+  };
+
+  return !isSubmited ? (
+    <form action='submit' onSubmit={handleSubmit}>
       <Flex col>
         <PasswordInput
           classNames={{ inputWrapper: '!bg-default' }}
@@ -44,5 +51,12 @@ export const ChangePasswordForm = () => {
         </Button>
       </Flex>
     </form>
+  ) : (
+    <Flex className='bg-background z-20 fixed inset-0'>
+      <SuccessBlock
+        description='При следующем входе вводите изменённый пароль.'
+        title='Пароль изменен'
+      />
+    </Flex>
   );
 };

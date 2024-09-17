@@ -1,5 +1,3 @@
-/* eslint-disable @conarti/feature-sliced/layers-slices */
-
 import { IOffer } from '../../offer';
 import { IProduct } from '../../product';
 
