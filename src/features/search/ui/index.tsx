@@ -2,7 +2,7 @@
 
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Squircle } from '@squircle-js/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import { SearchModal } from './modal';
@@ -13,6 +13,24 @@ import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 export const Search = () => {
   const [isFocused, setIsFocused] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsFocused(false);
+      }
+      if (event.key === ' ') {
+        event.preventDefault();
+        setIsFocused(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <>
       <MotionLayout layoutId='search' onClick={() => setIsFocused(true)}>
@@ -22,7 +40,9 @@ export const Search = () => {
           cornerSmoothing={1}
         >
           <MagnifyingGlass opacity={0.5} size={22} weight='bold' />
-          <Text opacity={0.5}>Поиск</Text>
+          <Text opacity={0.5} size={16}>
+            Поиск
+          </Text>
         </Squircle>
       </MotionLayout>
 

@@ -1,6 +1,5 @@
-import { DiamondsFour } from '@phosphor-icons/react';
-
 import { IProduct } from '../model/product.type';
+import { CashbackChip } from '../../cashback';
 
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Flex } from '@/src/shared/ui/primitives/flex';
@@ -23,20 +22,9 @@ export const Product = ({ product }: Props) => {
         </Text>
       </Flex>
 
-      <Flex center className='bg-default px-2 h-8 rounded-full' gap={1} width={'min-width'}>
-        {cashbackType === 'amount' ? (
-          <>
-            <DiamondsFour className='text-[--accent]' weight='fill' />
-            <Text className='text-[--accent]' size={18} weight={600}>
-              {fixCashback}
-            </Text>
-          </>
-        ) : (
-          <Text className='text-[--accent] w-fit text-nowrap' size={18} weight={600}>
-            {fixCashback}%
-          </Text>
-        )}
-      </Flex>
+      <CashbackChip color='onBg' type={cashbackType}>
+        {fixCashback}
+      </CashbackChip>
     </Flex>
   );
 };

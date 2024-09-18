@@ -1,16 +1,15 @@
 import { usePathname, useRouter } from 'next/navigation';
-import { DiamondsFour, MagnifyingGlass } from '@phosphor-icons/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 import { ScrollShadow } from '@nextui-org/scroll-shadow';
 
 import { ISearchResponse } from '../model/search-response.type';
 
 import { HorisontalList } from '@/src/shared/ui/primitives/horisontal-list';
-import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Article } from '@/src/shared/ui/primitives/article';
-import { Text } from '@/src/shared/ui/primitives/text';
 import { BrandMiniCard } from '@/src/entities/brand';
 import { ListElement } from '@/src/shared/ui/primitives/element';
 import { Placeholder } from '@/src/shared/ui/primitives/placeholder';
+import { CashbackChip } from '@/src/entities/cashback';
 
 type Props = {
   results: ISearchResponse;
@@ -59,25 +58,9 @@ export const SearchResults = ({ results, closeModal }: Props) => {
               avatarUrl={brand.logo}
               description={sku}
               endContent={
-                <Flex
-                  center
-                  className='bg-background dark:bg-default-200 px-2 h-7 mt-2 rounded-full'
-                  gap={1}
-                  width={'min-width'}
-                >
-                  {cashbackType === 'amount' ? (
-                    <>
-                      <DiamondsFour className='text-[--accent]' weight='fill' width={13} />
-                      <Text className='text-[--accent]' size={14} weight={600}>
-                        {fixCashback}
-                      </Text>
-                    </>
-                  ) : (
-                    <Text className='text-[--accent] w-fit text-nowrap' size={14} weight={600}>
-                      {fixCashback}%
-                    </Text>
-                  )}
-                </Flex>
+                <CashbackChip classNames={{ wrapper: 'mt-2' }} size='sm' type={cashbackType}>
+                  {fixCashback}
+                </CashbackChip>
               }
               title={name}
               onClick={handleNavigateBrand(brand.id)}

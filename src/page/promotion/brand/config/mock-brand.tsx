@@ -41,15 +41,15 @@ export const MockProducts: IProduct[] = [
 export const MockProductsWithBrand: IProductWithBrand[] = [
   {
     id: 1,
-    brandId: 1,
+    brandId: 3,
     name: 'Терафлю порошок 20пак.',
     fixCashback: 200,
     sku: '123412412',
     cashbackType: 'amount',
     brand: {
-      id: 1,
+      id: 3,
       promotionId: 'x-pharm',
-      name: 'Нурофен',
+      name: 'Терафлю',
       description: 'Средство от головной боли',
       logo: '/theraflu_logo.png',
       createdAt: '123123412',
@@ -58,15 +58,15 @@ export const MockProductsWithBrand: IProductWithBrand[] = [
   },
   {
     id: 2,
-    brandId: 1,
+    brandId: 2,
     name: 'Граммидин таб. 20шт',
     fixCashback: 20,
     sku: '123412432',
     cashbackType: 'percent',
     brand: {
-      id: 1,
+      id: 2,
       promotionId: 'x-pharm',
-      name: 'Нурофен',
+      name: 'Граммидин',
       description: 'Средство от головной боли',
       logo: '/grammidin_logo.png',
       createdAt: '123123412',

@@ -15,7 +15,7 @@ export const Text = ({
   tag = 'p',
   className = 'md:text-lg font-medium',
   opacity = 1,
-  size,
+  size = 16,
   weight = 500,
   isCopyable = false,
 }: Props) => {

@@ -9,7 +9,7 @@ import { formatDate } from '../../lib/utils/format-date';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { ModalLayout, useModal } from '@/src/entities/modal';
 import { Text } from '@/src/shared/ui/primitives/text';
-import { CashbackAmountBlock } from '@/src/entities/cashback';
+import { CashbackAmountBlock, CashbackChip } from '@/src/entities/cashback';
 import { Article } from '@/src/shared/ui/primitives/article';
 
 type Props = {
@@ -47,11 +47,11 @@ export const ReceiptModal = ({ id }: Props) => {
           </Text>
         </Flex>
 
-        <Flex center col className='justify-center' gap={1}>
+        <Flex center col className='justify-center' gap={4}>
           <Text size={26} tag='h3' weight={600}>
             {price} ₽
           </Text>
-          <CashbackAmountBlock>{cashback}</CashbackAmountBlock>
+          <CashbackChip color='onBg'>{cashback}</CashbackChip>
         </Flex>
 
         <Article blockClassname='p-4 gap-6' title='Покупки с кешбэком'>
