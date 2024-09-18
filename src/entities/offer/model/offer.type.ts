@@ -1,4 +1,6 @@
-export type TOfferBannerColors = '#ffedd5' | '#f6ffd5' | '#d5f0ff' | '#e1d5ff';
+import { IProductWithBrand } from '../../product';
+
+import { EOfferBannerColors } from './banner-backgrounds';
 
 export type TOfferCondition = {
   variant: 'amount' | 'price';
@@ -13,10 +15,8 @@ export interface IOffer {
   profitType: 'static' | 'from';
   condition?: TOfferCondition;
   banner_image: string;
-  banner_color: TOfferBannerColors;
-  title: string;
-  description: string;
-  avatar_image: string;
+  banner_color: EOfferBannerColors;
   date_from: number;
   date_to: number;
+  products: IProductWithBrand[];
 }

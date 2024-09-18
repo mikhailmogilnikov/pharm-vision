@@ -1,31 +1,30 @@
+'use client';
+
 import { TReceipt } from '../../model/receipt.type';
+import { ReceiptModal } from '../modal';
 
-import { SeeMoreLayout } from './see-more-layout';
-
-import { Flex } from '@/src/shared/ui/primitives/flex';
-import { Text } from '@/src/shared/ui/primitives/text';
 import { getTime } from '@/src/shared/lib/utils/get-time';
-import { CashbackAmountBlock } from '@/src/entities/cashback';
+import { CashbackChip } from '@/src/entities/cashback';
+import { ListElement } from '@/src/shared/ui/primitives/element';
+import { useModal } from '@/src/entities/modal';
 
 export const Receipt = ({ name, cashback, date, price, id }: TReceipt) => {
+  const { setModal } = useModal();
+
+  const handleClick = () => {
+    setModal(<ReceiptModal id={id} />);
+  };
+
   return (
-    <SeeMoreLayout id={id}>
-      <Flex center className='h-min w-full active:scale-95 transition-transform'>
-        <Flex col gap={1}>
-          <Flex className='justify-between'>
-            <Text size={18} tag={'h2'} weight={600}>
-              {name}
-            </Text>
-            <Text className='text-nowrap' tag='h3'>
-              {price} ₽
-            </Text>
-          </Flex>
-          <Flex className='justify-between'>
-            <Text opacity={0.5}>{getTime(new Date(date))}</Text>
-            <CashbackAmountBlock>{cashback}</CashbackAmountBlock>
-          </Flex>
-        </Flex>
-      </Flex>
-    </SeeMoreLayout>
+    <ListElement
+      description={`${getTime(new Date(date))} · ${price} ₽`}
+      endContent={
+        <CashbackChip classNames={{ wrapper: 'mt-2' }} size='sm'>
+          {cashback}
+        </CashbackChip>
+      }
+      title={name}
+      onClick={handleClick}
+    />
   );
 };

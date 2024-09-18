@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { generateOfferProfit } from '../../lib/generate-profit';
 import { generateOfferCondition } from '../../lib/generate-condition';
 import { IOffer } from '../../model/offer.type';
+import { OfferBannerBackgrounds } from '../../model/banner-backgrounds';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
@@ -14,12 +15,14 @@ type Props = {
 };
 
 export const OfferBanner = ({ offer, height = 176 }: Props) => {
-  const { banner_color, title, banner_image, profit, profitType, condition, date_to } = offer;
+  const { banner_color, banner_image, profit, profitType, condition, date_to } = offer;
+
+  const backgroundColor = OfferBannerBackgrounds[banner_color];
 
   return (
     <div
       className=' bg-orange-100 p-4 flex-shrink-0 relative overflow-clip'
-      style={{ backgroundColor: banner_color, height }}
+      style={{ backgroundColor, height }}
     >
       <Flex col gap={1} width={'60%'}>
         <Text className='text-black' size={20} weight={700}>
@@ -36,7 +39,14 @@ export const OfferBanner = ({ offer, height = 176 }: Props) => {
       </Flex>
 
       <div className='absolute bottom-0 right-0 w-36 h-36'>
-        <Image fill alt={title} draggable={false} quality={100} sizes='128px' src={banner_image} />
+        <Image
+          fill
+          alt='Баннер спецпредложения'
+          draggable={false}
+          quality={100}
+          sizes='128px'
+          src={banner_image}
+        />
       </div>
     </div>
   );
