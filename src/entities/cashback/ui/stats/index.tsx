@@ -1,9 +1,8 @@
-import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
-
 import { NumberTicker } from '@/src/shared/ui/magicui/number-ticker';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   cashbackForWeek: number;
@@ -15,7 +14,7 @@ export const CashbackStats = ({ cashbackForWeek, cashbackForAllTime }: Props) =>
     <Flex>
       <Article titleInside blockClassname='p-4 gap-3' title='За неделю'>
         <Flex center className='pb-1' gap={1}>
-          <DiamondsFour className='text-[--accent]' size={20} weight='bold' />
+          <CashbackIcon className='text-[--accent]' size={20} weight='bold' />
           <Text className='text-[--accent] leading-6' size={30} weight={700}>
             <NumberTicker value={cashbackForWeek} />
           </Text>
@@ -24,7 +23,7 @@ export const CashbackStats = ({ cashbackForWeek, cashbackForAllTime }: Props) =>
 
       <Article titleInside blockClassname='p-4 gap-3' title='За все время'>
         <Flex center className='pb-1' gap={1}>
-          <DiamondsFour className='text-[--accent]' size={20} weight='bold' />
+          <CashbackIcon className='text-[--accent]' size={20} weight='bold' />
           <Text className='text-[--accent] leading-6' size={30} weight={700}>
             <NumberTicker value={cashbackForAllTime} />
           </Text>

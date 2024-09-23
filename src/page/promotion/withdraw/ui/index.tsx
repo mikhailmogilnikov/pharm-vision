@@ -1,5 +1,4 @@
 import { Button } from '@nextui-org/button';
-import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 
 import { SectionWithTitleLayout } from '@/src/shared/ui/layouts/section-with-title';
@@ -8,6 +7,7 @@ import { Article } from '@/src/shared/ui/primitives/article';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
 import { AnimatedGradientText } from '@/src/shared/ui/magicui/animated-gradient-text';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = { promotionId: string };
 
@@ -18,7 +18,7 @@ export const PromotionWithdrawPage = ({ promotionId }: Props) => {
     <SectionWithTitleLayout isBack title='Вывод бонусов'>
       <Article titleInside title='Доступно для вывода'>
         <Flex center gap={2}>
-          <DiamondsFour className='text-[--accent]' size={24} weight='bold' />
+          <CashbackIcon className='text-[--accent]' size={24} weight='bold' />
           <AnimatedGradientText className='text-4xl font-bold leading-8 mb-1'>
             {amount}
           </AnimatedGradientText>

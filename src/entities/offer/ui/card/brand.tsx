@@ -18,7 +18,7 @@ export const OfferBrand = ({ offer, isBlurred = true }: Props) => {
   const brandsList = products.map(({ brand }) => brand);
   const uniqueBrands = getUniqueBrands(brandsList);
 
-  return products.length > 1 ? (
+  return uniqueBrands.length > 1 ? (
     <MultibrandItem brands={uniqueBrands} />
   ) : (
     <Flex center tag='article'>

@@ -1,6 +1,5 @@
 import { Chip } from '@nextui-org/chip';
 import { Button } from '@nextui-org/button';
-import { DiamondsFour } from '@phosphor-icons/react';
 
 import { IWithdrawInfo } from '../../model/withdraw-info.type';
 import { ChipData } from '../../config/chip-data';
@@ -11,6 +10,7 @@ import { Text } from '@/src/shared/ui/primitives/text';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { InfoBlock } from '@/src/shared/ui/primitives/info-block';
 import { formatDate } from '@/src/entities/receipt';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   info: IWithdrawInfo;
@@ -47,7 +47,7 @@ export const WithdrawInfoModal = ({ info }: Props) => {
         <Chip
           className='h-12 p-4'
           classNames={{ content: 'font-semibold text-2xl -mr-1 ml-[2px] text-[--accent]' }}
-          startContent={<DiamondsFour className='text-[--accent]' size={24} weight='bold' />}
+          startContent={<CashbackIcon className='text-[--accent]' size={24} weight='bold' />}
         >
           {amount}
         </Chip>
