@@ -1,6 +1,5 @@
 'use client';
 
-import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 import { Chip } from '@nextui-org/chip';
 
@@ -13,6 +12,7 @@ import { Flex } from '@/src/shared/ui/primitives/flex';
 import { formatDateToDayAndMonth } from '@/src/shared/lib/utils/format-date';
 import { getTime } from '@/src/shared/lib/utils/get-time';
 import { useModal } from '@/src/entities/modal';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   info: IWithdrawInfo;
@@ -52,7 +52,7 @@ export const WithdrawInfo = ({ info }: Props) => {
         </Flex>
         <Flex center className='items-end' gap={2} width={'30%'}>
           <Flex center className='justify-end' gap={1}>
-            <DiamondsFour className={bonusStyles} weight='fill' />
+            <CashbackIcon className={bonusStyles} weight='fill' />
             <Text className={bonusStyles} size={18} weight={600}>
               {amount}
             </Text>

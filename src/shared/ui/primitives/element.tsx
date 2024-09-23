@@ -25,7 +25,7 @@ export const ListElement = ({
 
   const desc =
     typeof description === 'string' ? (
-      <p className='text-base font-medium opacity-50'>{description}</p>
+      <p className='font-medium opacity-50 text-sm'>{description}</p>
     ) : (
       description
     );

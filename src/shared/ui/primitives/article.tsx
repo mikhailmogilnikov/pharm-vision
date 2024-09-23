@@ -12,6 +12,7 @@ type Props = PropsWithChildren<{
   actionButton?: React.ReactNode;
   className?: string;
   titleInside?: boolean;
+  id?: string;
 }>;
 
 export const Article = ({
@@ -23,9 +24,10 @@ export const Article = ({
   className,
   titleInside = false,
   blockClassname = `${titleInside ? ' gap-3' : 'gap-4'} p-4`,
+  id,
 }: Props) => {
   return (
-    <Flex col className={className} gap={3} tag='article'>
+    <Flex col className={className} gap={3} id={id} tag='article'>
       {title && !titleInside && (
         <Flex center className='justify-between'>
           <Text className={titleClassname} opacity={0.7} tag='h3' weight={600}>

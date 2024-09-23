@@ -1,6 +1,5 @@
 'use client';
 
-import { DiamondsFour } from '@phosphor-icons/react/dist/ssr';
 import { Slider } from '@nextui-org/slider';
 import { useLayoutEffect, useState } from 'react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
@@ -14,6 +13,7 @@ import { MotionLayout } from '@/src/shared/ui/primitives/motion-layout';
 import { NumberInput } from '@/src/shared/ui/inputs/number-input';
 import { WithdrawButton } from '@/src/features/withdraw/withdraw-button';
 import { UserAgreementUnder } from '@/src/entities/user-agreement';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   amount: number;
@@ -41,7 +41,7 @@ export const WithdrawAmountBlock = ({ amount }: Props) => {
   return (
     <>
       <Flex center gap={2}>
-        <DiamondsFour className='text-[--accent]' size={32} weight='bold' />
+        <CashbackIcon className='text-[--accent]' size={32} weight='bold' />
         <NumberInput
           className='bg-transparent text-5xl font-bold outline-none text-[--accent]'
           value={selectedAmount}

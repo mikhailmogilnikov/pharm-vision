@@ -2,7 +2,6 @@
 
 import { MouseEventHandler } from 'react';
 import { Chip } from '@nextui-org/chip';
-import { DiamondsFour } from '@phosphor-icons/react';
 import NextImage from 'next/image';
 import { Image } from '@nextui-org/image';
 
@@ -12,6 +11,7 @@ import { getMaxCashback } from '../../lib/get-max-cashback';
 import { Article } from '@/src/shared/ui/primitives/article';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   brand: IBrand;
@@ -60,7 +60,7 @@ export const BrandMiniCard = ({ brand, onClick }: Props) => {
             До{' '}
             {typeof maxCashback === 'number' && (
               <span>
-                <DiamondsFour className='-mr-[2px]' weight='fill' />{' '}
+                <CashbackIcon className='-mr-[2px]' weight='fill' />{' '}
               </span>
             )}
             {maxCashback}

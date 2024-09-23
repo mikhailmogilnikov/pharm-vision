@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Image } from '@nextui-org/image';
 import NextImage from 'next/image';
-import { CaretRight, DiamondsFour } from '@phosphor-icons/react/dist/ssr';
+import { CaretRight } from '@phosphor-icons/react/dist/ssr';
 import { Chip } from '@nextui-org/chip';
 
 import { IBrand } from '../../model/brand.type';
@@ -9,6 +9,7 @@ import { getMaxCashback } from '../../lib/get-max-cashback';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
+import { CashbackIcon } from '@/src/shared/ui/cashback-icon';
 
 type Props = {
   brand: IBrand;
@@ -47,7 +48,7 @@ export const BrandTab = ({ brand }: Props) => {
           Кешбэк до{' '}
           {typeof maxCashback === 'number' && (
             <span>
-              <DiamondsFour className='-mr-[2px]' weight='fill' />{' '}
+              <CashbackIcon className='-mr-[2px]' weight='fill' />{' '}
             </span>
           )}
           {maxCashback}

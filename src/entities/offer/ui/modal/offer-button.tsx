@@ -35,7 +35,7 @@ export const ScanQrOfferButton = () => {
       size='lg'
       onPress={handlePress}
     >
-      Получить кешбек
+      Получить кешбэк
     </Button>
   );
 };
