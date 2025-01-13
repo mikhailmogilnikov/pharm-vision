@@ -2,6 +2,8 @@ import { Image } from '@nextui-org/image';
 import { Squircle } from '@squircle-js/react';
 import NextImage from 'next/image';
 
+import banner from '@/public/banner.png';
+
 export const HomeBanner = () => {
   return (
     <Squircle
@@ -20,7 +22,7 @@ export const HomeBanner = () => {
         }}
         draggable={false}
         quality={100}
-        src='https://pharmprom.ru/wp-content/uploads/r-pharm-v.jpg'
+        src={banner.src}
       />
     </Squircle>
   );
