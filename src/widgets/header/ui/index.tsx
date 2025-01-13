@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { ChangeThemeSkeleton } from '@/src/features/change-theme';
+import logo from '@/public/logo.svg';
 
 type Props = {
   promotionId: string;
@@ -32,10 +33,11 @@ export const CustomerHeader = ({ promotionId }: Props) => {
         <Image
           priority
           alt='logo'
+          className='w-full h-[50px]'
           draggable={false}
           height={50}
           quality={100}
-          src={'/r-farm-logo.png'}
+          src={logo.src}
           width={250}
         />
       </button>

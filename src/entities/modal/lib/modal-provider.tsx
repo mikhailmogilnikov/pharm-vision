@@ -17,8 +17,8 @@ export const ModalProvider = ({ children }: Props) => {
   return (
     <>
       <Modal />
-      <AnimatePresence>
-        <m.div animate={modal ? { scale: 0.95, y: 30 } : { scale: 1 }} style={{ willChange }}>
+      <AnimatePresence mode='wait'>
+        <m.div animate={modal ? { scale: 0.99, y: 30 } : { scale: 1 }} style={{ willChange }}>
           {children}
         </m.div>
       </AnimatePresence>
